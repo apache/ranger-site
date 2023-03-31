@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Ranger REST API: XXDBBase</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!--custom css for these pages-->
+  <link rel="stylesheet" href="css/enunciate.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#apinav">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Ranger REST API: XXDBBase</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="data.html">Data Types</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" id="apinav">
+        <ul class="nav nav-sidebar">
+          <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ol class="breadcrumb" id="top">
+          <li class="active dropdown"><a href="index.html">Home</a></li>
+          <li class="active dropdown"><a href="syntax_json.html">JSON</a></li>
+          <li class="dropdown"><a href="json_XXDBBase.html">XXDBBase</a></li>
+        </ol>
+
+      <h1 class="page-header">XXDBBase <small>Data Type</small></h1>
+
+      <p></p>
+
+      <dl class="dl-horizontal">
+        <dt>Abstract Type</dt>
+        <dd></dd>
+        <dt>Subtypes</dt>
+        <dd><a href="json_XXPolicyItemGroupPerm.html">XXPolicyItemGroupPerm</a>, <a href="json_XXPolicyConditionDef.html">XXPolicyConditionDef</a>, <a href="json_XXSecurityZoneRefTagService.html">XXSecurityZoneRefTagService</a>, <a href="json_XXTagResourceMap.html">XXTagResourceMap</a>, <a href="json_XXPolicyLabelMap.html">XXPolicyLabelMap</a>, <a href="json_XXPolicyItemCondition.html">XXPolicyItemCondition</a>, <a href="json_XXPolicyRefDataMaskType.html">XXPolicyRefDataMaskType</a>, <a href="json_XXPolicyBase.html">XXPolicyBase</a>, <a href="json_XXTag.html">XXTag</a>, <a href="json_XXPolicyResource.html">XXPolicyResource</a>, <a href="json_XXAccessTypeDef.html">XXAccessTypeDef</a>, <a href="json_XXPolicyLabel.html">XXPolicyLabel</a>, <a href="json_XXRoleBase.html">XXRoleBase</a>, <a href="json_XXGlobalState.html">XXGlobalState</a>, <a href="json_XXServiceConfigDef.html">XXServiceConfigDef</a>, <a href="json_XXAsset.html">XXAsset</a>, <a href="json_XXRoleRefUser.html">XXRoleRefUser</a>, <a href="json_XXPolicyRefCondition.html">XXPolicyRefCondition</a>, <a href="json_XXPolicy.html">XXPolicy</a>, <a href="json_XXAccessTypeDefGrants.html">XXAccessTypeDefGrants</a>, <a href="json_XXSecurityZone.html">XXSecurityZone</a>, <a href="json_XXServiceDefWithAssignedId.html">XXServiceDefWithAssignedId</a>, <a href="json_XXPolicyRefResource.html">XXPolicyRefResource</a>, <a href="json_XXGlobalStateBase.html">XXGlobalStateBase</a>, <a href="json_XXUser.html">XXUser</a>, <a href="json_XXPolicyRefRole.html">XXPolicyRefRole</a>, <a href="json_XXTagAttribute.html">XXTagAttribute</a>, <a href="json_XXContextEnricherDef.html">XXContextEnricherDef</a>, <a href="json_XXServiceConfigMap.html">XXServiceConfigMap</a>, <a href="json_XXServiceDefBase.html">XXServiceDefBase</a>, <a href="json_XXServiceWithAssignedId.html">XXServiceWithAssignedId</a>, <a href="json_XXTagAttributeDef.html">XXTagAttributeDef</a>, <a href="json_XXRMSServiceResource.html">XXRMSServiceResource</a>, <a href="json_XXGroupPermission.html">XXGroupPermission</a>, <a href="json_XXSecurityZoneBase.html">XXSecurityZoneBase</a>, <a href="json_XXPermMap.html">XXPermMap</a>, <a href="json_XXPortalUserRole.html">XXPortalUserRole</a>, <a href="json_XXEnumElementDef.html">XXEnumElementDef</a>, <a href="json_XXServiceBase.html">XXServiceBase</a>, <a href="json_XXServiceResource.html">XXServiceResource</a>, <a href="json_XXGroup.html">XXGroup</a>, <a href="json_XXRoleRefRole.html">XXRoleRefRole</a>, <a href="json_XXRole.html">XXRole</a>, <a href="json_XXServiceResourceElement.html">XXServiceResourceElement</a>, <a href="json_XXGroupUser.html">XXGroupUser</a>, <a href="json_XXAccessAudit.html">XXAccessAudit</a>, <a href="json_XXCredentialStore.html">XXCredentialStore</a>, <a href="json_XXPolicyRefUser.html">XXPolicyRefUser</a>, <a href="json_XXPolicyRefAccessType.html">XXPolicyRefAccessType</a>, <a href="json_XXUgsyncAuditInfo.html">XXUgsyncAuditInfo</a>, <a href="json_XXDataMaskTypeDef.html">XXDataMaskTypeDef</a>, <a href="json_XXTagDef.html">XXTagDef</a>, <a href="json_XXPolicyWithAssignedId.html">XXPolicyWithAssignedId</a>, <a href="json_XXEnumDef.html">XXEnumDef</a>, <a href="json_XXPolicyItemRowFilterInfo.html">XXPolicyItemRowFilterInfo</a>, <a href="json_XXSecurityZoneRefUser.html">XXSecurityZoneRefUser</a>, <a href="json_XXUserPermission.html">XXUserPermission</a>, <a href="json_XXPolicyItemDataMaskInfo.html">XXPolicyItemDataMaskInfo</a>, <a href="json_XXServiceResourceElementValue.html">XXServiceResourceElementValue</a>, <a href="json_XXSecurityZoneRefResource.html">XXSecurityZoneRefResource</a>, <a href="json_XXPolicyExportAudit.html">XXPolicyExportAudit</a>, <a href="json_XXTrxLog.html">XXTrxLog</a>, <a href="json_XXAuthSession.html">XXAuthSession</a>, <a href="json_XXSecurityZoneRefGroup.html">XXSecurityZoneRefGroup</a>, <a href="json_XXAccessAuditV4.html">XXAccessAuditV4</a>, <a href="json_XXResourceDef.html">XXResourceDef</a>, <a href="json_XXAccessAuditV5.html">XXAccessAuditV5</a>, <a href="json_XXRoleRefGroup.html">XXRoleRefGroup</a>, <a href="json_XXSecurityZoneRefService.html">XXSecurityZoneRefService</a>, <a href="json_XXPolicyRefGroup.html">XXPolicyRefGroup</a>, <a href="json_XXAuditMap.html">XXAuditMap</a>, <a href="json_XXPortalUser.html">XXPortalUser</a>, <a href="json_XXAccessAuditBase.html">XXAccessAuditBase</a>, <a href="json_XXPolicyResourceMap.html">XXPolicyResourceMap</a>, <a href="json_XXModuleDef.html">XXModuleDef</a>, <a href="json_XXServiceDef.html">XXServiceDef</a>, <a href="json_XXService.html">XXService</a>, <a href="json_XXResource.html">XXResource</a>, <a href="json_XXPolicyItemUserPerm.html">XXPolicyItemUserPerm</a>, <a href="json_XXGroupGroup.html">XXGroupGroup</a>, <a href="json_XXPolicyItem.html">XXPolicyItem</a>, <a href="json_XXPolicyItemAccess.html">XXPolicyItemAccess</a></dd>
+      </dl>
+
+      <table class="table datatype-properties">
+        <caption>Properties</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>data type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>  <span id="prop-myClassType" class="property-name">myClassType</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-myDisplayValue" class="property-name">myDisplayValue</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-id" class="property-name">id</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>id</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-createTime" class="property-name">createTime</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>createTime</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-updateTime" class="property-name">updateTime</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>updateTime</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-addedByUserId" class="property-name">addedByUserId</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>addedByUserId</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-updatedByUserId" class="property-name">updatedByUserId</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>updatedByUserId</b></span>
+</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <p class="lead">Example</p>
+
+      <div class="alert alert-warning">This data type is abstract. The example below may be incomplete. More accurate examples can be found in subtypes pages.</div>
+      
+      <pre class="prettyprint language-js example">{
+  &quot;myClassType&quot; : 12345,
+  &quot;myDisplayValue&quot; : &quot;...&quot;,
+  &quot;id&quot; : 12345,
+  &quot;createTime&quot; : 12345,
+  &quot;updateTime&quot; : 12345,
+  &quot;addedByUserId&quot; : 12345,
+  &quot;updatedByUserId&quot; : 12345
+}</pre>
+
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Generated by <a href="http://enunciate.webcohesion.com">Enunciate</a>.</p>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript placed at the end of the document so the pages load faster. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
+  <script>
+    $(function() {
+      $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+      });
+
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Ranger REST API: ViewBaseBean</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!--custom css for these pages-->
+  <link rel="stylesheet" href="css/enunciate.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#apinav">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Ranger REST API: ViewBaseBean</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="data.html">Data Types</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" id="apinav">
+        <ul class="nav nav-sidebar">
+          <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ol class="breadcrumb" id="top">
+          <li class="active dropdown"><a href="index.html">Home</a></li>
+          <li class="active dropdown"><a href="syntax_json.html">JSON</a></li>
+          <li class="dropdown"><a href="json_ViewBaseBean.html">ViewBaseBean</a></li>
+        </ol>
+
+      <h1 class="page-header">ViewBaseBean <small>Data Type</small></h1>
+
+      <p></p>
+
+      <dl class="dl-horizontal">
+        <dt>Subtypes</dt>
+        <dd><a href="json_VXPortalUserList.html">VXPortalUserList</a>, <a href="json_VXTrxLog.html">VXTrxLog</a>, <a href="json_VXPolicyList.html">VXPolicyList</a>, <a href="json_VXUgsyncAuditInfo.html">VXUgsyncAuditInfo</a>, <a href="json_VXUserList.html">VXUserList</a>, <a href="json_VXTrxLogList.html">VXTrxLogList</a>, <a href="json_VList.html">VList</a>, <a href="json_VXAuditMap.html">VXAuditMap</a>, <a href="json_VXGroupPermission.html">VXGroupPermission</a>, <a href="json_VEnumElement.html">VEnumElement</a>, <a href="json_VXKmsKey.html">VXKmsKey</a>, <a href="json_VXGroupList.html">VXGroupList</a>, <a href="json_VXGroupUserList.html">VXGroupUserList</a>, <a href="json_VXUser.html">VXUser</a>, <a href="json_VXGroupUserInfo.html">VXGroupUserInfo</a>, <a href="json_VXGroupUser.html">VXGroupUser</a>, <a href="json_VXString.html">VXString</a>, <a href="json_VXCredentialStoreList.html">VXCredentialStoreList</a>, <a href="json_VXKmsKeyList.html">VXKmsKeyList</a>, <a href="json_VXResponse.html">VXResponse</a>, <a href="json_VXDataObject.html">VXDataObject</a>, <a href="json_VXModuleDefList.html">VXModuleDefList</a>, <a href="json_VXAccessAudit.html">VXAccessAudit</a>, <a href="json_VXPolicyExportAuditList.html">VXPolicyExportAuditList</a>, <a href="json_RangerExportPolicyList.html">RangerExportPolicyList</a>, <a href="json_VXUserGroupInfo.html">VXUserGroupInfo</a>, <a href="json_VXPermObjList.html">VXPermObjList</a>, <a href="json_VXGroup.html">VXGroup</a>, <a href="json_RangerPolicyList.html">RangerPolicyList</a>, <a href="json_VXRepository.html">VXRepository</a>, <a href="json_RangerServiceDefList.html">RangerServiceDefList</a>, <a href="json_VEnum.html">VEnum</a>, <a href="json_RangerRoleList.html">RangerRoleList</a>, <a href="json_VXAuthSessionList.html">VXAuthSessionList</a>, <a href="json_VXPolicy.html">VXPolicy</a>, <a href="json_VXMessage.html">VXMessage</a>, <a href="json_VXPermMapList.html">VXPermMapList</a>, <a href="json_VXAsset.html">VXAsset</a>, <a href="json_RangerPluginInfoList.html">RangerPluginInfoList</a>, <a href="json_RangerSecurityZoneList.html">RangerSecurityZoneList</a>, <a href="json_VXAuthSession.html">VXAuthSession</a>, <a href="json_VXPermMap.html">VXPermMap</a>, <a href="json_RangerServiceList.html">RangerServiceList</a>, <a href="json_VXResourceList.html">VXResourceList</a>, <a href="json_VXResource.html">VXResource</a>, <a href="json_VXPolicyExportAudit.html">VXPolicyExportAudit</a>, <a href="json_VXAuditRecordList.html">VXAuditRecordList</a>, <a href="json_VXGroupPermissionList.html">VXGroupPermissionList</a>, <a href="json_VXRepositoryList.html">VXRepositoryList</a>, <a href="json_VXPasswordChange.html">VXPasswordChange</a>, <a href="json_VXAssetList.html">VXAssetList</a>, <a href="json_VXPolicyLabelList.html">VXPolicyLabelList</a>, <a href="json_VXLong.html">VXLong</a>, <a href="json_VXGroupGroupList.html">VXGroupGroupList</a>, <a href="json_VTrxLogAttr.html">VTrxLogAttr</a>, <a href="json_VXPortalUser.html">VXPortalUser</a>, <a href="json_VXModuleDef.html">VXModuleDef</a>, <a href="json_VXAccessAuditList.html">VXAccessAuditList</a>, <a href="json_VXGroupGroup.html">VXGroupGroup</a>, <a href="json_VXCredentialStore.html">VXCredentialStore</a>, <a href="json_VXUgsyncAuditInfoList.html">VXUgsyncAuditInfoList</a>, <a href="json_VXUserPermissionList.html">VXUserPermissionList</a>, <a href="json_VXUserPermission.html">VXUserPermission</a>, <a href="json_VXStringList.html">VXStringList</a>, <a href="json_VXPolicyLabel.html">VXPolicyLabel</a>, <a href="json_VXAuditMapList.html">VXAuditMapList</a></dd>
+      </dl>
+
+      <table class="table datatype-properties">
+        <caption>Properties</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>data type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+
+      <p class="lead">Example</p>
+      
+      <pre class="prettyprint language-js example">{ }</pre>
+
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Generated by <a href="http://enunciate.webcohesion.com">Enunciate</a>.</p>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript placed at the end of the document so the pages load faster. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
+  <script>
+    $(function() {
+      $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+      });
+
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+
+</body>
+</html>

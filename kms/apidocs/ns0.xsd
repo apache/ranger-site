@@ -1,0 +1,1700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0"
+  
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="XXDBBase" type="XXDBBase"/>
+  <xs:element name="XXRangerKeyStore" type="XXRangerKeyStore"/>
+  <xs:element name="XXRangerMasterKey" type="XXRangerMasterKey"/>
+  <xs:element name="rangerTagForEval" type="rangerTagForEval"/>
+  <xs:element name="auditFilter" type="auditFilter"/>
+  <xs:element name="groupInfo" type="groupInfo"/>
+  <xs:element name="rangerBaseModelObject" type="rangerBaseModelObject"/>
+  <xs:element name="rangerMetrics" type="rangerMetrics"/>
+  <xs:element name="rangerPluginInfo" type="rangerPluginInfo"/>
+  <xs:element name="rangerPolicy" type="rangerPolicy"/>
+  <xs:element name="rangerDataMaskPolicyItem" type="rangerDataMaskPolicyItem"/>
+  <xs:element name="rangerPolicyItem" type="rangerPolicyItem"/>
+  <xs:element name="rangerPolicyItemAccess" type="rangerPolicyItemAccess"/>
+  <xs:element name="rangerPolicyItemCondition" type="rangerPolicyItemCondition"/>
+  <xs:element name="rangerPolicyItemDataMaskInfo" type="rangerPolicyItemDataMaskInfo"/>
+  <xs:element name="rangerPolicyItemRowFilterInfo" type="rangerPolicyItemRowFilterInfo"/>
+  <xs:element name="rangerPolicyResource" type="rangerPolicyResource"/>
+  <xs:element name="rangerRowFilterPolicyItem" type="rangerRowFilterPolicyItem"/>
+  <xs:element name="rangerPolicyDelta" type="rangerPolicyDelta"/>
+  <xs:element name="rangerRole" type="rangerRole"/>
+  <xs:element name="roleMember" type="roleMember"/>
+  <xs:element name="rangerSecurityZone" type="rangerSecurityZone"/>
+  <xs:element name="rangerSecurityZoneService" type="rangerSecurityZoneService"/>
+  <xs:element name="rangerService" type="rangerService"/>
+  <xs:element name="rangerServiceDef" type="rangerServiceDef"/>
+  <xs:element name="rangerAccessTypeDef" type="rangerAccessTypeDef"/>
+  <xs:element name="rangerContextEnricherDef" type="rangerContextEnricherDef"/>
+  <xs:element name="rangerDataMaskDef" type="rangerDataMaskDef"/>
+  <xs:element name="rangerDataMaskTypeDef" type="rangerDataMaskTypeDef"/>
+  <xs:element name="rangerEnumDef" type="rangerEnumDef"/>
+  <xs:element name="rangerEnumElementDef" type="rangerEnumElementDef"/>
+  <xs:element name="rangerPolicyConditionDef" type="rangerPolicyConditionDef"/>
+  <xs:element name="rangerResourceDef" type="rangerResourceDef"/>
+  <xs:element name="rangerRowFilterDef" type="rangerRowFilterDef"/>
+  <xs:element name="rangerServiceConfigDef" type="rangerServiceConfigDef"/>
+  <xs:element name="rangerServiceResource" type="rangerServiceResource"/>
+  <xs:element name="rangerTag" type="rangerTag"/>
+  <xs:element name="rangerTagDef" type="rangerTagDef"/>
+  <xs:element name="rangerTagAttributeDef" type="rangerTagAttributeDef"/>
+  <xs:element name="rangerTagResourceMap" type="rangerTagResourceMap"/>
+  <xs:element name="rangerValidityRecurrence" type="rangerValidityRecurrence"/>
+  <xs:element name="recurrenceSchedule" type="recurrenceSchedule"/>
+  <xs:element name="validityInterval" type="validityInterval"/>
+  <xs:element name="rangerValiditySchedule" type="rangerValiditySchedule"/>
+  <xs:element name="serviceDeleteResponse" type="serviceDeleteResponse"/>
+  <xs:element name="userInfo" type="userInfo"/>
+  <xs:element name="accessResult" type="accessResult"/>
+  <xs:element name="dataMaskResult" type="dataMaskResult"/>
+  <xs:element name="rowFilterResult" type="rowFilterResult"/>
+  <xs:element name="resourceLookupContext" type="resourceLookupContext"/>
+  <xs:element name="storedServiceResource" type="storedServiceResource"/>
+  <xs:element name="grantRevokeRequest" type="grantRevokeRequest"/>
+  <xs:element name="grantRevokeRoleRequest" type="grantRevokeRoleRequest"/>
+  <xs:element name="rangerRequestedResources" type="rangerRequestedResources"/>
+  <xs:element name="rangerRoles" type="rangerRoles"/>
+  <xs:element name="rangerUserStore" type="rangerUserStore"/>
+  <xs:element name="servicePolicies" type="servicePolicies"/>
+  <xs:element name="securityZoneInfo" type="securityZoneInfo"/>
+  <xs:element name="tagPolicies" type="tagPolicies"/>
+  <xs:element name="serviceTags" type="serviceTags"/>
+<xs:complexType name="XXDBBase" abstract="true">
+       <xs:sequence>
+              <xs:element name="id" type="xs:long" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the value for the member attribute <b>id</b>]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="createTime" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the value for the member attribute <b>createTime</b>]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="updateTime" type="xs:dateTime" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the value for the member attribute <b>updateTime</b>]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="addedByUserId" type="xs:long" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the value for the member attribute <b>addedByUserId</b>]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="updatedByUserId" type="xs:long" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Returns the value for the member attribute <b>updatedByUserId</b>]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="XXRangerKeyStore">
+   <xs:complexContent>
+    <xs:extension base="XXDBBase">
+      <xs:sequence>
+              <xs:element name="alias" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="createdDate" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="encoded" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="cipher" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="bitLength" type="xs:int" minOccurs="1">
+              </xs:element>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="version" type="xs:int" minOccurs="1">
+              </xs:element>
+              <xs:element name="attributes" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="XXRangerMasterKey">
+   <xs:complexContent>
+    <xs:extension base="XXDBBase">
+      <xs:sequence>
+              <xs:element name="cipher" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="bitLength" type="xs:int" minOccurs="1">
+              </xs:element>
+              <xs:element name="masterKey" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="rangerTagForEval">
+       <xs:sequence>
+              <xs:element name="matchType" type="matchType" minOccurs="0">
+              </xs:element>
+              <xs:element name="options" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="type" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="attributes" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="validityPeriods" type="rangerValiditySchedule" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="auditFilter">
+       <xs:sequence>
+              <xs:element name="groups" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="roles" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="users" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="actions" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="isAudited" type="xs:boolean" minOccurs="0">
+              </xs:element>
+              <xs:element name="accessResult" type="accessResult" minOccurs="0">
+              </xs:element>
+              <xs:element name="resources" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="rangerPolicyResource"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="accessTypes" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="accessResult">
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="DENIED"/>
+ 
+    <xs:enumeration value="ALLOWED"/>
+ 
+    <xs:enumeration value="NOT_DETERMINED"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="groupInfo">
+   <xs:complexContent>
+    <xs:extension base="rangerBaseModelObject">
+      <xs:sequence>
+              <xs:element name="otherAttributes" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="rangerBaseModelObject">
+       <xs:sequence>
+              <xs:element name="id" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="updateTime" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="guid" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="version" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="createdBy" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="createTime" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="isEnabled" type="xs:boolean" minOccurs="0">
+              </xs:element>
+              <xs:element name="updatedBy" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerMetrics">
+       <xs:sequence>
+              <xs:element name="data" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerPluginInfo">
+       <xs:sequence>
+              <xs:element name="serviceType" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="id" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="hostName" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="info" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="updateTime" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="appType" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="createTime" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="ipAddress" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="serviceName" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="serviceDisplayName" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="serviceTypeDisplayName" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerPolicy">
+   <xs:complexContent>
+    <xs:extension base="rangerBaseModelObject">
+      <xs:sequence>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="denyPolicyItems" type="rangerPolicyItem" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="service" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="zoneName" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="isDenyAllElse" type="xs:boolean" minOccurs="0">
+              </xs:element>
+              <xs:element name="serviceType" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="policyItems" type="rangerPolicyItem" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="denyExceptions" type="rangerPolicyItem" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="policyType" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="resources" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="rangerPolicyResource"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="rowFilterPolicyItems" type="rangerRowFilterPolicyItem" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="resourceSignature" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="conditions" type="rangerPolicyItemCondition" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="validitySchedules" type="rangerValiditySchedule" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="policyPriority" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="options" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="dataMaskPolicyItems" type="rangerDataMaskPolicyItem" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="policyLabels" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="allowExceptions" type="rangerPolicyItem" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="isAuditEnabled" type="xs:boolean" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="rangerDataMaskPolicyItem">
+   <xs:complexContent>
+    <xs:extension base="rangerPolicyItem">
+      <xs:sequence>
+              <xs:element name="dataMaskInfo" type="rangerPolicyItemDataMaskInfo" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="rangerPolicyItem">
+       <xs:sequence>
+              <xs:element name="accesses" type="rangerPolicyItemAccess" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="delegateAdmin" type="xs:boolean" minOccurs="0">
+              </xs:element>
+              <xs:element name="groups" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="users" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="conditions" type="rangerPolicyItemCondition" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="roles" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerPolicyItemAccess">
+       <xs:sequence>
+              <xs:element name="type" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="isAllowed" type="xs:boolean" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerPolicyItemCondition">
+       <xs:sequence>
+              <xs:element name="type" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="values" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerPolicyItemDataMaskInfo">
+       <xs:sequence>
+              <xs:element name="valueExpr" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="conditionExpr" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="dataMaskType" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerPolicyItemRowFilterInfo">
+       <xs:sequence>
+              <xs:element name="filterExpr" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerPolicyResource">
+       <xs:sequence>
+              <xs:element name="isExcludes" type="xs:boolean" minOccurs="0">
+              </xs:element>
+              <xs:element name="values" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="isRecursive" type="xs:boolean" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerRowFilterPolicyItem">
+   <xs:complexContent>
+    <xs:extension base="rangerPolicyItem">
+      <xs:sequence>
+              <xs:element name="rowFilterInfo" type="rangerPolicyItemRowFilterInfo" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="rangerPolicyDelta">
+       <xs:sequence>
+              <xs:element name="changeType" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="policiesVersion" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="id" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="policy" type="rangerPolicy" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerRole">
+   <xs:complexContent>
+    <xs:extension base="rangerBaseModelObject">
+      <xs:sequence>
+              <xs:element name="groups" type="roleMember" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="options" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="createdByUser" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="users" type="roleMember" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="roles" type="roleMember" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="roleMember">
+       <xs:sequence>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="isAdmin" type="xs:boolean" minOccurs="1">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerSecurityZone">
+   <xs:complexContent>
+    <xs:extension base="rangerBaseModelObject">
+      <xs:sequence>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="auditUserGroups" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="adminUserGroups" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="tagServices" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="services" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="rangerSecurityZoneService"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="auditUsers" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="adminUsers" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="rangerSecurityZoneService">
+       <xs:sequence>
+              <xs:element name="resources" minOccurs="0" maxOccurs="unbounded">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerService">
+   <xs:complexContent>
+    <xs:extension base="rangerBaseModelObject">
+      <xs:sequence>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="configs" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="displayName" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="type" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="tagUpdateTime" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="policyVersion" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="tagService" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="policyUpdateTime" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="tagVersion" type="xs:long" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="rangerServiceDef">
+   <xs:complexContent>
+    <xs:extension base="rangerBaseModelObject">
+      <xs:sequence>
+              <xs:element name="dataMaskDef" type="rangerDataMaskDef" minOccurs="0">
+              </xs:element>
+              <xs:element name="configs" type="rangerServiceConfigDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="rbKeyDescription" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="contextEnrichers" type="rangerContextEnricherDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="accessTypes" type="rangerAccessTypeDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="label" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="rowFilterDef" type="rangerRowFilterDef" minOccurs="0">
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="options" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="policyConditions" type="rangerPolicyConditionDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="implClass" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="enums" type="rangerEnumDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="displayName" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="rbKeyLabel" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="resources" type="rangerResourceDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="rangerAccessTypeDef">
+       <xs:sequence>
+              <xs:element name="impliedGrants" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="rbKeyLabel" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="label" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="itemId" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerContextEnricherDef">
+       <xs:sequence>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="itemId" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="enricherOptions" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="enricher" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerDataMaskDef">
+       <xs:sequence>
+              <xs:element name="resources" type="rangerResourceDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="maskTypes" type="rangerDataMaskTypeDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="accessTypes" type="rangerAccessTypeDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerDataMaskTypeDef">
+       <xs:sequence>
+              <xs:element name="rbKeyDescription" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="label" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="rbKeyLabel" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="transformer" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="dataMaskOptions" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="itemId" type="xs:long" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerEnumDef">
+       <xs:sequence>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="itemId" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="defaultIndex" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="elements" type="rangerEnumElementDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerEnumElementDef">
+       <xs:sequence>
+              <xs:element name="itemId" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="rbKeyLabel" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="label" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerPolicyConditionDef">
+       <xs:sequence>
+              <xs:element name="rbKeyLabel" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="evaluator" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="uiHint" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="label" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="itemId" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="rbKeyDescription" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="evaluatorOptions" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="validationMessage" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="rbKeyValidationMessage" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="validationRegEx" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerResourceDef">
+       <xs:sequence>
+              <xs:element name="lookupSupported" type="xs:boolean" minOccurs="0">
+              </xs:element>
+              <xs:element name="validationRegEx" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="mandatory" type="xs:boolean" minOccurs="0">
+              </xs:element>
+              <xs:element name="isValidLeaf" type="xs:boolean" minOccurs="0">
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="rbKeyDescription" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="label" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="level" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="recursiveSupported" type="xs:boolean" minOccurs="0">
+              </xs:element>
+              <xs:element name="rbKeyLabel" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="uiHint" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="parent" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="excludesSupported" type="xs:boolean" minOccurs="0">
+              </xs:element>
+              <xs:element name="rbKeyValidationMessage" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="type" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="matcher" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="matcherOptions" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="validationMessage" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="accessTypeRestrictions" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="itemId" type="xs:long" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerRowFilterDef">
+       <xs:sequence>
+              <xs:element name="accessTypes" type="rangerAccessTypeDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="resources" type="rangerResourceDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerServiceConfigDef">
+       <xs:sequence>
+              <xs:element name="subType" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="mandatory" type="xs:boolean" minOccurs="0">
+              </xs:element>
+              <xs:element name="rbKeyLabel" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="label" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="rbKeyDescription" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="type" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="validationRegEx" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="validationMessage" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="rbKeyValidationMessage" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="uiHint" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="defaultValue" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="itemId" type="xs:long" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerServiceResource">
+   <xs:complexContent>
+    <xs:extension base="rangerBaseModelObject">
+      <xs:sequence>
+              <xs:element name="serviceName" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="additionalInfo" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="resourceElements" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="rangerPolicyResource"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="resourceSignature" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="ownerUser" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="rangerTag">
+   <xs:complexContent>
+    <xs:extension base="rangerBaseModelObject">
+      <xs:sequence>
+              <xs:element name="attributes" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="owner" type="xs:short" minOccurs="0">
+              </xs:element>
+              <xs:element name="type" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="options" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="validityPeriods" type="rangerValiditySchedule" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="rangerTagDef">
+   <xs:complexContent>
+    <xs:extension base="rangerBaseModelObject">
+      <xs:sequence>
+              <xs:element name="attributeDefs" type="rangerTagAttributeDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="source" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="rangerTagAttributeDef">
+       <xs:sequence>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="type" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerTagResourceMap">
+   <xs:complexContent>
+    <xs:extension base="rangerBaseModelObject">
+      <xs:sequence>
+              <xs:element name="resourceId" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="tagId" type="xs:long" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="rangerValidityRecurrence">
+       <xs:sequence>
+              <xs:element name="schedule" type="recurrenceSchedule" minOccurs="0">
+              </xs:element>
+              <xs:element name="interval" type="validityInterval" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="recurrenceSchedule">
+       <xs:sequence>
+              <xs:element name="hour" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="dayOfMonth" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="year" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="month" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="minute" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="dayOfWeek" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validityInterval">
+       <xs:sequence>
+              <xs:element name="minutes" type="xs:int" minOccurs="1">
+              </xs:element>
+              <xs:element name="days" type="xs:int" minOccurs="1">
+              </xs:element>
+              <xs:element name="hours" type="xs:int" minOccurs="1">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerValiditySchedule">
+       <xs:sequence>
+              <xs:element name="endTime" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="recurrences" type="rangerValidityRecurrence" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="timeZone" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="startTime" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="serviceDeleteResponse">
+       <xs:sequence>
+              <xs:element name="serviceId" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="isDeleted" type="xs:boolean" minOccurs="0">
+              </xs:element>
+              <xs:element name="errorMsg" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="serviceName" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="userInfo">
+   <xs:complexContent>
+    <xs:extension base="rangerBaseModelObject">
+      <xs:sequence>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="groups" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="otherAttributes" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="rangerAccessResource" abstract="true">
+ </xs:complexType>
+
+<xs:complexType name="rangerAccessResourceImpl">
+       <xs:sequence>
+              <xs:element name="serviceDef" type="rangerServiceDef" minOccurs="0">
+              </xs:element>
+              <xs:element name="ownerUser" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerAccessResourceReadOnly">
+ </xs:complexType>
+
+<xs:complexType name="rangerMutableResource" abstract="true">
+ </xs:complexType>
+
+<xs:complexType name="dataMaskResult">
+       <xs:sequence>
+              <xs:element name="roles" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="isConditional" type="xs:boolean" minOccurs="1">
+              </xs:element>
+              <xs:element name="users" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="groups" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="accessTypes" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="maskInfo" type="rangerPolicyItemDataMaskInfo" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rowFilterResult">
+       <xs:sequence>
+              <xs:element name="accessTypes" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="roles" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="users" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="groups" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="isConditional" type="xs:boolean" minOccurs="1">
+              </xs:element>
+              <xs:element name="filterInfo" type="rangerPolicyItemRowFilterInfo" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerTagResource">
+   <xs:complexContent>
+    <xs:extension base="rangerAccessResourceImpl">
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="rangerAuditPolicy">
+   <xs:complexContent>
+    <xs:extension base="rangerPolicy">
+      <xs:sequence>
+              <xs:element name="auditPolicyItems" type="rangerAuditPolicyItem" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="rangerAuditPolicyItem">
+   <xs:complexContent>
+    <xs:extension base="rangerPolicyItem">
+      <xs:sequence>
+              <xs:element name="actions" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="accessTypes" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="accessResult" type="accessResult" minOccurs="0">
+              </xs:element>
+              <xs:element name="isAudited" type="xs:boolean" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:simpleType name="matchType">
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="NONE"/>
+ 
+    <xs:enumeration value="SELF"/>
+ 
+    <xs:enumeration value="DESCENDANT"/>
+ 
+    <xs:enumeration value="ANCESTOR"/>
+ 
+    <xs:enumeration value="SELF_AND_ALL_DESCENDANTS"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="resourceLookupContext">
+       <xs:sequence>
+              <xs:element name="resourceName" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="resources" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="userInput" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="storedServiceResource">
+       <xs:sequence>
+              <xs:element name="additionalInfo" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="resourceElements" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="rangerPolicyResource"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="ownerName" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="grantRevokeRequest">
+       <xs:sequence>
+              <xs:element name="zoneName" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="resource" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="groups" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="isRecursive" type="xs:boolean" minOccurs="0">
+              </xs:element>
+              <xs:element name="delegateAdmin" type="xs:boolean" minOccurs="0">
+              </xs:element>
+              <xs:element name="forwardedAddresses" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="replaceExistingPermissions" type="xs:boolean" minOccurs="0">
+              </xs:element>
+              <xs:element name="ownerUser" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="roles" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="users" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="grantorGroups" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="clientIPAddress" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="sessionId" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="accessTypes" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="grantor" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="remoteIPAddress" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="clientType" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="requestData" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="clusterName" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="enableAudit" type="xs:boolean" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="grantRevokeRoleRequest">
+       <xs:sequence>
+              <xs:element name="roles" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="grantOption" type="xs:boolean" minOccurs="0">
+              </xs:element>
+              <xs:element name="sessionId" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="clientType" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="clientIPAddress" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="clusterName" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="grantorGroups" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="targetRoles" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="groups" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="requestData" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="users" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="grantor" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerRequestedResources">
+       <xs:sequence>
+              <xs:element name="requestedResources" type="xs:anyType" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerRoles">
+       <xs:sequence>
+              <xs:element name="roleVersion" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="roleUpdateTime" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="rangerRoles" type="rangerRole" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="serviceName" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangerUserStore">
+       <xs:sequence>
+              <xs:element name="userStoreVersion" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="userGroupMapping" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="groupAttrMapping" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="userCloudIdMapping" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="groupCloudIdMapping" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="userAttrMapping" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="userStoreUpdateTime" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="servicePolicies">
+       <xs:sequence>
+              <xs:element name="auditMode" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="securityZones" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="securityZoneInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="tagPolicies" type="tagPolicies" minOccurs="0">
+              </xs:element>
+              <xs:element name="policies" type="rangerPolicy" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="policyDeltas" type="rangerPolicyDelta" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="policyUpdateTime" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="serviceId" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="policyVersion" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="serviceDef" type="rangerServiceDef" minOccurs="0">
+              </xs:element>
+              <xs:element name="serviceConfig" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="serviceName" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="securityZoneInfo">
+       <xs:sequence>
+              <xs:element name="policyDeltas" type="rangerPolicyDelta" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="policies" type="rangerPolicy" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="containsAssociatedTagService" type="xs:boolean" minOccurs="0">
+              </xs:element>
+              <xs:element name="zoneName" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="resources" minOccurs="0" maxOccurs="unbounded">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tagPolicies">
+       <xs:sequence>
+              <xs:element name="serviceConfig" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="policyVersion" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="auditMode" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="serviceName" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="policyUpdateTime" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="policies" type="rangerPolicy" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="serviceId" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="serviceDef" type="rangerServiceDef" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="serviceTags">
+       <xs:sequence>
+              <xs:element name="serviceName" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="tagsChangeExtent" type="tagsChangeExtent" minOccurs="0">
+              </xs:element>
+              <xs:element name="resourceToTagIds" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:long"/>
+            <xs:element name="value" minOccurs="1" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="tags" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:long"/>
+            <xs:element name="value" minOccurs="1" type="rangerTag"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="isDelta" type="xs:boolean" minOccurs="0">
+              </xs:element>
+              <xs:element name="op" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="tagUpdateTime" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="serviceResources" type="rangerServiceResource" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="tagDefinitions" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:long"/>
+            <xs:element name="value" minOccurs="1" type="rangerTagDef"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="tagVersion" type="xs:long" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="tagsChangeExtent">
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="NONE"/>
+ 
+    <xs:enumeration value="TAGS"/>
+ 
+    <xs:enumeration value="SERVICE_RESOURCE"/>
+ 
+    <xs:enumeration value="ALL"/>
+  </xs:restriction>
+</xs:simpleType>
+
+</xs:schema>

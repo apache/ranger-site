@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Ranger REST API: HttpStatus</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!--custom css for these pages-->
+  <link rel="stylesheet" href="css/enunciate.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#apinav">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Ranger REST API: HttpStatus</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="data.html">Data Types</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" id="apinav">
+        <ul class="nav nav-sidebar">
+          <li><a href="#CONTINUE"><abbr title="CONTINUE"><span class="sideoverflow">CONTINUE</span></abbr></a></li>
+          <li><a href="#SWITCHING_PROTOCOLS"><abbr title="SWITCHING_PROTOCOLS"><span class="sideoverflow">SWITCHING_PROTOCOLS</span></abbr></a></li>
+          <li><a href="#PROCESSING"><abbr title="PROCESSING"><span class="sideoverflow">PROCESSING</span></abbr></a></li>
+          <li><a href="#CHECKPOINT"><abbr title="CHECKPOINT"><span class="sideoverflow">CHECKPOINT</span></abbr></a></li>
+          <li><a href="#OK"><abbr title="OK"><span class="sideoverflow">OK</span></abbr></a></li>
+          <li><a href="#CREATED"><abbr title="CREATED"><span class="sideoverflow">CREATED</span></abbr></a></li>
+          <li><a href="#ACCEPTED"><abbr title="ACCEPTED"><span class="sideoverflow">ACCEPTED</span></abbr></a></li>
+          <li><a href="#NON_AUTHORITATIVE_INFORMATION"><abbr title="NON_AUTHORITATIVE_INFORMATION"><span class="sideoverflow">NON_AUTHORITATIVE_INFORMATION</span></abbr></a></li>
+          <li><a href="#NO_CONTENT"><abbr title="NO_CONTENT"><span class="sideoverflow">NO_CONTENT</span></abbr></a></li>
+          <li><a href="#RESET_CONTENT"><abbr title="RESET_CONTENT"><span class="sideoverflow">RESET_CONTENT</span></abbr></a></li>
+          <li><a href="#PARTIAL_CONTENT"><abbr title="PARTIAL_CONTENT"><span class="sideoverflow">PARTIAL_CONTENT</span></abbr></a></li>
+          <li><a href="#MULTI_STATUS"><abbr title="MULTI_STATUS"><span class="sideoverflow">MULTI_STATUS</span></abbr></a></li>
+          <li><a href="#ALREADY_REPORTED"><abbr title="ALREADY_REPORTED"><span class="sideoverflow">ALREADY_REPORTED</span></abbr></a></li>
+          <li><a href="#IM_USED"><abbr title="IM_USED"><span class="sideoverflow">IM_USED</span></abbr></a></li>
+          <li><a href="#MULTIPLE_CHOICES"><abbr title="MULTIPLE_CHOICES"><span class="sideoverflow">MULTIPLE_CHOICES</span></abbr></a></li>
+          <li><a href="#MOVED_PERMANENTLY"><abbr title="MOVED_PERMANENTLY"><span class="sideoverflow">MOVED_PERMANENTLY</span></abbr></a></li>
+          <li><a href="#FOUND"><abbr title="FOUND"><span class="sideoverflow">FOUND</span></abbr></a></li>
+          <li><a href="#MOVED_TEMPORARILY"><abbr title="MOVED_TEMPORARILY"><span class="sideoverflow">MOVED_TEMPORARILY</span></abbr></a></li>
+          <li><a href="#SEE_OTHER"><abbr title="SEE_OTHER"><span class="sideoverflow">SEE_OTHER</span></abbr></a></li>
+          <li><a href="#NOT_MODIFIED"><abbr title="NOT_MODIFIED"><span class="sideoverflow">NOT_MODIFIED</span></abbr></a></li>
+          <li><a href="#USE_PROXY"><abbr title="USE_PROXY"><span class="sideoverflow">USE_PROXY</span></abbr></a></li>
+          <li><a href="#TEMPORARY_REDIRECT"><abbr title="TEMPORARY_REDIRECT"><span class="sideoverflow">TEMPORARY_REDIRECT</span></abbr></a></li>
+          <li><a href="#PERMANENT_REDIRECT"><abbr title="PERMANENT_REDIRECT"><span class="sideoverflow">PERMANENT_REDIRECT</span></abbr></a></li>
+          <li><a href="#BAD_REQUEST"><abbr title="BAD_REQUEST"><span class="sideoverflow">BAD_REQUEST</span></abbr></a></li>
+          <li><a href="#UNAUTHORIZED"><abbr title="UNAUTHORIZED"><span class="sideoverflow">UNAUTHORIZED</span></abbr></a></li>
+          <li><a href="#PAYMENT_REQUIRED"><abbr title="PAYMENT_REQUIRED"><span class="sideoverflow">PAYMENT_REQUIRED</span></abbr></a></li>
+          <li><a href="#FORBIDDEN"><abbr title="FORBIDDEN"><span class="sideoverflow">FORBIDDEN</span></abbr></a></li>
+          <li><a href="#NOT_FOUND"><abbr title="NOT_FOUND"><span class="sideoverflow">NOT_FOUND</span></abbr></a></li>
+          <li><a href="#METHOD_NOT_ALLOWED"><abbr title="METHOD_NOT_ALLOWED"><span class="sideoverflow">METHOD_NOT_ALLOWED</span></abbr></a></li>
+          <li><a href="#NOT_ACCEPTABLE"><abbr title="NOT_ACCEPTABLE"><span class="sideoverflow">NOT_ACCEPTABLE</span></abbr></a></li>
+          <li><a href="#PROXY_AUTHENTICATION_REQUIRED"><abbr title="PROXY_AUTHENTICATION_REQUIRED"><span class="sideoverflow">PROXY_AUTHENTICATION_REQUIRED</span></abbr></a></li>
+          <li><a href="#REQUEST_TIMEOUT"><abbr title="REQUEST_TIMEOUT"><span class="sideoverflow">REQUEST_TIMEOUT</span></abbr></a></li>
+          <li><a href="#CONFLICT"><abbr title="CONFLICT"><span class="sideoverflow">CONFLICT</span></abbr></a></li>
+          <li><a href="#GONE"><abbr title="GONE"><span class="sideoverflow">GONE</span></abbr></a></li>
+          <li><a href="#LENGTH_REQUIRED"><abbr title="LENGTH_REQUIRED"><span class="sideoverflow">LENGTH_REQUIRED</span></abbr></a></li>
+          <li><a href="#PRECONDITION_FAILED"><abbr title="PRECONDITION_FAILED"><span class="sideoverflow">PRECONDITION_FAILED</span></abbr></a></li>
+          <li><a href="#PAYLOAD_TOO_LARGE"><abbr title="PAYLOAD_TOO_LARGE"><span class="sideoverflow">PAYLOAD_TOO_LARGE</span></abbr></a></li>
+          <li><a href="#REQUEST_ENTITY_TOO_LARGE"><abbr title="REQUEST_ENTITY_TOO_LARGE"><span class="sideoverflow">REQUEST_ENTITY_TOO_LARGE</span></abbr></a></li>
+          <li><a href="#URI_TOO_LONG"><abbr title="URI_TOO_LONG"><span class="sideoverflow">URI_TOO_LONG</span></abbr></a></li>
+          <li><a href="#REQUEST_URI_TOO_LONG"><abbr title="REQUEST_URI_TOO_LONG"><span class="sideoverflow">REQUEST_URI_TOO_LONG</span></abbr></a></li>
+          <li><a href="#UNSUPPORTED_MEDIA_TYPE"><abbr title="UNSUPPORTED_MEDIA_TYPE"><span class="sideoverflow">UNSUPPORTED_MEDIA_TYPE</span></abbr></a></li>
+          <li><a href="#REQUESTED_RANGE_NOT_SATISFIABLE"><abbr title="REQUESTED_RANGE_NOT_SATISFIABLE"><span class="sideoverflow">REQUESTED_RANGE_NOT_SATISFIABLE</span></abbr></a></li>
+          <li><a href="#EXPECTATION_FAILED"><abbr title="EXPECTATION_FAILED"><span class="sideoverflow">EXPECTATION_FAILED</span></abbr></a></li>
+          <li><a href="#I_AM_A_TEAPOT"><abbr title="I_AM_A_TEAPOT"><span class="sideoverflow">I_AM_A_TEAPOT</span></abbr></a></li>
+          <li><a href="#INSUFFICIENT_SPACE_ON_RESOURCE"><abbr title="INSUFFICIENT_SPACE_ON_RESOURCE"><span class="sideoverflow">INSUFFICIENT_SPACE_ON_RESOURCE</span></abbr></a></li>
+          <li><a href="#METHOD_FAILURE"><abbr title="METHOD_FAILURE"><span class="sideoverflow">METHOD_FAILURE</span></abbr></a></li>
+          <li><a href="#DESTINATION_LOCKED"><abbr title="DESTINATION_LOCKED"><span class="sideoverflow">DESTINATION_LOCKED</span></abbr></a></li>
+          <li><a href="#UNPROCESSABLE_ENTITY"><abbr title="UNPROCESSABLE_ENTITY"><span class="sideoverflow">UNPROCESSABLE_ENTITY</span></abbr></a></li>
+          <li><a href="#LOCKED"><abbr title="LOCKED"><span class="sideoverflow">LOCKED</span></abbr></a></li>
+          <li><a href="#FAILED_DEPENDENCY"><abbr title="FAILED_DEPENDENCY"><span class="sideoverflow">FAILED_DEPENDENCY</span></abbr></a></li>
+          <li><a href="#TOO_EARLY"><abbr title="TOO_EARLY"><span class="sideoverflow">TOO_EARLY</span></abbr></a></li>
+          <li><a href="#UPGRADE_REQUIRED"><abbr title="UPGRADE_REQUIRED"><span class="sideoverflow">UPGRADE_REQUIRED</span></abbr></a></li>
+          <li><a href="#PRECONDITION_REQUIRED"><abbr title="PRECONDITION_REQUIRED"><span class="sideoverflow">PRECONDITION_REQUIRED</span></abbr></a></li>
+          <li><a href="#TOO_MANY_REQUESTS"><abbr title="TOO_MANY_REQUESTS"><span class="sideoverflow">TOO_MANY_REQUESTS</span></abbr></a></li>
+          <li><a href="#REQUEST_HEADER_FIELDS_TOO_LARGE"><abbr title="REQUEST_HEADER_FIELDS_TOO_LARGE"><span class="sideoverflow">REQUEST_HEADER_FIELDS_TOO_LARGE</span></abbr></a></li>
+          <li><a href="#UNAVAILABLE_FOR_LEGAL_REASONS"><abbr title="UNAVAILABLE_FOR_LEGAL_REASONS"><span class="sideoverflow">UNAVAILABLE_FOR_LEGAL_REASONS</span></abbr></a></li>
+          <li><a href="#INTERNAL_SERVER_ERROR"><abbr title="INTERNAL_SERVER_ERROR"><span class="sideoverflow">INTERNAL_SERVER_ERROR</span></abbr></a></li>
+          <li><a href="#NOT_IMPLEMENTED"><abbr title="NOT_IMPLEMENTED"><span class="sideoverflow">NOT_IMPLEMENTED</span></abbr></a></li>
+          <li><a href="#BAD_GATEWAY"><abbr title="BAD_GATEWAY"><span class="sideoverflow">BAD_GATEWAY</span></abbr></a></li>
+          <li><a href="#SERVICE_UNAVAILABLE"><abbr title="SERVICE_UNAVAILABLE"><span class="sideoverflow">SERVICE_UNAVAILABLE</span></abbr></a></li>
+          <li><a href="#GATEWAY_TIMEOUT"><abbr title="GATEWAY_TIMEOUT"><span class="sideoverflow">GATEWAY_TIMEOUT</span></abbr></a></li>
+          <li><a href="#HTTP_VERSION_NOT_SUPPORTED"><abbr title="HTTP_VERSION_NOT_SUPPORTED"><span class="sideoverflow">HTTP_VERSION_NOT_SUPPORTED</span></abbr></a></li>
+          <li><a href="#VARIANT_ALSO_NEGOTIATES"><abbr title="VARIANT_ALSO_NEGOTIATES"><span class="sideoverflow">VARIANT_ALSO_NEGOTIATES</span></abbr></a></li>
+          <li><a href="#INSUFFICIENT_STORAGE"><abbr title="INSUFFICIENT_STORAGE"><span class="sideoverflow">INSUFFICIENT_STORAGE</span></abbr></a></li>
+          <li><a href="#LOOP_DETECTED"><abbr title="LOOP_DETECTED"><span class="sideoverflow">LOOP_DETECTED</span></abbr></a></li>
+          <li><a href="#BANDWIDTH_LIMIT_EXCEEDED"><abbr title="BANDWIDTH_LIMIT_EXCEEDED"><span class="sideoverflow">BANDWIDTH_LIMIT_EXCEEDED</span></abbr></a></li>
+          <li><a href="#NOT_EXTENDED"><abbr title="NOT_EXTENDED"><span class="sideoverflow">NOT_EXTENDED</span></abbr></a></li>
+          <li><a href="#NETWORK_AUTHENTICATION_REQUIRED"><abbr title="NETWORK_AUTHENTICATION_REQUIRED"><span class="sideoverflow">NETWORK_AUTHENTICATION_REQUIRED</span></abbr></a></li>
+          <li class="divider"></li>
+          <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ol class="breadcrumb" id="top">
+          <li class="active dropdown"><a href="index.html">Home</a></li>
+          <li class="active dropdown"><a href="syntax_json.html">JSON</a></li>
+          <li class="dropdown"><a href="json_HttpStatus.html">HttpStatus</a></li>
+        </ol>
+
+      <h1 class="page-header">HttpStatus <small>Data Type</small></h1>
+
+      <p></p>
+
+      <dl class="dl-horizontal">
+      </dl>
+
+      <table class="table datatype-values">
+        <caption>Values</caption>
+        <thead>
+        <tr>
+          <th>value</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><span class="value-value" id="CONTINUE">CONTINUE</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="SWITCHING_PROTOCOLS">SWITCHING_PROTOCOLS</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="PROCESSING">PROCESSING</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="CHECKPOINT">CHECKPOINT</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="OK">OK</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="CREATED">CREATED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="ACCEPTED">ACCEPTED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="NON_AUTHORITATIVE_INFORMATION">NON_AUTHORITATIVE_INFORMATION</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="NO_CONTENT">NO_CONTENT</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="RESET_CONTENT">RESET_CONTENT</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="PARTIAL_CONTENT">PARTIAL_CONTENT</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="MULTI_STATUS">MULTI_STATUS</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="ALREADY_REPORTED">ALREADY_REPORTED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="IM_USED">IM_USED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="MULTIPLE_CHOICES">MULTIPLE_CHOICES</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="MOVED_PERMANENTLY">MOVED_PERMANENTLY</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="FOUND">FOUND</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="MOVED_TEMPORARILY">MOVED_TEMPORARILY</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="SEE_OTHER">SEE_OTHER</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="NOT_MODIFIED">NOT_MODIFIED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="USE_PROXY">USE_PROXY</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="TEMPORARY_REDIRECT">TEMPORARY_REDIRECT</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="PERMANENT_REDIRECT">PERMANENT_REDIRECT</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="BAD_REQUEST">BAD_REQUEST</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="UNAUTHORIZED">UNAUTHORIZED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="PAYMENT_REQUIRED">PAYMENT_REQUIRED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="FORBIDDEN">FORBIDDEN</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="NOT_FOUND">NOT_FOUND</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="METHOD_NOT_ALLOWED">METHOD_NOT_ALLOWED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="NOT_ACCEPTABLE">NOT_ACCEPTABLE</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="PROXY_AUTHENTICATION_REQUIRED">PROXY_AUTHENTICATION_REQUIRED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="REQUEST_TIMEOUT">REQUEST_TIMEOUT</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="CONFLICT">CONFLICT</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="GONE">GONE</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="LENGTH_REQUIRED">LENGTH_REQUIRED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="PRECONDITION_FAILED">PRECONDITION_FAILED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="PAYLOAD_TOO_LARGE">PAYLOAD_TOO_LARGE</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="REQUEST_ENTITY_TOO_LARGE">REQUEST_ENTITY_TOO_LARGE</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="URI_TOO_LONG">URI_TOO_LONG</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="REQUEST_URI_TOO_LONG">REQUEST_URI_TOO_LONG</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="UNSUPPORTED_MEDIA_TYPE">UNSUPPORTED_MEDIA_TYPE</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="REQUESTED_RANGE_NOT_SATISFIABLE">REQUESTED_RANGE_NOT_SATISFIABLE</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="EXPECTATION_FAILED">EXPECTATION_FAILED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="I_AM_A_TEAPOT">I_AM_A_TEAPOT</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="INSUFFICIENT_SPACE_ON_RESOURCE">INSUFFICIENT_SPACE_ON_RESOURCE</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="METHOD_FAILURE">METHOD_FAILURE</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="DESTINATION_LOCKED">DESTINATION_LOCKED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="UNPROCESSABLE_ENTITY">UNPROCESSABLE_ENTITY</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="LOCKED">LOCKED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="FAILED_DEPENDENCY">FAILED_DEPENDENCY</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="TOO_EARLY">TOO_EARLY</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="UPGRADE_REQUIRED">UPGRADE_REQUIRED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="PRECONDITION_REQUIRED">PRECONDITION_REQUIRED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="TOO_MANY_REQUESTS">TOO_MANY_REQUESTS</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="REQUEST_HEADER_FIELDS_TOO_LARGE">REQUEST_HEADER_FIELDS_TOO_LARGE</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="UNAVAILABLE_FOR_LEGAL_REASONS">UNAVAILABLE_FOR_LEGAL_REASONS</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="INTERNAL_SERVER_ERROR">INTERNAL_SERVER_ERROR</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="NOT_IMPLEMENTED">NOT_IMPLEMENTED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="BAD_GATEWAY">BAD_GATEWAY</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="SERVICE_UNAVAILABLE">SERVICE_UNAVAILABLE</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="GATEWAY_TIMEOUT">GATEWAY_TIMEOUT</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="HTTP_VERSION_NOT_SUPPORTED">HTTP_VERSION_NOT_SUPPORTED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="VARIANT_ALSO_NEGOTIATES">VARIANT_ALSO_NEGOTIATES</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="INSUFFICIENT_STORAGE">INSUFFICIENT_STORAGE</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="LOOP_DETECTED">LOOP_DETECTED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="BANDWIDTH_LIMIT_EXCEEDED">BANDWIDTH_LIMIT_EXCEEDED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="NOT_EXTENDED">NOT_EXTENDED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="NETWORK_AUTHENTICATION_REQUIRED">NETWORK_AUTHENTICATION_REQUIRED</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        </tbody>
+      </table>
+
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Generated by <a href="http://enunciate.webcohesion.com">Enunciate</a>.</p>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript placed at the end of the document so the pages load faster. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
+  <script>
+    $(function() {
+      $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+      });
+
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+
+</body>
+</html>

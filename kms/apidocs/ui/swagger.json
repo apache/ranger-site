@@ -1,0 +1,4727 @@
+{
+  "swagger": "2.0",
+  "info" : {
+    "description" : "Apache Ranger is a framework to enable, monitor and manage comprehensive data security across the Hadoop platform. Apache Ranger currently provides a centralized security adminstration, fine grain access control and detailed auditing for user access within Apache Hadoop, Apache Hive, Apache HBase and other Apache components",
+    "license" : {
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html",
+      "name" : "Apache 2.0 License"
+    },
+    "version" : "2.2.0",
+    "title" : "Ranger REST API"
+  },
+  "schemes" : [],
+  "tags" : [
+    {
+      "name" : "KMS"
+      ,
+      "description" : "Class providing the REST bindings, via Jersey, for the KMS."
+    }
+    ,
+    {
+      "name" : "RangerKMSRestApi"
+    }
+  ],
+  "definitions" : {
+    "xml_ns0_XXDBBase" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "XXDBBase",
+        "namespace" : ""
+      },
+      "title" : "XXDBBase",
+      "allOf" : [
+        {
+          "properties" : {
+            "addedByUserId" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "Returns the value for the member attribute <b>addedByUserId<\/b>",
+"type" : "integer",
+"format" : "int64"
+            },
+            "createTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "Returns the value for the member attribute <b>createTime<\/b>",
+"type" : "string"
+            },
+            "id" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "Returns the value for the member attribute <b>id<\/b>",
+"type" : "integer",
+"format" : "int64"
+            },
+            "updateTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "Returns the value for the member attribute <b>updateTime<\/b>",
+"type" : "string"
+            },
+            "updatedByUserId" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "Returns the value for the member attribute <b>updatedByUserId<\/b>",
+"type" : "integer",
+"format" : "int64"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_XXRangerKeyStore" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "XXRangerKeyStore",
+        "namespace" : ""
+      },
+      "title" : "XXRangerKeyStore",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_XXDBBase"
+        },
+        {
+          "properties" : {
+            "alias" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "attributes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "bitLength" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int32"
+            },
+            "cipher" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "createdDate" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "description" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "encoded" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "version" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int32"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_XXRangerMasterKey" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "XXRangerMasterKey",
+        "namespace" : ""
+      },
+      "title" : "XXRangerMasterKey",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_XXDBBase"
+        },
+        {
+          "properties" : {
+            "bitLength" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int32"
+            },
+            "cipher" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "masterKey" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerTagForEval" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerTagForEval",
+        "namespace" : ""
+      },
+      "title" : "rangerTagForEval",
+      "allOf" : [
+        {
+          "properties" : {
+            "attributes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "matchType" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_matchType"
+            },
+            "options" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "type" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "validityPeriods" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerValiditySchedule"
+}
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_auditFilter" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "auditFilter",
+        "namespace" : ""
+      },
+      "title" : "auditFilter",
+      "allOf" : [
+        {
+          "properties" : {
+            "accessResult" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_accessResult"
+            },
+            "accessTypes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "actions" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "groups" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "isAudited" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "resources" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "roles" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "users" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_accessResult" : {
+      "type" : "string",
+      "title" : "accessResult",
+          "enum" : [
+            "DENIED",
+            "ALLOWED",
+            "NOT_DETERMINED"
+          ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_groupInfo" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "groupInfo",
+        "namespace" : ""
+      },
+      "title" : "groupInfo",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_rangerBaseModelObject"
+        },
+        {
+          "properties" : {
+            "description" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "otherAttributes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerBaseModelObject" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerBaseModelObject",
+        "namespace" : ""
+      },
+      "title" : "rangerBaseModelObject",
+      "allOf" : [
+        {
+          "properties" : {
+            "createTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "createdBy" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "guid" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "id" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "isEnabled" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "updateTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "updatedBy" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "version" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerMetrics" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerMetrics",
+        "namespace" : ""
+      },
+      "title" : "rangerMetrics",
+      "allOf" : [
+        {
+          "properties" : {
+            "data" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerPluginInfo" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerPluginInfo",
+        "namespace" : ""
+      },
+      "title" : "rangerPluginInfo",
+      "allOf" : [
+        {
+          "properties" : {
+            "appType" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "createTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "hostName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "id" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "info" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "ipAddress" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "serviceDisplayName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "serviceName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "serviceType" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "serviceTypeDisplayName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "updateTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerPolicy" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerPolicy",
+        "namespace" : ""
+      },
+      "title" : "rangerPolicy",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_rangerBaseModelObject"
+        },
+        {
+          "properties" : {
+            "allowExceptions" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerPolicyItem"
+}
+            },
+            "conditions" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerPolicyItemCondition"
+}
+            },
+            "dataMaskPolicyItems" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerDataMaskPolicyItem"
+}
+            },
+            "denyExceptions" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerPolicyItem"
+}
+            },
+            "denyPolicyItems" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerPolicyItem"
+}
+            },
+            "description" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "isAuditEnabled" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "isDenyAllElse" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "options" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "policyItems" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerPolicyItem"
+}
+            },
+            "policyLabels" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "policyPriority" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int32"
+            },
+            "policyType" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int32"
+            },
+            "resourceSignature" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "resources" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "rowFilterPolicyItems" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerRowFilterPolicyItem"
+}
+            },
+            "service" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "serviceType" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "validitySchedules" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerValiditySchedule"
+}
+            },
+            "zoneName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerDataMaskPolicyItem" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerDataMaskPolicyItem",
+        "namespace" : ""
+      },
+      "title" : "rangerDataMaskPolicyItem",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_rangerPolicyItem"
+        },
+        {
+          "properties" : {
+            "dataMaskInfo" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_rangerPolicyItemDataMaskInfo"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerPolicyItem" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerPolicyItem",
+        "namespace" : ""
+      },
+      "title" : "rangerPolicyItem",
+      "allOf" : [
+        {
+          "properties" : {
+            "accesses" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerPolicyItemAccess"
+}
+            },
+            "conditions" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerPolicyItemCondition"
+}
+            },
+            "delegateAdmin" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "groups" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "roles" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "users" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerPolicyItemAccess" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerPolicyItemAccess",
+        "namespace" : ""
+      },
+      "title" : "rangerPolicyItemAccess",
+      "allOf" : [
+        {
+          "properties" : {
+            "isAllowed" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "type" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerPolicyItemCondition" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerPolicyItemCondition",
+        "namespace" : ""
+      },
+      "title" : "rangerPolicyItemCondition",
+      "allOf" : [
+        {
+          "properties" : {
+            "type" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "values" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerPolicyItemDataMaskInfo" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerPolicyItemDataMaskInfo",
+        "namespace" : ""
+      },
+      "title" : "rangerPolicyItemDataMaskInfo",
+      "allOf" : [
+        {
+          "properties" : {
+            "conditionExpr" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "dataMaskType" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "valueExpr" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerPolicyItemRowFilterInfo" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerPolicyItemRowFilterInfo",
+        "namespace" : ""
+      },
+      "title" : "rangerPolicyItemRowFilterInfo",
+      "allOf" : [
+        {
+          "properties" : {
+            "filterExpr" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerPolicyResource" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerPolicyResource",
+        "namespace" : ""
+      },
+      "title" : "rangerPolicyResource",
+      "allOf" : [
+        {
+          "properties" : {
+            "isExcludes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "isRecursive" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "values" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerRowFilterPolicyItem" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerRowFilterPolicyItem",
+        "namespace" : ""
+      },
+      "title" : "rangerRowFilterPolicyItem",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_rangerPolicyItem"
+        },
+        {
+          "properties" : {
+            "rowFilterInfo" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_rangerPolicyItemRowFilterInfo"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerPolicyDelta" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerPolicyDelta",
+        "namespace" : ""
+      },
+      "title" : "rangerPolicyDelta",
+      "allOf" : [
+        {
+          "properties" : {
+            "changeType" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int32"
+            },
+            "id" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "policiesVersion" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "policy" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_rangerPolicy"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerRole" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerRole",
+        "namespace" : ""
+      },
+      "title" : "rangerRole",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_rangerBaseModelObject"
+        },
+        {
+          "properties" : {
+            "createdByUser" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "description" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "groups" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_roleMember"
+}
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "options" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "roles" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_roleMember"
+}
+            },
+            "users" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_roleMember"
+}
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_roleMember" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "roleMember",
+        "namespace" : ""
+      },
+      "title" : "roleMember",
+      "allOf" : [
+        {
+          "properties" : {
+            "isAdmin" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerSecurityZone" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerSecurityZone",
+        "namespace" : ""
+      },
+      "title" : "rangerSecurityZone",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_rangerBaseModelObject"
+        },
+        {
+          "properties" : {
+            "adminUserGroups" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "adminUsers" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "auditUserGroups" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "auditUsers" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "description" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "services" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "tagServices" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerSecurityZoneService" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerSecurityZoneService",
+        "namespace" : ""
+      },
+      "title" : "rangerSecurityZoneService",
+      "allOf" : [
+        {
+          "properties" : {
+            "resources" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "object"
+}
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerService" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerService",
+        "namespace" : ""
+      },
+      "title" : "rangerService",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_rangerBaseModelObject"
+        },
+        {
+          "properties" : {
+            "configs" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "description" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "displayName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "policyUpdateTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "policyVersion" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "tagService" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "tagUpdateTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "tagVersion" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "type" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerServiceDef" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerServiceDef",
+        "namespace" : ""
+      },
+      "title" : "rangerServiceDef",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_rangerBaseModelObject"
+        },
+        {
+          "properties" : {
+            "accessTypes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerAccessTypeDef"
+}
+            },
+            "configs" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerServiceConfigDef"
+}
+            },
+            "contextEnrichers" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerContextEnricherDef"
+}
+            },
+            "dataMaskDef" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_rangerDataMaskDef"
+            },
+            "description" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "displayName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "enums" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerEnumDef"
+}
+            },
+            "implClass" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "label" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "options" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "policyConditions" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerPolicyConditionDef"
+}
+            },
+            "rbKeyDescription" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "rbKeyLabel" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "resources" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerResourceDef"
+}
+            },
+            "rowFilterDef" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_rangerRowFilterDef"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerAccessTypeDef" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerAccessTypeDef",
+        "namespace" : ""
+      },
+      "title" : "rangerAccessTypeDef",
+      "allOf" : [
+        {
+          "properties" : {
+            "impliedGrants" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "itemId" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "label" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "rbKeyLabel" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerContextEnricherDef" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerContextEnricherDef",
+        "namespace" : ""
+      },
+      "title" : "rangerContextEnricherDef",
+      "allOf" : [
+        {
+          "properties" : {
+            "enricher" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "enricherOptions" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "itemId" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerDataMaskDef" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerDataMaskDef",
+        "namespace" : ""
+      },
+      "title" : "rangerDataMaskDef",
+      "allOf" : [
+        {
+          "properties" : {
+            "accessTypes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerAccessTypeDef"
+}
+            },
+            "maskTypes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerDataMaskTypeDef"
+}
+            },
+            "resources" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerResourceDef"
+}
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerDataMaskTypeDef" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerDataMaskTypeDef",
+        "namespace" : ""
+      },
+      "title" : "rangerDataMaskTypeDef",
+      "allOf" : [
+        {
+          "properties" : {
+            "dataMaskOptions" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "description" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "itemId" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "label" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "rbKeyDescription" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "rbKeyLabel" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "transformer" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerEnumDef" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerEnumDef",
+        "namespace" : ""
+      },
+      "title" : "rangerEnumDef",
+      "allOf" : [
+        {
+          "properties" : {
+            "defaultIndex" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int32"
+            },
+            "elements" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerEnumElementDef"
+}
+            },
+            "itemId" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerEnumElementDef" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerEnumElementDef",
+        "namespace" : ""
+      },
+      "title" : "rangerEnumElementDef",
+      "allOf" : [
+        {
+          "properties" : {
+            "itemId" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "label" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "rbKeyLabel" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerPolicyConditionDef" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerPolicyConditionDef",
+        "namespace" : ""
+      },
+      "title" : "rangerPolicyConditionDef",
+      "allOf" : [
+        {
+          "properties" : {
+            "description" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "evaluator" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "evaluatorOptions" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "itemId" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "label" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "rbKeyDescription" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "rbKeyLabel" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "rbKeyValidationMessage" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "uiHint" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "validationMessage" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "validationRegEx" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerResourceDef" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerResourceDef",
+        "namespace" : ""
+      },
+      "title" : "rangerResourceDef",
+      "allOf" : [
+        {
+          "properties" : {
+            "accessTypeRestrictions" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "description" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "excludesSupported" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "isValidLeaf" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "itemId" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "label" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "level" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int32"
+            },
+            "lookupSupported" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "mandatory" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "matcher" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "matcherOptions" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "parent" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "rbKeyDescription" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "rbKeyLabel" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "rbKeyValidationMessage" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "recursiveSupported" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "type" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "uiHint" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "validationMessage" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "validationRegEx" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerRowFilterDef" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerRowFilterDef",
+        "namespace" : ""
+      },
+      "title" : "rangerRowFilterDef",
+      "allOf" : [
+        {
+          "properties" : {
+            "accessTypes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerAccessTypeDef"
+}
+            },
+            "resources" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerResourceDef"
+}
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerServiceConfigDef" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerServiceConfigDef",
+        "namespace" : ""
+      },
+      "title" : "rangerServiceConfigDef",
+      "allOf" : [
+        {
+          "properties" : {
+            "defaultValue" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "description" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "itemId" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "label" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "mandatory" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "rbKeyDescription" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "rbKeyLabel" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "rbKeyValidationMessage" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "subType" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "type" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "uiHint" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "validationMessage" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "validationRegEx" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerServiceResource" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerServiceResource",
+        "namespace" : ""
+      },
+      "title" : "rangerServiceResource",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_rangerBaseModelObject"
+        },
+        {
+          "properties" : {
+            "additionalInfo" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "ownerUser" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "resourceElements" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "resourceSignature" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "serviceName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerTag" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerTag",
+        "namespace" : ""
+      },
+      "title" : "rangerTag",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_rangerBaseModelObject"
+        },
+        {
+          "properties" : {
+            "attributes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "options" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "owner" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int32"
+            },
+            "type" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "validityPeriods" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerValiditySchedule"
+}
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerTagDef" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerTagDef",
+        "namespace" : ""
+      },
+      "title" : "rangerTagDef",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_rangerBaseModelObject"
+        },
+        {
+          "properties" : {
+            "attributeDefs" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerTagAttributeDef"
+}
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "source" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerTagAttributeDef" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerTagAttributeDef",
+        "namespace" : ""
+      },
+      "title" : "rangerTagAttributeDef",
+      "allOf" : [
+        {
+          "properties" : {
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "type" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerTagResourceMap" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerTagResourceMap",
+        "namespace" : ""
+      },
+      "title" : "rangerTagResourceMap",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_rangerBaseModelObject"
+        },
+        {
+          "properties" : {
+            "resourceId" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "tagId" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerValidityRecurrence" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerValidityRecurrence",
+        "namespace" : ""
+      },
+      "title" : "rangerValidityRecurrence",
+      "allOf" : [
+        {
+          "properties" : {
+            "interval" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_validityInterval"
+            },
+            "schedule" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_recurrenceSchedule"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_recurrenceSchedule" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "recurrenceSchedule",
+        "namespace" : ""
+      },
+      "title" : "recurrenceSchedule",
+      "allOf" : [
+        {
+          "properties" : {
+            "dayOfMonth" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "dayOfWeek" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "hour" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "minute" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "month" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "year" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_validityInterval" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "validityInterval",
+        "namespace" : ""
+      },
+      "title" : "validityInterval",
+      "allOf" : [
+        {
+          "properties" : {
+            "days" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int32"
+            },
+            "hours" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int32"
+            },
+            "minutes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int32"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerValiditySchedule" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerValiditySchedule",
+        "namespace" : ""
+      },
+      "title" : "rangerValiditySchedule",
+      "allOf" : [
+        {
+          "properties" : {
+            "endTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "recurrences" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerValidityRecurrence"
+}
+            },
+            "startTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "timeZone" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_serviceDeleteResponse" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "serviceDeleteResponse",
+        "namespace" : ""
+      },
+      "title" : "serviceDeleteResponse",
+      "allOf" : [
+        {
+          "properties" : {
+            "errorMsg" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "isDeleted" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "serviceId" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "serviceName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_userInfo" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "userInfo",
+        "namespace" : ""
+      },
+      "title" : "userInfo",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_rangerBaseModelObject"
+        },
+        {
+          "properties" : {
+            "description" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "groups" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "otherAttributes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerAccessResource" : {
+      "type" : "object",
+      "title" : "rangerAccessResource",
+      "allOf" : [
+        {
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerAccessResourceImpl" : {
+      "type" : "object",
+      "title" : "rangerAccessResourceImpl",
+      "allOf" : [
+        {
+          "properties" : {
+            "ownerUser" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "serviceDef" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_rangerServiceDef"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerAccessResourceReadOnly" : {
+      "type" : "object",
+      "title" : "rangerAccessResourceReadOnly",
+      "allOf" : [
+        {
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerMutableResource" : {
+      "type" : "object",
+      "title" : "rangerMutableResource",
+      "allOf" : [
+        {
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_dataMaskResult" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "dataMaskResult",
+        "namespace" : ""
+      },
+      "title" : "dataMaskResult",
+      "allOf" : [
+        {
+          "properties" : {
+            "accessTypes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "groups" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "isConditional" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "maskInfo" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_rangerPolicyItemDataMaskInfo"
+            },
+            "roles" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "users" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rowFilterResult" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rowFilterResult",
+        "namespace" : ""
+      },
+      "title" : "rowFilterResult",
+      "allOf" : [
+        {
+          "properties" : {
+            "accessTypes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "filterInfo" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_rangerPolicyItemRowFilterInfo"
+            },
+            "groups" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "isConditional" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "roles" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "users" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerTagResource" : {
+      "type" : "object",
+      "title" : "rangerTagResource",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_rangerAccessResourceImpl"
+        },
+        {
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerAuditPolicy" : {
+      "type" : "object",
+      "title" : "rangerAuditPolicy",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_rangerPolicy"
+        },
+        {
+          "properties" : {
+            "auditPolicyItems" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerAuditPolicyItem"
+}
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerAuditPolicyItem" : {
+      "type" : "object",
+      "title" : "rangerAuditPolicyItem",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_rangerPolicyItem"
+        },
+        {
+          "properties" : {
+            "accessResult" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_accessResult"
+            },
+            "accessTypes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "actions" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "isAudited" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_matchType" : {
+      "type" : "string",
+      "title" : "matchType",
+          "enum" : [
+            "NONE",
+            "SELF",
+            "DESCENDANT",
+            "ANCESTOR",
+            "SELF_AND_ALL_DESCENDANTS"
+          ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_resourceLookupContext" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "resourceLookupContext",
+        "namespace" : ""
+      },
+      "title" : "resourceLookupContext",
+      "allOf" : [
+        {
+          "properties" : {
+            "resourceName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "resources" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "userInput" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_storedServiceResource" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "storedServiceResource",
+        "namespace" : ""
+      },
+      "title" : "storedServiceResource",
+      "allOf" : [
+        {
+          "properties" : {
+            "additionalInfo" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "ownerName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "resourceElements" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_grantRevokeRequest" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "grantRevokeRequest",
+        "namespace" : ""
+      },
+      "title" : "grantRevokeRequest",
+      "allOf" : [
+        {
+          "properties" : {
+            "accessTypes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "clientIPAddress" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "clientType" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "clusterName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "delegateAdmin" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "enableAudit" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "forwardedAddresses" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "grantor" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "grantorGroups" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "groups" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "isRecursive" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "ownerUser" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "remoteIPAddress" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "replaceExistingPermissions" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "requestData" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "resource" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "roles" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "sessionId" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "users" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "zoneName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_grantRevokeRoleRequest" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "grantRevokeRoleRequest",
+        "namespace" : ""
+      },
+      "title" : "grantRevokeRoleRequest",
+      "allOf" : [
+        {
+          "properties" : {
+            "clientIPAddress" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "clientType" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "clusterName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "grantOption" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "grantor" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "grantorGroups" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "groups" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "requestData" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "roles" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "sessionId" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "targetRoles" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "users" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerRequestedResources" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerRequestedResources",
+        "namespace" : ""
+      },
+      "title" : "rangerRequestedResources",
+      "allOf" : [
+        {
+          "properties" : {
+            "requestedResources" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "object"
+}
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerRoles" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerRoles",
+        "namespace" : ""
+      },
+      "title" : "rangerRoles",
+      "allOf" : [
+        {
+          "properties" : {
+            "rangerRoles" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerRole"
+}
+            },
+            "roleUpdateTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "roleVersion" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "serviceName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_rangerUserStore" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "rangerUserStore",
+        "namespace" : ""
+      },
+      "title" : "rangerUserStore",
+      "allOf" : [
+        {
+          "properties" : {
+            "groupAttrMapping" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "groupCloudIdMapping" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "userAttrMapping" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "userCloudIdMapping" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "userGroupMapping" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "userStoreUpdateTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "userStoreVersion" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_servicePolicies" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "servicePolicies",
+        "namespace" : ""
+      },
+      "title" : "servicePolicies",
+      "allOf" : [
+        {
+          "properties" : {
+            "auditMode" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "policies" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerPolicy"
+}
+            },
+            "policyDeltas" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerPolicyDelta"
+}
+            },
+            "policyUpdateTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "policyVersion" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "securityZones" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "serviceConfig" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "serviceDef" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_rangerServiceDef"
+            },
+            "serviceId" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "serviceName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "tagPolicies" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_tagPolicies"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_securityZoneInfo" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "securityZoneInfo",
+        "namespace" : ""
+      },
+      "title" : "securityZoneInfo",
+      "allOf" : [
+        {
+          "properties" : {
+            "containsAssociatedTagService" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "policies" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerPolicy"
+}
+            },
+            "policyDeltas" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerPolicyDelta"
+}
+            },
+            "resources" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "object"
+}
+            },
+            "zoneName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_tagPolicies" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "tagPolicies",
+        "namespace" : ""
+      },
+      "title" : "tagPolicies",
+      "allOf" : [
+        {
+          "properties" : {
+            "auditMode" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "policies" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerPolicy"
+}
+            },
+            "policyUpdateTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "policyVersion" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "serviceConfig" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "serviceDef" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_rangerServiceDef"
+            },
+            "serviceId" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "serviceName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_serviceTags" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "serviceTags",
+        "namespace" : ""
+      },
+      "title" : "serviceTags",
+      "allOf" : [
+        {
+          "properties" : {
+            "isDelta" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "op" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "resourceToTagIds" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "serviceName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "serviceResources" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_rangerServiceResource"
+}
+            },
+            "tagDefinitions" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "tagUpdateTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "tagVersion" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            },
+            "tags" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "tagsChangeExtent" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_tagsChangeExtent"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_tagsChangeExtent" : {
+      "type" : "string",
+      "title" : "tagsChangeExtent",
+          "enum" : [
+            "NONE",
+            "TAGS",
+            "SERVICE_RESOURCE",
+            "ALL"
+          ],
+      "description" : ""
+    }
+  },
+  "paths": {
+    "\/api/status" : {
+      "get" : {
+        "tags" : [ "RangerKMSRestApi" ],
+        "description" : "",
+        "operationId" : "getStatus",
+        "produces" : [ "application/xml" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v1/key/{name}" : {
+      "delete" : {
+        "tags" : [ "KMS" ],
+        "description" : "",
+        "operationId" : "deleteKey",
+        "produces" : [ "application/xml" ],
+        "parameters" : [
+          {
+            "name" : "name",
+            "in" : "path",
+            "required" : false,
+            "type" : "string",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        }
+      }
+      ,
+      "get" : {
+        "tags" : [ "KMS" ],
+        "description" : "",
+        "operationId" : "getKey",
+        "produces" : [ "application/xml" ],
+        "parameters" : [
+          {
+            "name" : "name",
+            "in" : "path",
+            "required" : false,
+            "type" : "string",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        }
+      }
+      ,
+      "post" : {
+        "tags" : [ "KMS" ],
+        "description" : "",
+        "operationId" : "rolloverKey",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "name",
+            "in" : "path",
+            "required" : false,
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v1/key/{name}/_currentversion" : {
+      "get" : {
+        "tags" : [ "KMS" ],
+        "description" : "",
+        "operationId" : "getCurrentVersion",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "name",
+            "in" : "path",
+            "required" : false,
+            "type" : "string",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v1/key/{name}/_eek" : {
+      "get" : {
+        "tags" : [ "KMS" ],
+        "description" : "",
+        "operationId" : "generateEncryptedKeys",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "name",
+            "in" : "path",
+            "required" : false,
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "eek_op",
+            "in" : "query",
+            "required" : false,
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "num_keys",
+            "in" : "query",
+            "required" : false,
+            "default" : "1",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v1/key/{name}/_invalidatecache" : {
+      "post" : {
+        "tags" : [ "KMS" ],
+        "description" : "",
+        "operationId" : "invalidateCache",
+        "produces" : [ "application/xml" ],
+        "parameters" : [
+          {
+            "name" : "name",
+            "in" : "path",
+            "required" : false,
+            "type" : "string",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v1/key/{name}/_metadata" : {
+      "get" : {
+        "tags" : [ "KMS" ],
+        "description" : "",
+        "operationId" : "getMetadata",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "name",
+            "in" : "path",
+            "required" : false,
+            "type" : "string",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v1/key/{name}/_reencryptbatch" : {
+      "post" : {
+        "tags" : [ "KMS" ],
+        "description" : "",
+        "operationId" : "reencryptEncryptedKeys",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "name",
+            "in" : "path",
+            "required" : false,
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v1/key/{name}/_versions" : {
+      "get" : {
+        "tags" : [ "KMS" ],
+        "description" : "",
+        "operationId" : "getKeyVersions",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "name",
+            "in" : "path",
+            "required" : false,
+            "type" : "string",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v1/keys" : {
+      "post" : {
+        "tags" : [ "KMS" ],
+        "description" : "",
+        "operationId" : "createKey",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v1/keys/metadata" : {
+      "get" : {
+        "tags" : [ "KMS" ],
+        "description" : "",
+        "operationId" : "getKeysMetadata",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "key",
+            "in" : "query",
+            "required" : false,
+            "type" : "array",
+            "items" : {
+            "type" : "string"
+            },
+            "collectionFormat" : "multi",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v1/keys/names" : {
+      "get" : {
+        "tags" : [ "KMS" ],
+        "description" : "",
+        "operationId" : "getKeyNames",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v1/keyversion/{versionName}" : {
+      "get" : {
+        "tags" : [ "KMS" ],
+        "description" : "",
+        "operationId" : "getKeyVersion",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "versionName",
+            "in" : "path",
+            "required" : false,
+            "type" : "string",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v1/keyversion/{versionName}/_eek" : {
+      "post" : {
+        "tags" : [ "KMS" ],
+        "description" : "",
+        "operationId" : "handleEncryptedKeyOp",
+        "consumes" : [ "application/xml" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "versionName",
+            "in" : "path",
+            "required" : false,
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "eek_op",
+            "in" : "query",
+            "required" : false,
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        }
+      }
+    }
+  }
+}

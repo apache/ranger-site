@@ -1,0 +1,3656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Ranger REST API: AssetREST</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!--custom css for these pages-->
+  <link rel="stylesheet" href="css/enunciate.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#apinav">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Ranger REST API: AssetREST</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="data.html">Data Types</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" id="apinav">
+        <ul class="nav nav-sidebar">
+          <li><a href="#resource_AssetREST_getAccessLogs_GET"><abbr title="GET /assets/accessAudit"><span class="sideoverflow">GET /assets/accessAudit</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_searchXAssets_GET"><abbr title="GET /assets/assets"><span class="sideoverflow">GET /assets/assets</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_createXAsset_POST"><abbr title="POST /assets/assets"><span class="sideoverflow">POST /assets/assets</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_searchXCredentialStores_GET"><abbr title="GET /assets/credstores"><span class="sideoverflow">GET /assets/credstores</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_createXCredentialStore_POST"><abbr title="POST /assets/credstores"><span class="sideoverflow">POST /assets/credstores</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_updateXCredentialStore_PUT"><abbr title="PUT /assets/credstores"><span class="sideoverflow">PUT /assets/credstores</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_searchXPolicyExportAudits_GET"><abbr title="GET /assets/exportAudit"><span class="sideoverflow">GET /assets/exportAudit</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_getReportLogs_GET"><abbr title="GET /assets/report"><span class="sideoverflow">GET /assets/report</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_searchXResources_GET"><abbr title="GET /assets/resources"><span class="sideoverflow">GET /assets/resources</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_createXResource_POST"><abbr title="POST /assets/resources"><span class="sideoverflow">POST /assets/resources</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_getUgsyncAudits_GET"><abbr title="GET /assets/ugsyncAudits"><span class="sideoverflow">GET /assets/ugsyncAudits</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_countXAssets_GET"><abbr title="GET /assets/assets/count"><span class="sideoverflow">GET /assets/assets/count</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_configTest_POST"><abbr title="POST /assets/assets/testConfig"><span class="sideoverflow">POST /assets/assets/testConfig</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_deleteXAsset_DELETE"><abbr title="DELETE /assets/assets/{id}"><span class="sideoverflow">DELETE /assets/assets/{id}</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_getXAsset_GET"><abbr title="GET /assets/assets/{id}"><span class="sideoverflow">GET /assets/assets/{id}</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_updateXAsset_PUT"><abbr title="PUT /assets/assets/{id}"><span class="sideoverflow">PUT /assets/assets/{id}</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_countXCredentialStores_GET"><abbr title="GET /assets/credstores/count"><span class="sideoverflow">GET /assets/credstores/count</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_deleteXCredentialStore_DELETE"><abbr title="DELETE /assets/credstores/{id}"><span class="sideoverflow">DELETE /assets/credstores/{id}</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_getXCredentialStore_GET"><abbr title="GET /assets/credstores/{id}"><span class="sideoverflow">GET /assets/credstores/{id}</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_getResourceJSON_GET"><abbr title="GET /assets/policyList/{repository}"><span class="sideoverflow">GET /assets/policyList/{repository}</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_getTransactionReport_GET"><abbr title="GET /assets/report/{transactionId}"><span class="sideoverflow">GET /assets/report/{transactionId}</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_getXResourceFile_GET"><abbr title="GET /assets/resource/{id}"><span class="sideoverflow">GET /assets/resource/{id}</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_countXResources_GET"><abbr title="GET /assets/resources/count"><span class="sideoverflow">GET /assets/resources/count</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_grantPermission_POST"><abbr title="POST /assets/resources/grant"><span class="sideoverflow">POST /assets/resources/grant</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_revokePermission_POST"><abbr title="POST /assets/resources/revoke"><span class="sideoverflow">POST /assets/resources/revoke</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_deleteXResource_DELETE"><abbr title="DELETE /assets/resources/{id}"><span class="sideoverflow">DELETE /assets/resources/{id}</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_getXResource_GET"><abbr title="GET /assets/resources/{id}"><span class="sideoverflow">GET /assets/resources/{id}</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_updateXResource_PUT"><abbr title="PUT /assets/resources/{id}"><span class="sideoverflow">PUT /assets/resources/{id}</span></abbr></a></li>
+          <li><a href="#resource_AssetREST_getUgsyncAuditsBySyncSource_GET"><abbr title="GET /assets/ugsyncAudits/{syncSource}"><span class="sideoverflow">GET /assets/ugsyncAudits/{syncSource}</span></abbr></a></li>
+          <li class="divider"></li>
+          <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ol class="breadcrumb" id="top">
+          <li class="active dropdown"><a href="index.html">Home</a></li>
+          <li class="active dropdown"><a href="resources.html">Resources</a></li>
+          <li class="dropdown"><a href="resource_AssetREST.html">AssetREST</a></li>
+        </ol>
+
+      <h1 class="page-header">AssetREST <small>Resource</small></h1>
+
+      <p></p>
+
+      <div id="resource_AssetREST_getAccessLogs_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/assets/accessAudit <a href="../assets/accessAudit" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXAccessAuditList.html">VXAccessAuditList</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXAccessAuditList.html">VXAccessAuditList</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /assets/accessAudit
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;vXAccessAudits&quot; : [ {
+    &quot;auditType&quot; : 12345,
+    &quot;accessResult&quot; : 12345,
+    &quot;accessType&quot; : &quot;...&quot;,
+    &quot;aclEnforcer&quot; : &quot;...&quot;,
+    &quot;agentId&quot; : &quot;...&quot;,
+    &quot;clientIP&quot; : &quot;...&quot;,
+    &quot;clientType&quot; : &quot;...&quot;,
+    &quot;policyId&quot; : 12345,
+    &quot;repoName&quot; : &quot;...&quot;,
+    &quot;repoDisplayName&quot; : &quot;...&quot;,
+    &quot;repoType&quot; : 12345,
+    &quot;serviceType&quot; : &quot;...&quot;,
+    &quot;serviceTypeDisplayName&quot; : &quot;...&quot;,
+    &quot;resultReason&quot; : &quot;...&quot;,
+    &quot;sessionId&quot; : &quot;...&quot;,
+    &quot;eventTime&quot; : 12345,
+    &quot;requestUser&quot; : &quot;...&quot;,
+    &quot;action&quot; : &quot;...&quot;,
+    &quot;requestData&quot; : &quot;...&quot;,
+    &quot;resourcePath&quot; : &quot;...&quot;,
+    &quot;resourceType&quot; : &quot;...&quot;,
+    &quot;sequenceNumber&quot; : 12345,
+    &quot;eventCount&quot; : 12345,
+    &quot;eventDuration&quot; : 12345,
+    &quot;tags&quot; : &quot;...&quot;,
+    &quot;clusterName&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345,
+    &quot;zoneName&quot; : &quot;...&quot;,
+    &quot;agentHost&quot; : &quot;...&quot;,
+    &quot;policyVersion&quot; : 12345,
+    &quot;eventId&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  }, {
+    &quot;auditType&quot; : 12345,
+    &quot;accessResult&quot; : 12345,
+    &quot;accessType&quot; : &quot;...&quot;,
+    &quot;aclEnforcer&quot; : &quot;...&quot;,
+    &quot;agentId&quot; : &quot;...&quot;,
+    &quot;clientIP&quot; : &quot;...&quot;,
+    &quot;clientType&quot; : &quot;...&quot;,
+    &quot;policyId&quot; : 12345,
+    &quot;repoName&quot; : &quot;...&quot;,
+    &quot;repoDisplayName&quot; : &quot;...&quot;,
+    &quot;repoType&quot; : 12345,
+    &quot;serviceType&quot; : &quot;...&quot;,
+    &quot;serviceTypeDisplayName&quot; : &quot;...&quot;,
+    &quot;resultReason&quot; : &quot;...&quot;,
+    &quot;sessionId&quot; : &quot;...&quot;,
+    &quot;eventTime&quot; : 12345,
+    &quot;requestUser&quot; : &quot;...&quot;,
+    &quot;action&quot; : &quot;...&quot;,
+    &quot;requestData&quot; : &quot;...&quot;,
+    &quot;resourcePath&quot; : &quot;...&quot;,
+    &quot;resourceType&quot; : &quot;...&quot;,
+    &quot;sequenceNumber&quot; : 12345,
+    &quot;eventCount&quot; : 12345,
+    &quot;eventDuration&quot; : 12345,
+    &quot;tags&quot; : &quot;...&quot;,
+    &quot;clusterName&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345,
+    &quot;zoneName&quot; : &quot;...&quot;,
+    &quot;agentHost&quot; : &quot;...&quot;,
+    &quot;policyVersion&quot; : 12345,
+    &quot;eventId&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  } ],
+  &quot;listSize&quot; : 12345,
+  &quot;list&quot; : [ { }, { } ],
+  &quot;startIndex&quot; : 12345,
+  &quot;pageSize&quot; : 12345,
+  &quot;totalCount&quot; : 12345,
+  &quot;resultSize&quot; : 12345,
+  &quot;sortType&quot; : &quot;...&quot;,
+  &quot;sortBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_searchXAssets_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/assets/assets <a href="../assets/assets" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXAssetList.html">VXAssetList</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXAssetList.html">VXAssetList</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /assets/assets
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;vXAssets&quot; : [ {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;activeStatus&quot; : 12345,
+    &quot;assetType&quot; : 12345,
+    &quot;config&quot; : &quot;...&quot;,
+    &quot;supportNative&quot; : true,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  }, {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;activeStatus&quot; : 12345,
+    &quot;assetType&quot; : 12345,
+    &quot;config&quot; : &quot;...&quot;,
+    &quot;supportNative&quot; : true,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  } ],
+  &quot;listSize&quot; : 12345,
+  &quot;list&quot; : [ { }, { } ],
+  &quot;startIndex&quot; : 12345,
+  &quot;pageSize&quot; : 12345,
+  &quot;totalCount&quot; : 12345,
+  &quot;resultSize&quot; : 12345,
+  &quot;sortType&quot; : &quot;...&quot;,
+  &quot;sortBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_createXAsset_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/assets/assets <a href="../assets/assets" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXAsset.html">VXAsset</a>
+ (JSON)</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXAsset.html">VXAsset</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXAsset.html">VXAsset</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXAsset.html">VXAsset</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /assets/assets
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;activeStatus&quot; : 12345,
+  &quot;assetType&quot; : 12345,
+  &quot;config&quot; : &quot;...&quot;,
+  &quot;supportNative&quot; : true,
+  &quot;myClassType&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;activeStatus&quot; : 12345,
+  &quot;assetType&quot; : 12345,
+  &quot;config&quot; : &quot;...&quot;,
+  &quot;supportNative&quot; : true,
+  &quot;myClassType&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_searchXCredentialStores_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/assets/credstores <a href="../assets/credstores" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXCredentialStoreList.html">VXCredentialStoreList</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXCredentialStoreList.html">VXCredentialStoreList</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /assets/credstores
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;vXCredentialStores&quot; : [ {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  }, {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  } ],
+  &quot;listSize&quot; : 12345,
+  &quot;list&quot; : [ { }, { } ],
+  &quot;startIndex&quot; : 12345,
+  &quot;pageSize&quot; : 12345,
+  &quot;totalCount&quot; : 12345,
+  &quot;resultSize&quot; : 12345,
+  &quot;sortType&quot; : &quot;...&quot;,
+  &quot;sortBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_createXCredentialStore_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/assets/credstores <a href="../assets/credstores" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXCredentialStore.html">VXCredentialStore</a>
+ (JSON)</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXCredentialStore.html">VXCredentialStore</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXCredentialStore.html">VXCredentialStore</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXCredentialStore.html">VXCredentialStore</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /assets/credstores
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;myClassType&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;myClassType&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_updateXCredentialStore_PUT">
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/assets/credstores <a href="../assets/credstores" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXCredentialStore.html">VXCredentialStore</a>
+ (JSON)</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXCredentialStore.html">VXCredentialStore</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXCredentialStore.html">VXCredentialStore</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXCredentialStore.html">VXCredentialStore</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /assets/credstores
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;myClassType&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;myClassType&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_searchXPolicyExportAudits_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/assets/exportAudit <a href="../assets/exportAudit" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXPolicyExportAuditList.html">VXPolicyExportAuditList</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXPolicyExportAuditList.html">VXPolicyExportAuditList</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /assets/exportAudit
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;vXPolicyExportAudits&quot; : [ {
+    &quot;clientIP&quot; : &quot;...&quot;,
+    &quot;agentId&quot; : &quot;...&quot;,
+    &quot;requestedEpoch&quot; : 12345,
+    &quot;lastUpdated&quot; : 12345,
+    &quot;repositoryName&quot; : &quot;...&quot;,
+    &quot;repositoryDisplayName&quot; : &quot;...&quot;,
+    &quot;exportedJson&quot; : &quot;...&quot;,
+    &quot;httpRetCode&quot; : 12345,
+    &quot;syncStatus&quot; : &quot;...&quot;,
+    &quot;clusterName&quot; : &quot;...&quot;,
+    &quot;zoneName&quot; : &quot;...&quot;,
+    &quot;policyVersion&quot; : 12345,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  }, {
+    &quot;clientIP&quot; : &quot;...&quot;,
+    &quot;agentId&quot; : &quot;...&quot;,
+    &quot;requestedEpoch&quot; : 12345,
+    &quot;lastUpdated&quot; : 12345,
+    &quot;repositoryName&quot; : &quot;...&quot;,
+    &quot;repositoryDisplayName&quot; : &quot;...&quot;,
+    &quot;exportedJson&quot; : &quot;...&quot;,
+    &quot;httpRetCode&quot; : 12345,
+    &quot;syncStatus&quot; : &quot;...&quot;,
+    &quot;clusterName&quot; : &quot;...&quot;,
+    &quot;zoneName&quot; : &quot;...&quot;,
+    &quot;policyVersion&quot; : 12345,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  } ],
+  &quot;listSize&quot; : 12345,
+  &quot;list&quot; : [ { }, { } ],
+  &quot;startIndex&quot; : 12345,
+  &quot;pageSize&quot; : 12345,
+  &quot;totalCount&quot; : 12345,
+  &quot;resultSize&quot; : 12345,
+  &quot;sortType&quot; : &quot;...&quot;,
+  &quot;sortBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_getReportLogs_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/assets/report <a href="../assets/report" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXTrxLogList.html">VXTrxLogList</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXTrxLogList.html">VXTrxLogList</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /assets/report
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;vXTrxLogs&quot; : [ {
+    &quot;objectClassType&quot; : 12345,
+    &quot;objectId&quot; : 12345,
+    &quot;parentObjectId&quot; : 12345,
+    &quot;parentObjectClassType&quot; : 12345,
+    &quot;parentObjectName&quot; : &quot;...&quot;,
+    &quot;objectName&quot; : &quot;...&quot;,
+    &quot;attributeName&quot; : &quot;...&quot;,
+    &quot;previousValue&quot; : &quot;...&quot;,
+    &quot;newValue&quot; : &quot;...&quot;,
+    &quot;transactionId&quot; : &quot;...&quot;,
+    &quot;action&quot; : &quot;...&quot;,
+    &quot;sessionId&quot; : &quot;...&quot;,
+    &quot;requestId&quot; : &quot;...&quot;,
+    &quot;sessionType&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345
+  }, {
+    &quot;objectClassType&quot; : 12345,
+    &quot;objectId&quot; : 12345,
+    &quot;parentObjectId&quot; : 12345,
+    &quot;parentObjectClassType&quot; : 12345,
+    &quot;parentObjectName&quot; : &quot;...&quot;,
+    &quot;objectName&quot; : &quot;...&quot;,
+    &quot;attributeName&quot; : &quot;...&quot;,
+    &quot;previousValue&quot; : &quot;...&quot;,
+    &quot;newValue&quot; : &quot;...&quot;,
+    &quot;transactionId&quot; : &quot;...&quot;,
+    &quot;action&quot; : &quot;...&quot;,
+    &quot;sessionId&quot; : &quot;...&quot;,
+    &quot;requestId&quot; : &quot;...&quot;,
+    &quot;sessionType&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345
+  } ],
+  &quot;listSize&quot; : 12345,
+  &quot;list&quot; : [ { }, { } ],
+  &quot;startIndex&quot; : 12345,
+  &quot;pageSize&quot; : 12345,
+  &quot;totalCount&quot; : 12345,
+  &quot;resultSize&quot; : 12345,
+  &quot;sortType&quot; : &quot;...&quot;,
+  &quot;sortBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_searchXResources_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/assets/resources <a href="../assets/resources" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXResourceList.html">VXResourceList</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXResourceList.html">VXResourceList</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /assets/resources
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;vXResources&quot; : [ {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;policyName&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;resourceType&quot; : 12345,
+    &quot;assetId&quot; : 12345,
+    &quot;parentId&quot; : 12345,
+    &quot;parentPath&quot; : &quot;...&quot;,
+    &quot;isEncrypt&quot; : 12345,
+    &quot;permMapList&quot; : [ {
+      &quot;permGroup&quot; : &quot;...&quot;,
+      &quot;resourceId&quot; : 12345,
+      &quot;groupId&quot; : 12345,
+      &quot;userId&quot; : 12345,
+      &quot;permFor&quot; : 12345,
+      &quot;permType&quot; : 12345,
+      &quot;grantOrRevoke&quot; : true,
+      &quot;groupName&quot; : &quot;...&quot;,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;isRecursive&quot; : 12345,
+      &quot;isWildCard&quot; : true,
+      &quot;ipAddress&quot; : &quot;...&quot;,
+      &quot;myClassType&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;createDate&quot; : 12345,
+      &quot;updateDate&quot; : 12345,
+      &quot;owner&quot; : &quot;...&quot;,
+      &quot;updatedBy&quot; : &quot;...&quot;
+    }, {
+      &quot;permGroup&quot; : &quot;...&quot;,
+      &quot;resourceId&quot; : 12345,
+      &quot;groupId&quot; : 12345,
+      &quot;userId&quot; : 12345,
+      &quot;permFor&quot; : 12345,
+      &quot;permType&quot; : 12345,
+      &quot;grantOrRevoke&quot; : true,
+      &quot;groupName&quot; : &quot;...&quot;,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;isRecursive&quot; : 12345,
+      &quot;isWildCard&quot; : true,
+      &quot;ipAddress&quot; : &quot;...&quot;,
+      &quot;myClassType&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;createDate&quot; : 12345,
+      &quot;updateDate&quot; : 12345,
+      &quot;owner&quot; : &quot;...&quot;,
+      &quot;updatedBy&quot; : &quot;...&quot;
+    } ],
+    &quot;auditList&quot; : [ {
+      &quot;resourceId&quot; : 12345,
+      &quot;groupId&quot; : 12345,
+      &quot;userId&quot; : 12345,
+      &quot;auditType&quot; : 12345,
+      &quot;myClassType&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;createDate&quot; : 12345,
+      &quot;updateDate&quot; : 12345,
+      &quot;owner&quot; : &quot;...&quot;,
+      &quot;updatedBy&quot; : &quot;...&quot;
+    }, {
+      &quot;resourceId&quot; : 12345,
+      &quot;groupId&quot; : 12345,
+      &quot;userId&quot; : 12345,
+      &quot;auditType&quot; : 12345,
+      &quot;myClassType&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;createDate&quot; : 12345,
+      &quot;updateDate&quot; : 12345,
+      &quot;owner&quot; : &quot;...&quot;,
+      &quot;updatedBy&quot; : &quot;...&quot;
+    } ],
+    &quot;isRecursive&quot; : 12345,
+    &quot;resourceGroup&quot; : &quot;...&quot;,
+    &quot;databases&quot; : &quot;...&quot;,
+    &quot;tables&quot; : &quot;...&quot;,
+    &quot;columnFamilies&quot; : &quot;...&quot;,
+    &quot;columns&quot; : &quot;...&quot;,
+    &quot;udfs&quot; : &quot;...&quot;,
+    &quot;assetName&quot; : &quot;...&quot;,
+    &quot;assetType&quot; : 12345,
+    &quot;resourceStatus&quot; : 12345,
+    &quot;tableType&quot; : 12345,
+    &quot;columnType&quot; : 12345,
+    &quot;topologies&quot; : &quot;...&quot;,
+    &quot;services&quot; : &quot;...&quot;,
+    &quot;hiveServices&quot; : &quot;...&quot;,
+    &quot;checkParentPermission&quot; : 12345,
+    &quot;myClassType&quot; : 12345,
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  }, {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;policyName&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;resourceType&quot; : 12345,
+    &quot;assetId&quot; : 12345,
+    &quot;parentId&quot; : 12345,
+    &quot;parentPath&quot; : &quot;...&quot;,
+    &quot;isEncrypt&quot; : 12345,
+    &quot;permMapList&quot; : [ {
+      &quot;permGroup&quot; : &quot;...&quot;,
+      &quot;resourceId&quot; : 12345,
+      &quot;groupId&quot; : 12345,
+      &quot;userId&quot; : 12345,
+      &quot;permFor&quot; : 12345,
+      &quot;permType&quot; : 12345,
+      &quot;grantOrRevoke&quot; : true,
+      &quot;groupName&quot; : &quot;...&quot;,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;isRecursive&quot; : 12345,
+      &quot;isWildCard&quot; : true,
+      &quot;ipAddress&quot; : &quot;...&quot;,
+      &quot;myClassType&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;createDate&quot; : 12345,
+      &quot;updateDate&quot; : 12345,
+      &quot;owner&quot; : &quot;...&quot;,
+      &quot;updatedBy&quot; : &quot;...&quot;
+    }, {
+      &quot;permGroup&quot; : &quot;...&quot;,
+      &quot;resourceId&quot; : 12345,
+      &quot;groupId&quot; : 12345,
+      &quot;userId&quot; : 12345,
+      &quot;permFor&quot; : 12345,
+      &quot;permType&quot; : 12345,
+      &quot;grantOrRevoke&quot; : true,
+      &quot;groupName&quot; : &quot;...&quot;,
+      &quot;userName&quot; : &quot;...&quot;,
+      &quot;isRecursive&quot; : 12345,
+      &quot;isWildCard&quot; : true,
+      &quot;ipAddress&quot; : &quot;...&quot;,
+      &quot;myClassType&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;createDate&quot; : 12345,
+      &quot;updateDate&quot; : 12345,
+      &quot;owner&quot; : &quot;...&quot;,
+      &quot;updatedBy&quot; : &quot;...&quot;
+    } ],
+    &quot;auditList&quot; : [ {
+      &quot;resourceId&quot; : 12345,
+      &quot;groupId&quot; : 12345,
+      &quot;userId&quot; : 12345,
+      &quot;auditType&quot; : 12345,
+      &quot;myClassType&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;createDate&quot; : 12345,
+      &quot;updateDate&quot; : 12345,
+      &quot;owner&quot; : &quot;...&quot;,
+      &quot;updatedBy&quot; : &quot;...&quot;
+    }, {
+      &quot;resourceId&quot; : 12345,
+      &quot;groupId&quot; : 12345,
+      &quot;userId&quot; : 12345,
+      &quot;auditType&quot; : 12345,
+      &quot;myClassType&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;createDate&quot; : 12345,
+      &quot;updateDate&quot; : 12345,
+      &quot;owner&quot; : &quot;...&quot;,
+      &quot;updatedBy&quot; : &quot;...&quot;
+    } ],
+    &quot;isRecursive&quot; : 12345,
+    &quot;resourceGroup&quot; : &quot;...&quot;,
+    &quot;databases&quot; : &quot;...&quot;,
+    &quot;tables&quot; : &quot;...&quot;,
+    &quot;columnFamilies&quot; : &quot;...&quot;,
+    &quot;columns&quot; : &quot;...&quot;,
+    &quot;udfs&quot; : &quot;...&quot;,
+    &quot;assetName&quot; : &quot;...&quot;,
+    &quot;assetType&quot; : 12345,
+    &quot;resourceStatus&quot; : 12345,
+    &quot;tableType&quot; : 12345,
+    &quot;columnType&quot; : 12345,
+    &quot;topologies&quot; : &quot;...&quot;,
+    &quot;services&quot; : &quot;...&quot;,
+    &quot;hiveServices&quot; : &quot;...&quot;,
+    &quot;checkParentPermission&quot; : 12345,
+    &quot;myClassType&quot; : 12345,
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  } ],
+  &quot;listSize&quot; : 12345,
+  &quot;list&quot; : [ { }, { } ],
+  &quot;startIndex&quot; : 12345,
+  &quot;pageSize&quot; : 12345,
+  &quot;totalCount&quot; : 12345,
+  &quot;resultSize&quot; : 12345,
+  &quot;sortType&quot; : &quot;...&quot;,
+  &quot;sortBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_createXResource_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/assets/resources <a href="../assets/resources" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXResource.html">VXResource</a>
+ (JSON)</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXResource.html">VXResource</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXResource.html">VXResource</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXResource.html">VXResource</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /assets/resources
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;policyName&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;resourceType&quot; : 12345,
+  &quot;assetId&quot; : 12345,
+  &quot;parentId&quot; : 12345,
+  &quot;parentPath&quot; : &quot;...&quot;,
+  &quot;isEncrypt&quot; : 12345,
+  &quot;permMapList&quot; : [ {
+    &quot;permGroup&quot; : &quot;...&quot;,
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;permFor&quot; : 12345,
+    &quot;permType&quot; : 12345,
+    &quot;grantOrRevoke&quot; : true,
+    &quot;groupName&quot; : &quot;...&quot;,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;isRecursive&quot; : 12345,
+    &quot;isWildCard&quot; : true,
+    &quot;ipAddress&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  }, {
+    &quot;permGroup&quot; : &quot;...&quot;,
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;permFor&quot; : 12345,
+    &quot;permType&quot; : 12345,
+    &quot;grantOrRevoke&quot; : true,
+    &quot;groupName&quot; : &quot;...&quot;,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;isRecursive&quot; : 12345,
+    &quot;isWildCard&quot; : true,
+    &quot;ipAddress&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  } ],
+  &quot;auditList&quot; : [ {
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;auditType&quot; : 12345,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  }, {
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;auditType&quot; : 12345,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  } ],
+  &quot;isRecursive&quot; : 12345,
+  &quot;resourceGroup&quot; : &quot;...&quot;,
+  &quot;databases&quot; : &quot;...&quot;,
+  &quot;tables&quot; : &quot;...&quot;,
+  &quot;columnFamilies&quot; : &quot;...&quot;,
+  &quot;columns&quot; : &quot;...&quot;,
+  &quot;udfs&quot; : &quot;...&quot;,
+  &quot;assetName&quot; : &quot;...&quot;,
+  &quot;assetType&quot; : 12345,
+  &quot;resourceStatus&quot; : 12345,
+  &quot;tableType&quot; : 12345,
+  &quot;columnType&quot; : 12345,
+  &quot;topologies&quot; : &quot;...&quot;,
+  &quot;services&quot; : &quot;...&quot;,
+  &quot;hiveServices&quot; : &quot;...&quot;,
+  &quot;checkParentPermission&quot; : 12345,
+  &quot;myClassType&quot; : 12345,
+  &quot;guid&quot; : &quot;...&quot;,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;policyName&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;resourceType&quot; : 12345,
+  &quot;assetId&quot; : 12345,
+  &quot;parentId&quot; : 12345,
+  &quot;parentPath&quot; : &quot;...&quot;,
+  &quot;isEncrypt&quot; : 12345,
+  &quot;permMapList&quot; : [ {
+    &quot;permGroup&quot; : &quot;...&quot;,
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;permFor&quot; : 12345,
+    &quot;permType&quot; : 12345,
+    &quot;grantOrRevoke&quot; : true,
+    &quot;groupName&quot; : &quot;...&quot;,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;isRecursive&quot; : 12345,
+    &quot;isWildCard&quot; : true,
+    &quot;ipAddress&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  }, {
+    &quot;permGroup&quot; : &quot;...&quot;,
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;permFor&quot; : 12345,
+    &quot;permType&quot; : 12345,
+    &quot;grantOrRevoke&quot; : true,
+    &quot;groupName&quot; : &quot;...&quot;,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;isRecursive&quot; : 12345,
+    &quot;isWildCard&quot; : true,
+    &quot;ipAddress&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  } ],
+  &quot;auditList&quot; : [ {
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;auditType&quot; : 12345,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  }, {
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;auditType&quot; : 12345,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  } ],
+  &quot;isRecursive&quot; : 12345,
+  &quot;resourceGroup&quot; : &quot;...&quot;,
+  &quot;databases&quot; : &quot;...&quot;,
+  &quot;tables&quot; : &quot;...&quot;,
+  &quot;columnFamilies&quot; : &quot;...&quot;,
+  &quot;columns&quot; : &quot;...&quot;,
+  &quot;udfs&quot; : &quot;...&quot;,
+  &quot;assetName&quot; : &quot;...&quot;,
+  &quot;assetType&quot; : 12345,
+  &quot;resourceStatus&quot; : 12345,
+  &quot;tableType&quot; : 12345,
+  &quot;columnType&quot; : 12345,
+  &quot;topologies&quot; : &quot;...&quot;,
+  &quot;services&quot; : &quot;...&quot;,
+  &quot;hiveServices&quot; : &quot;...&quot;,
+  &quot;checkParentPermission&quot; : 12345,
+  &quot;myClassType&quot; : 12345,
+  &quot;guid&quot; : &quot;...&quot;,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_getUgsyncAudits_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/assets/ugsyncAudits <a href="../assets/ugsyncAudits" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXUgsyncAuditInfoList.html">VXUgsyncAuditInfoList</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXUgsyncAuditInfoList.html">VXUgsyncAuditInfoList</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /assets/ugsyncAudits
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;vxUgsyncAuditInfoList&quot; : [ {
+    &quot;eventTime&quot; : 12345,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;noOfNewUsers&quot; : 12345,
+    &quot;noOfModifiedUsers&quot; : 12345,
+    &quot;noOfNewGroups&quot; : 12345,
+    &quot;noOfModifiedGroups&quot; : 12345,
+    &quot;syncSource&quot; : &quot;...&quot;,
+    &quot;ldapSyncSourceInfo&quot; : {
+      &quot;ldapUrl&quot; : &quot;...&quot;,
+      &quot;userSearchFilter&quot; : &quot;...&quot;,
+      &quot;groupSearchFilter&quot; : &quot;...&quot;,
+      &quot;groupHierarchyLevel&quot; : &quot;...&quot;,
+      &quot;totalUsersSynced&quot; : 12345,
+      &quot;totalGroupsSynced&quot; : 12345,
+      &quot;groupSearchFirstEnabled&quot; : &quot;...&quot;,
+      &quot;groupSearchEnabled&quot; : &quot;...&quot;,
+      &quot;userSearchEnabled&quot; : &quot;...&quot;,
+      &quot;totalUsersDeleted&quot; : 12345,
+      &quot;totalGroupsDeleted&quot; : 12345
+    },
+    &quot;fileSyncSourceInfo&quot; : {
+      &quot;fileName&quot; : &quot;...&quot;,
+      &quot;syncTime&quot; : &quot;...&quot;,
+      &quot;lastModified&quot; : &quot;...&quot;,
+      &quot;totalUsersSynced&quot; : 12345,
+      &quot;totalGroupsSynced&quot; : 12345,
+      &quot;totalUsersDeleted&quot; : 12345,
+      &quot;totalGroupsDeleted&quot; : 12345
+    },
+    &quot;unixSyncSourceInfo&quot; : {
+      &quot;fileName&quot; : &quot;...&quot;,
+      &quot;syncTime&quot; : &quot;...&quot;,
+      &quot;lastModified&quot; : &quot;...&quot;,
+      &quot;unixBackend&quot; : &quot;...&quot;,
+      &quot;minUserId&quot; : &quot;...&quot;,
+      &quot;minGroupId&quot; : &quot;...&quot;,
+      &quot;totalUsersSynced&quot; : 12345,
+      &quot;totalGroupsSynced&quot; : 12345,
+      &quot;totalUsersDeleted&quot; : 12345,
+      &quot;totalGroupsDeleted&quot; : 12345
+    },
+    &quot;sessionId&quot; : &quot;...&quot;,
+    &quot;syncSourceInfo&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    },
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345
+  }, {
+    &quot;eventTime&quot; : 12345,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;noOfNewUsers&quot; : 12345,
+    &quot;noOfModifiedUsers&quot; : 12345,
+    &quot;noOfNewGroups&quot; : 12345,
+    &quot;noOfModifiedGroups&quot; : 12345,
+    &quot;syncSource&quot; : &quot;...&quot;,
+    &quot;ldapSyncSourceInfo&quot; : {
+      &quot;ldapUrl&quot; : &quot;...&quot;,
+      &quot;userSearchFilter&quot; : &quot;...&quot;,
+      &quot;groupSearchFilter&quot; : &quot;...&quot;,
+      &quot;groupHierarchyLevel&quot; : &quot;...&quot;,
+      &quot;totalUsersSynced&quot; : 12345,
+      &quot;totalGroupsSynced&quot; : 12345,
+      &quot;groupSearchFirstEnabled&quot; : &quot;...&quot;,
+      &quot;groupSearchEnabled&quot; : &quot;...&quot;,
+      &quot;userSearchEnabled&quot; : &quot;...&quot;,
+      &quot;totalUsersDeleted&quot; : 12345,
+      &quot;totalGroupsDeleted&quot; : 12345
+    },
+    &quot;fileSyncSourceInfo&quot; : {
+      &quot;fileName&quot; : &quot;...&quot;,
+      &quot;syncTime&quot; : &quot;...&quot;,
+      &quot;lastModified&quot; : &quot;...&quot;,
+      &quot;totalUsersSynced&quot; : 12345,
+      &quot;totalGroupsSynced&quot; : 12345,
+      &quot;totalUsersDeleted&quot; : 12345,
+      &quot;totalGroupsDeleted&quot; : 12345
+    },
+    &quot;unixSyncSourceInfo&quot; : {
+      &quot;fileName&quot; : &quot;...&quot;,
+      &quot;syncTime&quot; : &quot;...&quot;,
+      &quot;lastModified&quot; : &quot;...&quot;,
+      &quot;unixBackend&quot; : &quot;...&quot;,
+      &quot;minUserId&quot; : &quot;...&quot;,
+      &quot;minGroupId&quot; : &quot;...&quot;,
+      &quot;totalUsersSynced&quot; : 12345,
+      &quot;totalGroupsSynced&quot; : 12345,
+      &quot;totalUsersDeleted&quot; : 12345,
+      &quot;totalGroupsDeleted&quot; : 12345
+    },
+    &quot;sessionId&quot; : &quot;...&quot;,
+    &quot;syncSourceInfo&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    },
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345
+  } ],
+  &quot;listSize&quot; : 12345,
+  &quot;list&quot; : [ { }, { } ],
+  &quot;startIndex&quot; : 12345,
+  &quot;pageSize&quot; : 12345,
+  &quot;totalCount&quot; : 12345,
+  &quot;resultSize&quot; : 12345,
+  &quot;sortType&quot; : &quot;...&quot;,
+  &quot;sortBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_countXAssets_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/assets/assets/count <a href="../assets/assets/count" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXLong.html">VXLong</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXLong.html">VXLong</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /assets/assets/count
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;value&quot; : 12345,
+  &quot;myClassType&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_configTest_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/assets/assets/testConfig <a href="../assets/assets/testConfig" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXAsset.html">VXAsset</a>
+ (JSON)</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXAsset.html">VXAsset</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXResponse.html">VXResponse</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXResponse.html">VXResponse</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /assets/assets/testConfig
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;activeStatus&quot; : 12345,
+  &quot;assetType&quot; : 12345,
+  &quot;config&quot; : &quot;...&quot;,
+  &quot;supportNative&quot; : true,
+  &quot;myClassType&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;statusCode&quot; : 12345,
+  &quot;msgDesc&quot; : &quot;...&quot;,
+  &quot;messageList&quot; : [ {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;rbKey&quot; : &quot;...&quot;,
+    &quot;message&quot; : &quot;...&quot;,
+    &quot;objectId&quot; : 12345,
+    &quot;fieldName&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345
+  }, {
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;rbKey&quot; : &quot;...&quot;,
+    &quot;message&quot; : &quot;...&quot;,
+    &quot;objectId&quot; : 12345,
+    &quot;fieldName&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345
+  } ],
+  &quot;myClassType&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_deleteXAsset_DELETE">
+        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/assets/assets/{id} <a href="../assets/assets/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">long</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+DELETE /assets/assets/{id}
+Content-Type: */*
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_getXAsset_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/assets/assets/{id} <a href="../assets/assets/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">long</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXAsset.html">VXAsset</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXAsset.html">VXAsset</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /assets/assets/{id}
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;activeStatus&quot; : 12345,
+  &quot;assetType&quot; : 12345,
+  &quot;config&quot; : &quot;...&quot;,
+  &quot;supportNative&quot; : true,
+  &quot;myClassType&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_updateXAsset_PUT">
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/assets/assets/{id} <a href="../assets/assets/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXAsset.html">VXAsset</a>
+ (JSON)</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXAsset.html">VXAsset</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXAsset.html">VXAsset</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXAsset.html">VXAsset</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /assets/assets/{id}
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;activeStatus&quot; : 12345,
+  &quot;assetType&quot; : 12345,
+  &quot;config&quot; : &quot;...&quot;,
+  &quot;supportNative&quot; : true,
+  &quot;myClassType&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;activeStatus&quot; : 12345,
+  &quot;assetType&quot; : 12345,
+  &quot;config&quot; : &quot;...&quot;,
+  &quot;supportNative&quot; : true,
+  &quot;myClassType&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_countXCredentialStores_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/assets/credstores/count <a href="../assets/credstores/count" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXLong.html">VXLong</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXLong.html">VXLong</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /assets/credstores/count
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;value&quot; : 12345,
+  &quot;myClassType&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_deleteXCredentialStore_DELETE">
+        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/assets/credstores/{id} <a href="../assets/credstores/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">long</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+DELETE /assets/credstores/{id}
+Content-Type: */*
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_getXCredentialStore_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/assets/credstores/{id} <a href="../assets/credstores/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">long</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXCredentialStore.html">VXCredentialStore</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXCredentialStore.html">VXCredentialStore</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /assets/credstores/{id}
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;myClassType&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_getResourceJSON_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/assets/policyList/{repository} <a href="../assets/policyList/{repository}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">repository</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">string
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference">string
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /assets/policyList/{repository}
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_getTransactionReport_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/assets/report/{transactionId} <a href="../assets/report/{transactionId}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">transactionId</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXTrxLogList.html">VXTrxLogList</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXTrxLogList.html">VXTrxLogList</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /assets/report/{transactionId}
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;vXTrxLogs&quot; : [ {
+    &quot;objectClassType&quot; : 12345,
+    &quot;objectId&quot; : 12345,
+    &quot;parentObjectId&quot; : 12345,
+    &quot;parentObjectClassType&quot; : 12345,
+    &quot;parentObjectName&quot; : &quot;...&quot;,
+    &quot;objectName&quot; : &quot;...&quot;,
+    &quot;attributeName&quot; : &quot;...&quot;,
+    &quot;previousValue&quot; : &quot;...&quot;,
+    &quot;newValue&quot; : &quot;...&quot;,
+    &quot;transactionId&quot; : &quot;...&quot;,
+    &quot;action&quot; : &quot;...&quot;,
+    &quot;sessionId&quot; : &quot;...&quot;,
+    &quot;requestId&quot; : &quot;...&quot;,
+    &quot;sessionType&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345
+  }, {
+    &quot;objectClassType&quot; : 12345,
+    &quot;objectId&quot; : 12345,
+    &quot;parentObjectId&quot; : 12345,
+    &quot;parentObjectClassType&quot; : 12345,
+    &quot;parentObjectName&quot; : &quot;...&quot;,
+    &quot;objectName&quot; : &quot;...&quot;,
+    &quot;attributeName&quot; : &quot;...&quot;,
+    &quot;previousValue&quot; : &quot;...&quot;,
+    &quot;newValue&quot; : &quot;...&quot;,
+    &quot;transactionId&quot; : &quot;...&quot;,
+    &quot;action&quot; : &quot;...&quot;,
+    &quot;sessionId&quot; : &quot;...&quot;,
+    &quot;requestId&quot; : &quot;...&quot;,
+    &quot;sessionType&quot; : &quot;...&quot;,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345
+  } ],
+  &quot;listSize&quot; : 12345,
+  &quot;list&quot; : [ { }, { } ],
+  &quot;startIndex&quot; : 12345,
+  &quot;pageSize&quot; : 12345,
+  &quot;totalCount&quot; : 12345,
+  &quot;resultSize&quot; : 12345,
+  &quot;sortType&quot; : &quot;...&quot;,
+  &quot;sortBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_getXResourceFile_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/assets/resource/{id} <a href="../assets/resource/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">long</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">object
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference">anyType
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /assets/resource/{id}
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_countXResources_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/assets/resources/count <a href="../assets/resources/count" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXLong.html">VXLong</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXLong.html">VXLong</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /assets/resources/count
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;value&quot; : 12345,
+  &quot;myClassType&quot; : 12345
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_grantPermission_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/assets/resources/grant <a href="../assets/resources/grant" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXPolicy.html">VXPolicy</a>
+ (JSON)</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXPolicy.html">VXPolicy</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXPolicy.html">VXPolicy</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXPolicy.html">VXPolicy</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /assets/resources/grant
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;policyName&quot; : &quot;...&quot;,
+  &quot;resourceName&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;repositoryName&quot; : &quot;...&quot;,
+  &quot;repositoryType&quot; : &quot;...&quot;,
+  &quot;permMapList&quot; : [ {
+    &quot;userList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;groupList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;permList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;ipAddress&quot; : &quot;...&quot;
+  }, {
+    &quot;userList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;groupList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;permList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;ipAddress&quot; : &quot;...&quot;
+  } ],
+  &quot;tables&quot; : &quot;...&quot;,
+  &quot;columnFamilies&quot; : &quot;...&quot;,
+  &quot;columns&quot; : &quot;...&quot;,
+  &quot;databases&quot; : &quot;...&quot;,
+  &quot;udfs&quot; : &quot;...&quot;,
+  &quot;tableType&quot; : &quot;...&quot;,
+  &quot;columnType&quot; : &quot;...&quot;,
+  &quot;topologies&quot; : &quot;...&quot;,
+  &quot;services&quot; : &quot;...&quot;,
+  &quot;hiveServices&quot; : &quot;...&quot;,
+  &quot;isEnabled&quot; : true,
+  &quot;isRecursive&quot; : true,
+  &quot;isAuditEnabled&quot; : true,
+  &quot;version&quot; : &quot;...&quot;,
+  &quot;grantor&quot; : &quot;...&quot;,
+  &quot;replacePerm&quot; : true,
+  &quot;policyLabel&quot; : &quot;...&quot;,
+  &quot;myClassType&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;policyName&quot; : &quot;...&quot;,
+  &quot;resourceName&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;repositoryName&quot; : &quot;...&quot;,
+  &quot;repositoryType&quot; : &quot;...&quot;,
+  &quot;permMapList&quot; : [ {
+    &quot;userList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;groupList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;permList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;ipAddress&quot; : &quot;...&quot;
+  }, {
+    &quot;userList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;groupList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;permList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;ipAddress&quot; : &quot;...&quot;
+  } ],
+  &quot;tables&quot; : &quot;...&quot;,
+  &quot;columnFamilies&quot; : &quot;...&quot;,
+  &quot;columns&quot; : &quot;...&quot;,
+  &quot;databases&quot; : &quot;...&quot;,
+  &quot;udfs&quot; : &quot;...&quot;,
+  &quot;tableType&quot; : &quot;...&quot;,
+  &quot;columnType&quot; : &quot;...&quot;,
+  &quot;topologies&quot; : &quot;...&quot;,
+  &quot;services&quot; : &quot;...&quot;,
+  &quot;hiveServices&quot; : &quot;...&quot;,
+  &quot;isEnabled&quot; : true,
+  &quot;isRecursive&quot; : true,
+  &quot;isAuditEnabled&quot; : true,
+  &quot;version&quot; : &quot;...&quot;,
+  &quot;grantor&quot; : &quot;...&quot;,
+  &quot;replacePerm&quot; : true,
+  &quot;policyLabel&quot; : &quot;...&quot;,
+  &quot;myClassType&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_revokePermission_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/assets/resources/revoke <a href="../assets/resources/revoke" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXPolicy.html">VXPolicy</a>
+ (JSON)</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXPolicy.html">VXPolicy</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXPolicy.html">VXPolicy</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXPolicy.html">VXPolicy</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /assets/resources/revoke
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;policyName&quot; : &quot;...&quot;,
+  &quot;resourceName&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;repositoryName&quot; : &quot;...&quot;,
+  &quot;repositoryType&quot; : &quot;...&quot;,
+  &quot;permMapList&quot; : [ {
+    &quot;userList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;groupList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;permList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;ipAddress&quot; : &quot;...&quot;
+  }, {
+    &quot;userList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;groupList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;permList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;ipAddress&quot; : &quot;...&quot;
+  } ],
+  &quot;tables&quot; : &quot;...&quot;,
+  &quot;columnFamilies&quot; : &quot;...&quot;,
+  &quot;columns&quot; : &quot;...&quot;,
+  &quot;databases&quot; : &quot;...&quot;,
+  &quot;udfs&quot; : &quot;...&quot;,
+  &quot;tableType&quot; : &quot;...&quot;,
+  &quot;columnType&quot; : &quot;...&quot;,
+  &quot;topologies&quot; : &quot;...&quot;,
+  &quot;services&quot; : &quot;...&quot;,
+  &quot;hiveServices&quot; : &quot;...&quot;,
+  &quot;isEnabled&quot; : true,
+  &quot;isRecursive&quot; : true,
+  &quot;isAuditEnabled&quot; : true,
+  &quot;version&quot; : &quot;...&quot;,
+  &quot;grantor&quot; : &quot;...&quot;,
+  &quot;replacePerm&quot; : true,
+  &quot;policyLabel&quot; : &quot;...&quot;,
+  &quot;myClassType&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;policyName&quot; : &quot;...&quot;,
+  &quot;resourceName&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;repositoryName&quot; : &quot;...&quot;,
+  &quot;repositoryType&quot; : &quot;...&quot;,
+  &quot;permMapList&quot; : [ {
+    &quot;userList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;groupList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;permList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;ipAddress&quot; : &quot;...&quot;
+  }, {
+    &quot;userList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;groupList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;permList&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;ipAddress&quot; : &quot;...&quot;
+  } ],
+  &quot;tables&quot; : &quot;...&quot;,
+  &quot;columnFamilies&quot; : &quot;...&quot;,
+  &quot;columns&quot; : &quot;...&quot;,
+  &quot;databases&quot; : &quot;...&quot;,
+  &quot;udfs&quot; : &quot;...&quot;,
+  &quot;tableType&quot; : &quot;...&quot;,
+  &quot;columnType&quot; : &quot;...&quot;,
+  &quot;topologies&quot; : &quot;...&quot;,
+  &quot;services&quot; : &quot;...&quot;,
+  &quot;hiveServices&quot; : &quot;...&quot;,
+  &quot;isEnabled&quot; : true,
+  &quot;isRecursive&quot; : true,
+  &quot;isAuditEnabled&quot; : true,
+  &quot;version&quot; : &quot;...&quot;,
+  &quot;grantor&quot; : &quot;...&quot;,
+  &quot;replacePerm&quot; : true,
+  &quot;policyLabel&quot; : &quot;...&quot;,
+  &quot;myClassType&quot; : 12345,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_deleteXResource_DELETE">
+        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/assets/resources/{id} <a href="../assets/resources/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">long</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+DELETE /assets/resources/{id}
+Content-Type: */*
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_getXResource_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/assets/resources/{id} <a href="../assets/resources/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">long</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXResource.html">VXResource</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXResource.html">VXResource</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /assets/resources/{id}
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;policyName&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;resourceType&quot; : 12345,
+  &quot;assetId&quot; : 12345,
+  &quot;parentId&quot; : 12345,
+  &quot;parentPath&quot; : &quot;...&quot;,
+  &quot;isEncrypt&quot; : 12345,
+  &quot;permMapList&quot; : [ {
+    &quot;permGroup&quot; : &quot;...&quot;,
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;permFor&quot; : 12345,
+    &quot;permType&quot; : 12345,
+    &quot;grantOrRevoke&quot; : true,
+    &quot;groupName&quot; : &quot;...&quot;,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;isRecursive&quot; : 12345,
+    &quot;isWildCard&quot; : true,
+    &quot;ipAddress&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  }, {
+    &quot;permGroup&quot; : &quot;...&quot;,
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;permFor&quot; : 12345,
+    &quot;permType&quot; : 12345,
+    &quot;grantOrRevoke&quot; : true,
+    &quot;groupName&quot; : &quot;...&quot;,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;isRecursive&quot; : 12345,
+    &quot;isWildCard&quot; : true,
+    &quot;ipAddress&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  } ],
+  &quot;auditList&quot; : [ {
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;auditType&quot; : 12345,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  }, {
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;auditType&quot; : 12345,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  } ],
+  &quot;isRecursive&quot; : 12345,
+  &quot;resourceGroup&quot; : &quot;...&quot;,
+  &quot;databases&quot; : &quot;...&quot;,
+  &quot;tables&quot; : &quot;...&quot;,
+  &quot;columnFamilies&quot; : &quot;...&quot;,
+  &quot;columns&quot; : &quot;...&quot;,
+  &quot;udfs&quot; : &quot;...&quot;,
+  &quot;assetName&quot; : &quot;...&quot;,
+  &quot;assetType&quot; : 12345,
+  &quot;resourceStatus&quot; : 12345,
+  &quot;tableType&quot; : 12345,
+  &quot;columnType&quot; : 12345,
+  &quot;topologies&quot; : &quot;...&quot;,
+  &quot;services&quot; : &quot;...&quot;,
+  &quot;hiveServices&quot; : &quot;...&quot;,
+  &quot;checkParentPermission&quot; : 12345,
+  &quot;myClassType&quot; : 12345,
+  &quot;guid&quot; : &quot;...&quot;,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_updateXResource_PUT">
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/assets/resources/{id} <a href="../assets/resources/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXResource.html">VXResource</a>
+ (JSON)</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXResource.html">VXResource</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXResource.html">VXResource</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXResource.html">VXResource</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /assets/resources/{id}
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;policyName&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;resourceType&quot; : 12345,
+  &quot;assetId&quot; : 12345,
+  &quot;parentId&quot; : 12345,
+  &quot;parentPath&quot; : &quot;...&quot;,
+  &quot;isEncrypt&quot; : 12345,
+  &quot;permMapList&quot; : [ {
+    &quot;permGroup&quot; : &quot;...&quot;,
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;permFor&quot; : 12345,
+    &quot;permType&quot; : 12345,
+    &quot;grantOrRevoke&quot; : true,
+    &quot;groupName&quot; : &quot;...&quot;,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;isRecursive&quot; : 12345,
+    &quot;isWildCard&quot; : true,
+    &quot;ipAddress&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  }, {
+    &quot;permGroup&quot; : &quot;...&quot;,
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;permFor&quot; : 12345,
+    &quot;permType&quot; : 12345,
+    &quot;grantOrRevoke&quot; : true,
+    &quot;groupName&quot; : &quot;...&quot;,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;isRecursive&quot; : 12345,
+    &quot;isWildCard&quot; : true,
+    &quot;ipAddress&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  } ],
+  &quot;auditList&quot; : [ {
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;auditType&quot; : 12345,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  }, {
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;auditType&quot; : 12345,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  } ],
+  &quot;isRecursive&quot; : 12345,
+  &quot;resourceGroup&quot; : &quot;...&quot;,
+  &quot;databases&quot; : &quot;...&quot;,
+  &quot;tables&quot; : &quot;...&quot;,
+  &quot;columnFamilies&quot; : &quot;...&quot;,
+  &quot;columns&quot; : &quot;...&quot;,
+  &quot;udfs&quot; : &quot;...&quot;,
+  &quot;assetName&quot; : &quot;...&quot;,
+  &quot;assetType&quot; : 12345,
+  &quot;resourceStatus&quot; : 12345,
+  &quot;tableType&quot; : 12345,
+  &quot;columnType&quot; : 12345,
+  &quot;topologies&quot; : &quot;...&quot;,
+  &quot;services&quot; : &quot;...&quot;,
+  &quot;hiveServices&quot; : &quot;...&quot;,
+  &quot;checkParentPermission&quot; : 12345,
+  &quot;myClassType&quot; : 12345,
+  &quot;guid&quot; : &quot;...&quot;,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;policyName&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;resourceType&quot; : 12345,
+  &quot;assetId&quot; : 12345,
+  &quot;parentId&quot; : 12345,
+  &quot;parentPath&quot; : &quot;...&quot;,
+  &quot;isEncrypt&quot; : 12345,
+  &quot;permMapList&quot; : [ {
+    &quot;permGroup&quot; : &quot;...&quot;,
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;permFor&quot; : 12345,
+    &quot;permType&quot; : 12345,
+    &quot;grantOrRevoke&quot; : true,
+    &quot;groupName&quot; : &quot;...&quot;,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;isRecursive&quot; : 12345,
+    &quot;isWildCard&quot; : true,
+    &quot;ipAddress&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  }, {
+    &quot;permGroup&quot; : &quot;...&quot;,
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;permFor&quot; : 12345,
+    &quot;permType&quot; : 12345,
+    &quot;grantOrRevoke&quot; : true,
+    &quot;groupName&quot; : &quot;...&quot;,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;isRecursive&quot; : 12345,
+    &quot;isWildCard&quot; : true,
+    &quot;ipAddress&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  } ],
+  &quot;auditList&quot; : [ {
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;auditType&quot; : 12345,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  }, {
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;auditType&quot; : 12345,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  } ],
+  &quot;isRecursive&quot; : 12345,
+  &quot;resourceGroup&quot; : &quot;...&quot;,
+  &quot;databases&quot; : &quot;...&quot;,
+  &quot;tables&quot; : &quot;...&quot;,
+  &quot;columnFamilies&quot; : &quot;...&quot;,
+  &quot;columns&quot; : &quot;...&quot;,
+  &quot;udfs&quot; : &quot;...&quot;,
+  &quot;assetName&quot; : &quot;...&quot;,
+  &quot;assetType&quot; : 12345,
+  &quot;resourceStatus&quot; : 12345,
+  &quot;tableType&quot; : 12345,
+  &quot;columnType&quot; : 12345,
+  &quot;topologies&quot; : &quot;...&quot;,
+  &quot;services&quot; : &quot;...&quot;,
+  &quot;hiveServices&quot; : &quot;...&quot;,
+  &quot;checkParentPermission&quot; : 12345,
+  &quot;myClassType&quot; : 12345,
+  &quot;guid&quot; : &quot;...&quot;,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_AssetREST_getUgsyncAuditsBySyncSource_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/assets/ugsyncAudits/{syncSource} <a href="../assets/ugsyncAudits/{syncSource}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">syncSource</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_VXUgsyncAuditInfoList.html">VXUgsyncAuditInfoList</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/xml&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference"><a href="xml_ns0_VXUgsyncAuditInfoList.html">VXUgsyncAuditInfoList</a>
+ (XML)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /assets/ugsyncAudits/{syncSource}
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;vxUgsyncAuditInfoList&quot; : [ {
+    &quot;eventTime&quot; : 12345,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;noOfNewUsers&quot; : 12345,
+    &quot;noOfModifiedUsers&quot; : 12345,
+    &quot;noOfNewGroups&quot; : 12345,
+    &quot;noOfModifiedGroups&quot; : 12345,
+    &quot;syncSource&quot; : &quot;...&quot;,
+    &quot;ldapSyncSourceInfo&quot; : {
+      &quot;ldapUrl&quot; : &quot;...&quot;,
+      &quot;userSearchFilter&quot; : &quot;...&quot;,
+      &quot;groupSearchFilter&quot; : &quot;...&quot;,
+      &quot;groupHierarchyLevel&quot; : &quot;...&quot;,
+      &quot;totalUsersSynced&quot; : 12345,
+      &quot;totalGroupsSynced&quot; : 12345,
+      &quot;groupSearchFirstEnabled&quot; : &quot;...&quot;,
+      &quot;groupSearchEnabled&quot; : &quot;...&quot;,
+      &quot;userSearchEnabled&quot; : &quot;...&quot;,
+      &quot;totalUsersDeleted&quot; : 12345,
+      &quot;totalGroupsDeleted&quot; : 12345
+    },
+    &quot;fileSyncSourceInfo&quot; : {
+      &quot;fileName&quot; : &quot;...&quot;,
+      &quot;syncTime&quot; : &quot;...&quot;,
+      &quot;lastModified&quot; : &quot;...&quot;,
+      &quot;totalUsersSynced&quot; : 12345,
+      &quot;totalGroupsSynced&quot; : 12345,
+      &quot;totalUsersDeleted&quot; : 12345,
+      &quot;totalGroupsDeleted&quot; : 12345
+    },
+    &quot;unixSyncSourceInfo&quot; : {
+      &quot;fileName&quot; : &quot;...&quot;,
+      &quot;syncTime&quot; : &quot;...&quot;,
+      &quot;lastModified&quot; : &quot;...&quot;,
+      &quot;unixBackend&quot; : &quot;...&quot;,
+      &quot;minUserId&quot; : &quot;...&quot;,
+      &quot;minGroupId&quot; : &quot;...&quot;,
+      &quot;totalUsersSynced&quot; : 12345,
+      &quot;totalGroupsSynced&quot; : 12345,
+      &quot;totalUsersDeleted&quot; : 12345,
+      &quot;totalGroupsDeleted&quot; : 12345
+    },
+    &quot;sessionId&quot; : &quot;...&quot;,
+    &quot;syncSourceInfo&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    },
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345
+  }, {
+    &quot;eventTime&quot; : 12345,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;noOfNewUsers&quot; : 12345,
+    &quot;noOfModifiedUsers&quot; : 12345,
+    &quot;noOfNewGroups&quot; : 12345,
+    &quot;noOfModifiedGroups&quot; : 12345,
+    &quot;syncSource&quot; : &quot;...&quot;,
+    &quot;ldapSyncSourceInfo&quot; : {
+      &quot;ldapUrl&quot; : &quot;...&quot;,
+      &quot;userSearchFilter&quot; : &quot;...&quot;,
+      &quot;groupSearchFilter&quot; : &quot;...&quot;,
+      &quot;groupHierarchyLevel&quot; : &quot;...&quot;,
+      &quot;totalUsersSynced&quot; : 12345,
+      &quot;totalGroupsSynced&quot; : 12345,
+      &quot;groupSearchFirstEnabled&quot; : &quot;...&quot;,
+      &quot;groupSearchEnabled&quot; : &quot;...&quot;,
+      &quot;userSearchEnabled&quot; : &quot;...&quot;,
+      &quot;totalUsersDeleted&quot; : 12345,
+      &quot;totalGroupsDeleted&quot; : 12345
+    },
+    &quot;fileSyncSourceInfo&quot; : {
+      &quot;fileName&quot; : &quot;...&quot;,
+      &quot;syncTime&quot; : &quot;...&quot;,
+      &quot;lastModified&quot; : &quot;...&quot;,
+      &quot;totalUsersSynced&quot; : 12345,
+      &quot;totalGroupsSynced&quot; : 12345,
+      &quot;totalUsersDeleted&quot; : 12345,
+      &quot;totalGroupsDeleted&quot; : 12345
+    },
+    &quot;unixSyncSourceInfo&quot; : {
+      &quot;fileName&quot; : &quot;...&quot;,
+      &quot;syncTime&quot; : &quot;...&quot;,
+      &quot;lastModified&quot; : &quot;...&quot;,
+      &quot;unixBackend&quot; : &quot;...&quot;,
+      &quot;minUserId&quot; : &quot;...&quot;,
+      &quot;minGroupId&quot; : &quot;...&quot;,
+      &quot;totalUsersSynced&quot; : 12345,
+      &quot;totalGroupsSynced&quot; : 12345,
+      &quot;totalUsersDeleted&quot; : 12345,
+      &quot;totalGroupsDeleted&quot; : 12345
+    },
+    &quot;sessionId&quot; : &quot;...&quot;,
+    &quot;syncSourceInfo&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    },
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345
+  } ],
+  &quot;listSize&quot; : 12345,
+  &quot;list&quot; : [ { }, { } ],
+  &quot;startIndex&quot; : 12345,
+  &quot;pageSize&quot; : 12345,
+  &quot;totalCount&quot; : 12345,
+  &quot;resultSize&quot; : 12345,
+  &quot;sortType&quot; : &quot;...&quot;,
+  &quot;sortBy&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Generated by <a href="http://enunciate.webcohesion.com">Enunciate</a>.</p>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript placed at the end of the document so the pages load faster. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
+  <script>
+    $(function() {
+      $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+      });
+
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+
+</body>
+</html>

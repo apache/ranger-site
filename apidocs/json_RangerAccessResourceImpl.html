@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Ranger REST API: RangerAccessResourceImpl</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!--custom css for these pages-->
+  <link rel="stylesheet" href="css/enunciate.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#apinav">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Ranger REST API: RangerAccessResourceImpl</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="data.html">Data Types</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" id="apinav">
+        <ul class="nav nav-sidebar">
+          <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ol class="breadcrumb" id="top">
+          <li class="active dropdown"><a href="index.html">Home</a></li>
+          <li class="active dropdown"><a href="syntax_json.html">JSON</a></li>
+          <li class="dropdown"><a href="json_RangerAccessResourceImpl.html">RangerAccessResourceImpl</a></li>
+        </ol>
+
+      <h1 class="page-header">RangerAccessResourceImpl <small>Data Type</small></h1>
+
+      <p></p>
+
+      <dl class="dl-horizontal">
+        <dt>Subtypes</dt>
+        <dd><a href="json_RangerTagResource.html">RangerTagResource</a></dd>
+        <dt>Implemented Interfaces</dt>
+        <dd><a href="json_RangerMutableResource.html">RangerMutableResource</a></dd>
+      </dl>
+
+      <table class="table datatype-properties">
+        <caption>Properties</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>data type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>  <span id="prop-leafName" class="property-name">leafName</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-asMap" class="property-name">asMap</span>
+</td>
+          <td>  <span class="datatype-reference">map of object
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-readOnlyCopy" class="property-name">readOnlyCopy</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_RangerAccessResource.html">RangerAccessResource</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-keys" class="property-name">keys</span>
+</td>
+          <td>  <span class="datatype-reference">array of string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-serviceDef" class="property-name">serviceDef</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_RangerServiceDef.html">RangerServiceDef</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-cacheKey" class="property-name">cacheKey</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-ownerUser" class="property-name">ownerUser</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-asString" class="property-name">asString</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <p class="lead">Example</p>
+      
+      <pre class="prettyprint language-js example">{
+  &quot;leafName&quot; : &quot;...&quot;,
+  &quot;asMap&quot; : {
+    &quot;property1&quot; : { },
+    &quot;property2&quot; : { }
+  },
+  &quot;readOnlyCopy&quot; : {
+    &quot;asMap&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    },
+    &quot;cacheKey&quot; : &quot;...&quot;,
+    &quot;asString&quot; : &quot;...&quot;,
+    &quot;readOnlyCopy&quot; : { },
+    &quot;serviceDef&quot; : {
+      &quot;accessTypes&quot; : [ { }, { } ],
+      &quot;label&quot; : &quot;...&quot;,
+      &quot;rbKeyLabel&quot; : &quot;...&quot;,
+      &quot;dataMaskDef&quot; : { },
+      &quot;resources&quot; : [ { }, { } ],
+      &quot;options&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;rowFilterDef&quot; : { },
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;policyConditions&quot; : [ { }, { } ],
+      &quot;implClass&quot; : &quot;...&quot;,
+      &quot;displayName&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;contextEnrichers&quot; : [ { }, { } ],
+      &quot;enums&quot; : [ { }, { } ],
+      &quot;rbKeyDescription&quot; : &quot;...&quot;,
+      &quot;configs&quot; : [ { }, { } ],
+      &quot;createTime&quot; : 12345,
+      &quot;id&quot; : 12345,
+      &quot;updatedBy&quot; : &quot;...&quot;,
+      &quot;version&quot; : 12345,
+      &quot;createdBy&quot; : &quot;...&quot;,
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;updateTime&quot; : 12345,
+      &quot;isEnabled&quot; : true
+    },
+    &quot;leafName&quot; : &quot;...&quot;,
+    &quot;keys&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;ownerUser&quot; : &quot;...&quot;
+  },
+  &quot;keys&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+  &quot;serviceDef&quot; : {
+    &quot;accessTypes&quot; : [ {
+      &quot;impliedGrants&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;label&quot; : &quot;...&quot;,
+      &quot;itemId&quot; : 12345,
+      &quot;rbKeyLabel&quot; : &quot;...&quot;
+    }, {
+      &quot;impliedGrants&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;label&quot; : &quot;...&quot;,
+      &quot;itemId&quot; : 12345,
+      &quot;rbKeyLabel&quot; : &quot;...&quot;
+    } ],
+    &quot;label&quot; : &quot;...&quot;,
+    &quot;rbKeyLabel&quot; : &quot;...&quot;,
+    &quot;dataMaskDef&quot; : {
+      &quot;maskTypes&quot; : [ { }, { } ],
+      &quot;accessTypes&quot; : [ { }, { } ],
+      &quot;resources&quot; : [ { }, { } ]
+    },
+    &quot;resources&quot; : [ {
+      &quot;recursiveSupported&quot; : true,
+      &quot;label&quot; : &quot;...&quot;,
+      &quot;excludesSupported&quot; : true,
+      &quot;parent&quot; : &quot;...&quot;,
+      &quot;matcher&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;accessTypeRestrictions&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;lookupSupported&quot; : true,
+      &quot;isValidLeaf&quot; : true,
+      &quot;matcherOptions&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;rbKeyLabel&quot; : &quot;...&quot;,
+      &quot;mandatory&quot; : true,
+      &quot;validationMessage&quot; : &quot;...&quot;,
+      &quot;level&quot; : 12345,
+      &quot;itemId&quot; : 12345,
+      &quot;uiHint&quot; : &quot;...&quot;,
+      &quot;rbKeyValidationMessage&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;validationRegEx&quot; : &quot;...&quot;,
+      &quot;rbKeyDescription&quot; : &quot;...&quot;
+    }, {
+      &quot;recursiveSupported&quot; : true,
+      &quot;label&quot; : &quot;...&quot;,
+      &quot;excludesSupported&quot; : true,
+      &quot;parent&quot; : &quot;...&quot;,
+      &quot;matcher&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;accessTypeRestrictions&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;lookupSupported&quot; : true,
+      &quot;isValidLeaf&quot; : true,
+      &quot;matcherOptions&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;rbKeyLabel&quot; : &quot;...&quot;,
+      &quot;mandatory&quot; : true,
+      &quot;validationMessage&quot; : &quot;...&quot;,
+      &quot;level&quot; : 12345,
+      &quot;itemId&quot; : 12345,
+      &quot;uiHint&quot; : &quot;...&quot;,
+      &quot;rbKeyValidationMessage&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;validationRegEx&quot; : &quot;...&quot;,
+      &quot;rbKeyDescription&quot; : &quot;...&quot;
+    } ],
+    &quot;options&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    },
+    &quot;rowFilterDef&quot; : {
+      &quot;accessTypes&quot; : [ { }, { } ],
+      &quot;resources&quot; : [ { }, { } ]
+    },
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;policyConditions&quot; : [ {
+      &quot;uiHint&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;itemId&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;validationRegEx&quot; : &quot;...&quot;,
+      &quot;label&quot; : &quot;...&quot;,
+      &quot;rbKeyLabel&quot; : &quot;...&quot;,
+      &quot;evaluatorOptions&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;validationMessage&quot; : &quot;...&quot;,
+      &quot;evaluator&quot; : &quot;...&quot;,
+      &quot;rbKeyValidationMessage&quot; : &quot;...&quot;,
+      &quot;rbKeyDescription&quot; : &quot;...&quot;
+    }, {
+      &quot;uiHint&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;itemId&quot; : 12345,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;validationRegEx&quot; : &quot;...&quot;,
+      &quot;label&quot; : &quot;...&quot;,
+      &quot;rbKeyLabel&quot; : &quot;...&quot;,
+      &quot;evaluatorOptions&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;validationMessage&quot; : &quot;...&quot;,
+      &quot;evaluator&quot; : &quot;...&quot;,
+      &quot;rbKeyValidationMessage&quot; : &quot;...&quot;,
+      &quot;rbKeyDescription&quot; : &quot;...&quot;
+    } ],
+    &quot;implClass&quot; : &quot;...&quot;,
+    &quot;displayName&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;contextEnrichers&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;itemId&quot; : 12345,
+      &quot;enricherOptions&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;enricher&quot; : &quot;...&quot;
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;itemId&quot; : 12345,
+      &quot;enricherOptions&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;enricher&quot; : &quot;...&quot;
+    } ],
+    &quot;enums&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;defaultIndex&quot; : 12345,
+      &quot;elements&quot; : [ { }, { } ],
+      &quot;itemId&quot; : 12345
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;defaultIndex&quot; : 12345,
+      &quot;elements&quot; : [ { }, { } ],
+      &quot;itemId&quot; : 12345
+    } ],
+    &quot;rbKeyDescription&quot; : &quot;...&quot;,
+    &quot;configs&quot; : [ {
+      &quot;rbKeyDescription&quot; : &quot;...&quot;,
+      &quot;subType&quot; : &quot;...&quot;,
+      &quot;rbKeyLabel&quot; : &quot;...&quot;,
+      &quot;defaultValue&quot; : &quot;...&quot;,
+      &quot;rbKeyValidationMessage&quot; : &quot;...&quot;,
+      &quot;label&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;itemId&quot; : 12345,
+      &quot;mandatory&quot; : true,
+      &quot;validationRegEx&quot; : &quot;...&quot;,
+      &quot;validationMessage&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;uiHint&quot; : &quot;...&quot;
+    }, {
+      &quot;rbKeyDescription&quot; : &quot;...&quot;,
+      &quot;subType&quot; : &quot;...&quot;,
+      &quot;rbKeyLabel&quot; : &quot;...&quot;,
+      &quot;defaultValue&quot; : &quot;...&quot;,
+      &quot;rbKeyValidationMessage&quot; : &quot;...&quot;,
+      &quot;label&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;itemId&quot; : 12345,
+      &quot;mandatory&quot; : true,
+      &quot;validationRegEx&quot; : &quot;...&quot;,
+      &quot;validationMessage&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;uiHint&quot; : &quot;...&quot;
+    } ],
+    &quot;createTime&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345,
+    &quot;createdBy&quot; : &quot;...&quot;,
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;updateTime&quot; : 12345,
+    &quot;isEnabled&quot; : true
+  },
+  &quot;cacheKey&quot; : &quot;...&quot;,
+  &quot;ownerUser&quot; : &quot;...&quot;,
+  &quot;asString&quot; : &quot;...&quot;
+}</pre>
+
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Generated by <a href="http://enunciate.webcohesion.com">Enunciate</a>.</p>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript placed at the end of the document so the pages load faster. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
+  <script>
+    $(function() {
+      $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+      });
+
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+
+</body>
+</html>

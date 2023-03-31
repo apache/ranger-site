@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Ranger REST API: VXResource</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!--custom css for these pages-->
+  <link rel="stylesheet" href="css/enunciate.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#apinav">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Ranger REST API: VXResource</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="data.html">Data Types</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" id="apinav">
+        <ul class="nav nav-sidebar">
+          <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ol class="breadcrumb" id="top">
+          <li class="active dropdown"><a href="index.html">Home</a></li>
+          <li class="active dropdown"><a href="syntax_json.html">JSON</a></li>
+          <li class="dropdown"><a href="json_VXResource.html">VXResource</a></li>
+        </ol>
+
+      <h1 class="page-header">VXResource <small>Data Type</small></h1>
+
+      <p></p>
+
+      <dl class="dl-horizontal">
+      </dl>
+
+      <table class="table datatype-properties">
+        <caption>Properties</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>data type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>  <span id="prop-name" class="property-name">name</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>name</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-policyName" class="property-name">policyName</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-description" class="property-name">description</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>description</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-resourceType" class="property-name">resourceType</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>resourceType</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-assetId" class="property-name">assetId</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>assetId</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-parentId" class="property-name">parentId</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>parentId</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-parentPath" class="property-name">parentPath</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>parentPath</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-isEncrypt" class="property-name">isEncrypt</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>isEncrypt</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-permMapList" class="property-name">permMapList</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_VXPermMap.html">VXPermMap</a>
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>permMapList</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-auditList" class="property-name">auditList</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_VXAuditMap.html">VXAuditMap</a>
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>auditList</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-isRecursive" class="property-name">isRecursive</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>isRecursive</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-resourceGroup" class="property-name">resourceGroup</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>resourceGroup</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-databases" class="property-name">databases</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>databases</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-tables" class="property-name">tables</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>tables</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-columnFamilies" class="property-name">columnFamilies</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>columnFamilies</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-columns" class="property-name">columns</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>columns</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-udfs" class="property-name">udfs</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>udfs</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-assetName" class="property-name">assetName</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>assetName</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-assetType" class="property-name">assetType</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>assetType</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-resourceStatus" class="property-name">resourceStatus</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>resourceStatus</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-tableType" class="property-name">tableType</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>tableType</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-columnType" class="property-name">columnType</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>columnType</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-topologies" class="property-name">topologies</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>topologies</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-services" class="property-name">services</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>services</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-hiveServices" class="property-name">hiveServices</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>hiveservices</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-checkParentPermission" class="property-name">checkParentPermission</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>checkParentPermission</b></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-myClassType" class="property-name">myClassType</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-guid" class="property-name">guid</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description">Returns the value for the member attribute <b>guid</b></span>
+</td>
+        </tr>
+        </tbody>
+        <tr>
+          <td colspan="3"><h5 class="text-muted">Properties inherited from <a href="json_VXDataObject.html">VXDataObject</a></h5></td>
+        </tr>
+        <tbody>
+        <tr>
+          <td><span class="property-name">id</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description">Returns the value for the member attribute <b>id</b></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">createDate</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description">Returns the value for the member attribute <b>createDate</b></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">updateDate</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description">Returns the value for the member attribute <b>updateDate</b></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">owner</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description">Returns the value for the member attribute <b>owner</b></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">updatedBy</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description">Returns the value for the member attribute <b>updatedBy</b></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">myClassType</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <p class="lead">Example</p>
+      
+      <pre class="prettyprint language-js example">{
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;policyName&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;resourceType&quot; : 12345,
+  &quot;assetId&quot; : 12345,
+  &quot;parentId&quot; : 12345,
+  &quot;parentPath&quot; : &quot;...&quot;,
+  &quot;isEncrypt&quot; : 12345,
+  &quot;permMapList&quot; : [ {
+    &quot;permGroup&quot; : &quot;...&quot;,
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;permFor&quot; : 12345,
+    &quot;permType&quot; : 12345,
+    &quot;grantOrRevoke&quot; : true,
+    &quot;groupName&quot; : &quot;...&quot;,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;isRecursive&quot; : 12345,
+    &quot;isWildCard&quot; : true,
+    &quot;ipAddress&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  }, {
+    &quot;permGroup&quot; : &quot;...&quot;,
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;permFor&quot; : 12345,
+    &quot;permType&quot; : 12345,
+    &quot;grantOrRevoke&quot; : true,
+    &quot;groupName&quot; : &quot;...&quot;,
+    &quot;userName&quot; : &quot;...&quot;,
+    &quot;isRecursive&quot; : 12345,
+    &quot;isWildCard&quot; : true,
+    &quot;ipAddress&quot; : &quot;...&quot;,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  } ],
+  &quot;auditList&quot; : [ {
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;auditType&quot; : 12345,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  }, {
+    &quot;resourceId&quot; : 12345,
+    &quot;groupId&quot; : 12345,
+    &quot;userId&quot; : 12345,
+    &quot;auditType&quot; : 12345,
+    &quot;myClassType&quot; : 12345,
+    &quot;id&quot; : 12345,
+    &quot;createDate&quot; : 12345,
+    &quot;updateDate&quot; : 12345,
+    &quot;owner&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;
+  } ],
+  &quot;isRecursive&quot; : 12345,
+  &quot;resourceGroup&quot; : &quot;...&quot;,
+  &quot;databases&quot; : &quot;...&quot;,
+  &quot;tables&quot; : &quot;...&quot;,
+  &quot;columnFamilies&quot; : &quot;...&quot;,
+  &quot;columns&quot; : &quot;...&quot;,
+  &quot;udfs&quot; : &quot;...&quot;,
+  &quot;assetName&quot; : &quot;...&quot;,
+  &quot;assetType&quot; : 12345,
+  &quot;resourceStatus&quot; : 12345,
+  &quot;tableType&quot; : 12345,
+  &quot;columnType&quot; : 12345,
+  &quot;topologies&quot; : &quot;...&quot;,
+  &quot;services&quot; : &quot;...&quot;,
+  &quot;hiveServices&quot; : &quot;...&quot;,
+  &quot;checkParentPermission&quot; : 12345,
+  &quot;myClassType&quot; : 12345,
+  &quot;guid&quot; : &quot;...&quot;,
+  &quot;id&quot; : 12345,
+  &quot;createDate&quot; : 12345,
+  &quot;updateDate&quot; : 12345,
+  &quot;owner&quot; : &quot;...&quot;,
+  &quot;updatedBy&quot; : &quot;...&quot;
+}</pre>
+
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Generated by <a href="http://enunciate.webcohesion.com">Enunciate</a>.</p>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript placed at the end of the document so the pages load faster. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
+  <script>
+    $(function() {
+      $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+      });
+
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+
+</body>
+</html>

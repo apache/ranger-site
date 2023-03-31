@@ -1,0 +1,3592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Ranger REST API</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!--custom css for these pages-->
+  <link rel="stylesheet" href="css/enunciate.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#apinav">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Ranger REST API</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="data.html">Data Types</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" id="apinav">
+        <ul class="nav nav-sidebar">
+          <li><a href="#resources"><abbr title="Resources"><span class="sideoverflow">Resources</span></abbr></a></li>
+          <li><a href="#syntax_json"><abbr title="JSON"><span class="sideoverflow">JSON</span></abbr></a></li>
+          <li><a href="#syntax_xml"><abbr title="XML"><span class="sideoverflow">XML</span></abbr></a></li>
+          <li class="divider"></li>
+          <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ol class="breadcrumb" id="top">
+          <li class="dropdown"><a href="index.html">Home</a></li>
+        </ol>
+
+  <div class="page-header">
+    Apache Ranger is a framework to enable, monitor and manage comprehensive data security across the Hadoop platform. Apache Ranger currently provides a centralized security adminstration, fine grain access control and detailed auditing for user access within Apache Hadoop, Apache Hive, Apache HBase and other Apache components
+  </div>
+
+  <h1 class="page-header" id="resources">Resources</h1>
+
+  <p>
+    There is a <a href="application.wadl">WADL document</a> available that describes the resources API.
+  </p>
+
+  <p>
+    You may also enjoy the <a href="ui/index.html">interactive interface</a> provided for this API by <a href="http://swagger.io">Swagger</a>.
+  </p>
+  <p>
+    <a href="ui/index.html" class="btn btn-default">Try it out!</a>
+  </p>
+
+  <table class="table table-hover resources">
+    <thead>
+    <tr>
+      <th align="center">name</th>
+      <th align="center">path</th>
+      <th align="center">methods</th>
+      <th align="center">description</th>
+    </tr>
+    </thead>
+    <tbody data-link="row" class="rowlink">
+    <tr class="clickable-row" data-href="resource_AssetREST.html">
+      <td>  <span class="resource-name">AssetREST</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/assets/accessAudit</span>
+</samp></li><li><samp>  <span class="resource-path">/assets/assets</span>
+</samp></li><li><samp>  <span class="resource-path">/assets/credstores</span>
+</samp></li><li><samp>  <span class="resource-path">/assets/exportAudit</span>
+</samp></li><li><samp>  <span class="resource-path">/assets/report</span>
+</samp></li><li><samp>  <span class="resource-path">/assets/resources</span>
+</samp></li><li><samp>  <span class="resource-path">/assets/ugsyncAudits</span>
+</samp></li><li><samp>  <span class="resource-path">/assets/assets/count</span>
+</samp></li><li><samp>  <span class="resource-path">/assets/assets/testConfig</span>
+</samp></li><li><samp>  <span class="resource-path">/assets/assets/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/assets/credstores/count</span>
+</samp></li><li><samp>  <span class="resource-path">/assets/credstores/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/assets/policyList/{repository}</span>
+</samp></li><li><samp>  <span class="resource-path">/assets/report/{transactionId}</span>
+</samp></li><li><samp>  <span class="resource-path">/assets/resource/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/assets/resources/count</span>
+</samp></li><li><samp>  <span class="resource-path">/assets/resources/grant</span>
+</samp></li><li><samp>  <span class="resource-path">/assets/resources/revoke</span>
+</samp></li><li><samp>  <span class="resource-path">/assets/resources/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/assets/ugsyncAudits/{syncSource}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_MetricsREST.html">
+      <td>  <span class="resource-name">MetricsREST</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/metrics/status</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_PublicAPIs.html">
+      <td>  <span class="resource-name">PublicAPIs</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/public/api/policy</span>
+</samp></li><li><samp>  <span class="resource-path">/public/api/repository</span>
+</samp></li><li><samp>  <span class="resource-path">/public/api/policy/count</span>
+</samp></li><li><samp>  <span class="resource-path">/public/api/policy/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/public/api/repository/count</span>
+</samp></li><li><samp>  <span class="resource-path">/public/api/repository/{id}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_PublicAPIsv2.html">
+      <td>  <span class="resource-name">PublicAPIsv2</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/public/v2/api/policy</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/roles</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/service</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/servicedef</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/zones</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/plugins/info</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/policy/apply</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/policy/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/roles/names</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/roles/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/server/policydeltas</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/server/tagdeltas</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/service/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/servicedef/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/zones/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/policies/{serviceDefName}/for-resource</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/roles/grant/{serviceName}</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/roles/name/{name}</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/roles/revoke/{serviceName}</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/roles/user/{user}</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/roles/{id}/addUsersAndGroups</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/roles/{id}/removeAdminFromUsersAndGroups</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/roles/{id}/removeUsersAndGroups</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/server/purgepolicies/{serviceName}</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/service/name/{name}</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/service/{servicename}/policy</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/servicedef/name/{name}</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/zones/name/{name}</span>
+</samp></li><li><samp>  <span class="resource-path">/public/v2/api/service/{servicename}/policy/{policyname}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_RoleREST.html">
+      <td>  <span class="resource-name">RoleREST</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/roles/roles</span>
+</samp></li><li><samp>  <span class="resource-path">/roles/download/{serviceName}</span>
+</samp></li><li><samp>  <span class="resource-path">/roles/lookup/roles</span>
+</samp></li><li><samp>  <span class="resource-path">/roles/roles/names</span>
+</samp></li><li><samp>  <span class="resource-path">/roles/roles/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/roles/roles/grant/{serviceName}</span>
+</samp></li><li><samp>  <span class="resource-path">/roles/roles/name/{name}</span>
+</samp></li><li><samp>  <span class="resource-path">/roles/roles/revoke/{serviceName}</span>
+</samp></li><li><samp>  <span class="resource-path">/roles/roles/user/{user}</span>
+</samp></li><li><samp>  <span class="resource-path">/roles/roles/{id}/addUsersAndGroups</span>
+</samp></li><li><samp>  <span class="resource-path">/roles/roles/{id}/removeAdminFromUsersAndGroups</span>
+</samp></li><li><samp>  <span class="resource-path">/roles/roles/{id}/removeUsersAndGroups</span>
+</samp></li><li><samp>  <span class="resource-path">/roles/secure/download/{serviceName}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_SecurityZoneREST.html">
+      <td>  <span class="resource-name">SecurityZoneREST</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/zones/zones</span>
+</samp></li><li><samp>  <span class="resource-path">/zones/zones/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/zones/zones/name/{name}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_ServiceREST.html">
+      <td>  <span class="resource-name">ServiceREST</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/plugins/checksso</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/csrfconf</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/definitions</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/policies</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/policyLabels</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/services</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/cluster-services/{clusterName}</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/definitions/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/plugins/info</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/policies/apply</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/policies/count</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/policies/csv</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/policies/downloadExcel</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/policies/eventTime</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/policies/exportJson</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/policies/importPoliciesFromFile</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/policies/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/server/policydeltas</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/services/count</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/services/validateConfig</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/services/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/definitions/name/{name}</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/metrics/type/{type}</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/policies/download/{serviceName}</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/policies/service/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/policies/{serviceDefName}/for-resource</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/policy/{policyId}/versionList</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/server/purgepolicies/{serviceName}</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/services/grant/{serviceName}</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/services/lookupResource/{serviceName}</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/services/name/{name}</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/services/revoke/{serviceName}</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/policies/service/name/{name}</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/policy/{policyId}/version/{versionNo}</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/secure/policies/download/{serviceName}</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/secure/services/grant/{serviceName}</span>
+</samp></li><li><samp>  <span class="resource-path">/plugins/secure/services/revoke/{serviceName}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_TagREST.html">
+      <td>  <span class="resource-name">TagREST</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/tags/importservicetags</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/resources</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/tagdefs</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/tagresourcemaps</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/tags</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/types</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/download/{serviceName}</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/resource/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/server/tagdeltas</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/tag/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/tagdef/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/tagresourcemap/tag-resource-guid</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/tagresourcemap/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/resource/guid/{guid}</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/resources/service/{serviceName}</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/secure/download/{serviceName}</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/tag/guid/{guid}</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/tagdef/guid/{guid}</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/tagdef/name/{name}</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/tagresourcemap/guid/{guid}</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/tags/type/{type}</span>
+</samp></li><li><samp>  <span class="resource-path">/tags/resource/service/{serviceName}/signature/{resourceSignature}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_UserREST.html">
+      <td>  <span class="resource-name">UserREST</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/users</span>
+</samp></li><li><samp>  <span class="resource-path">/users/default</span>
+</samp></li><li><samp>  <span class="resource-path">/users/firstnames</span>
+</samp></li><li><samp>  <span class="resource-path">/users/profile</span>
+</samp></li><li><samp>  <span class="resource-path">/users/{userId}</span>
+</samp></li><li><samp>  <span class="resource-path">/users/{userId}/deactivate</span>
+</samp></li><li><samp>  <span class="resource-path">/users/{userId}/emailchange</span>
+</samp></li><li><samp>  <span class="resource-path">/users/{userId}/passwordchange</span>
+</samp></li><li><samp>  <span class="resource-path">/users/{userId}/roles</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_XAuditREST.html">
+      <td>  <span class="resource-name">XAuditREST</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/xaudit/access_audit</span>
+</samp></li><li><samp>  <span class="resource-path">/xaudit/trx_log</span>
+</samp></li><li><samp>  <span class="resource-path">/xaudit/access_audit/count</span>
+</samp></li><li><samp>  <span class="resource-path">/xaudit/trx_log/count</span>
+</samp></li><li><samp>  <span class="resource-path">/xaudit/trx_log/{id}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_XKeyREST.html">
+      <td>  <span class="resource-name">XKeyREST</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/keys/key</span>
+</samp></li><li><samp>  <span class="resource-path">/keys/keys</span>
+</samp></li><li><samp>  <span class="resource-path">/keys/key/{alias}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_XUserREST.html">
+      <td>  <span class="resource-name">XUserREST</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/xusers/auditmaps</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/authSessions</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/groupgroups</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/groups</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/groupusers</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/permission</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/permmaps</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/users</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/auditmaps/count</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/auditmaps/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/authSessions/info</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/groupgroups/count</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/groupgroups/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/groups/count</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/groups/groupinfo</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/groups/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/groupusers/count</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/groupusers/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/lookup/groups</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/lookup/users</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/permission/count</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/permission/group</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/permission/user</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/permission/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/permmaps/count</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/permmaps/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/secure/groups</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/secure/users</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/ugsync/auditinfo</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/ugsync/groups</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/ugsync/groupusers</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/ugsync/users</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/users/count</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/users/external</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/users/roleassignments</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/users/userinfo</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/users/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/{groupId}/users</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/{userId}/groups</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/groups/groupName/{groupName}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/groupusers/groupName/{groupName}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/permission/group/count</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/permission/group/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/permission/user/count</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/permission/user/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/secure/download/{serviceName}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/secure/groups/delete</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/secure/groups/visibility</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/secure/groups/{groupName}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/secure/groups/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/secure/users/activestatus</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/secure/users/delete</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/secure/users/visibility</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/secure/users/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/secure/users/{userName}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/ugsync/groups/visibility</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/ugsync/users/visibility</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/users/userName/{userName}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/group/{groupName}/user/{userName}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/secure/groups/id/{groupId}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/secure/users/external/{userId}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/secure/users/id/{userId}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/secure/users/roles/{userId}</span>
+</samp></li><li><samp>  <span class="resource-path">/xusers/secure/users/roles/userName/{userName}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description"></span>
+</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h1 class="page-header" id="data">Data Types</h1>
+
+  <h3 id="syntax_json"><span class="syntax-name">JSON</span></h3>
+
+  <table class="table table-hover datatypes">
+    <thead>
+      <tr>
+        <th align="center">type</th>
+        <th align="center">description</th>
+      </tr>
+    </thead>
+    <tbody data-link="row" class="rowlink">
+    <tr class="clickable-row" data-href="json_AccessResult.html">
+      <td>  <span class="datatype-name">AccessResult</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_AccessResult_RangerResourceACLs.html">
+      <td>  <span class="datatype-name">AccessResult</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_AuditFilter.html">
+      <td>  <span class="datatype-name">AuditFilter</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_DataMaskResult.html">
+      <td>  <span class="datatype-name">DataMaskResult</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_GrantRevokeRequest.html">
+      <td>  <span class="datatype-name">GrantRevokeRequest</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_GrantRevokeRoleRequest.html">
+      <td>  <span class="datatype-name">GrantRevokeRoleRequest</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_GroupInfo.html">
+      <td>  <span class="datatype-name">GroupInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_GroupUserInfo.html">
+      <td>  <span class="datatype-name">GroupUserInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_HttpEntity.html">
+      <td>  <span class="datatype-name">HttpEntity</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_HttpStatus.html">
+      <td>  <span class="datatype-name">HttpStatus</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_MatchType.html">
+      <td>  <span class="datatype-name">MatchType</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Message.html">
+      <td>  <span class="datatype-name">Message</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RESTResponse.html">
+      <td>  <span class="datatype-name">RESTResponse</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerAccessResource.html">
+      <td>  <span class="datatype-name">RangerAccessResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerAccessResourceImpl.html">
+      <td>  <span class="datatype-name">RangerAccessResourceImpl</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerAccessResourceReadOnly.html">
+      <td>  <span class="datatype-name">RangerAccessResourceReadOnly</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerAccessTypeDef.html">
+      <td>  <span class="datatype-name">RangerAccessTypeDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerAuditPolicy.html">
+      <td>  <span class="datatype-name">RangerAuditPolicy</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerAuditPolicyItem.html">
+      <td>  <span class="datatype-name">RangerAuditPolicyItem</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerBaseModelObject.html">
+      <td>  <span class="datatype-name">RangerBaseModelObject</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerContextEnricherDef.html">
+      <td>  <span class="datatype-name">RangerContextEnricherDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerDataMaskDef.html">
+      <td>  <span class="datatype-name">RangerDataMaskDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerDataMaskPolicyItem.html">
+      <td>  <span class="datatype-name">RangerDataMaskPolicyItem</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerDataMaskTypeDef.html">
+      <td>  <span class="datatype-name">RangerDataMaskTypeDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerEnumDef.html">
+      <td>  <span class="datatype-name">RangerEnumDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerEnumElementDef.html">
+      <td>  <span class="datatype-name">RangerEnumElementDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerExportPolicyList.html">
+      <td>  <span class="datatype-name">RangerExportPolicyList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerMetrics.html">
+      <td>  <span class="datatype-name">RangerMetrics</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerMutableResource.html">
+      <td>  <span class="datatype-name">RangerMutableResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerPluginInfo.html">
+      <td>  <span class="datatype-name">RangerPluginInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerPluginInfoList.html">
+      <td>  <span class="datatype-name">RangerPluginInfoList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerPolicy.html">
+      <td>  <span class="datatype-name">RangerPolicy</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerPolicyConditionDef.html">
+      <td>  <span class="datatype-name">RangerPolicyConditionDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerPolicyDelta.html">
+      <td>  <span class="datatype-name">RangerPolicyDelta</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerPolicyItem.html">
+      <td>  <span class="datatype-name">RangerPolicyItem</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerPolicyItemAccess.html">
+      <td>  <span class="datatype-name">RangerPolicyItemAccess</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerPolicyItemCondition.html">
+      <td>  <span class="datatype-name">RangerPolicyItemCondition</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerPolicyItemDataMaskInfo.html">
+      <td>  <span class="datatype-name">RangerPolicyItemDataMaskInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerPolicyItemRowFilterInfo.html">
+      <td>  <span class="datatype-name">RangerPolicyItemRowFilterInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerPolicyList.html">
+      <td>  <span class="datatype-name">RangerPolicyList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerPolicyResource.html">
+      <td>  <span class="datatype-name">RangerPolicyResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerRequestedResources.html">
+      <td>  <span class="datatype-name">RangerRequestedResources</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerResourceDef.html">
+      <td>  <span class="datatype-name">RangerResourceDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerRole.html">
+      <td>  <span class="datatype-name">RangerRole</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerRoleList.html">
+      <td>  <span class="datatype-name">RangerRoleList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerRoles.html">
+      <td>  <span class="datatype-name">RangerRoles</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerRowFilterDef.html">
+      <td>  <span class="datatype-name">RangerRowFilterDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerRowFilterPolicyItem.html">
+      <td>  <span class="datatype-name">RangerRowFilterPolicyItem</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerSecurityZone.html">
+      <td>  <span class="datatype-name">RangerSecurityZone</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerSecurityZoneList.html">
+      <td>  <span class="datatype-name">RangerSecurityZoneList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerSecurityZoneService.html">
+      <td>  <span class="datatype-name">RangerSecurityZoneService</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerService.html">
+      <td>  <span class="datatype-name">RangerService</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerServiceConfigDef.html">
+      <td>  <span class="datatype-name">RangerServiceConfigDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerServiceDef.html">
+      <td>  <span class="datatype-name">RangerServiceDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerServiceDefList.html">
+      <td>  <span class="datatype-name">RangerServiceDefList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerServiceList.html">
+      <td>  <span class="datatype-name">RangerServiceList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerServiceResource.html">
+      <td>  <span class="datatype-name">RangerServiceResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerTag.html">
+      <td>  <span class="datatype-name">RangerTag</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerTagAttributeDef.html">
+      <td>  <span class="datatype-name">RangerTagAttributeDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerTagDef.html">
+      <td>  <span class="datatype-name">RangerTagDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerTagForEval.html">
+      <td>  <span class="datatype-name">RangerTagForEval</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerTagResource.html">
+      <td>  <span class="datatype-name">RangerTagResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerTagResourceMap.html">
+      <td>  <span class="datatype-name">RangerTagResourceMap</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerUserStore.html">
+      <td>  <span class="datatype-name">RangerUserStore</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerValidityRecurrence.html">
+      <td>  <span class="datatype-name">RangerValidityRecurrence</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RangerValiditySchedule.html">
+      <td>  <span class="datatype-name">RangerValiditySchedule</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RecurrenceSchedule.html">
+      <td>  <span class="datatype-name">RecurrenceSchedule</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ResourceLookupContext.html">
+      <td>  <span class="datatype-name">ResourceLookupContext</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ResponseEntityOfList.html">
+      <td>  <span class="datatype-name">ResponseEntityOfList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RoleMember.html">
+      <td>  <span class="datatype-name">RoleMember</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RowFilterResult.html">
+      <td>  <span class="datatype-name">RowFilterResult</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_SecurityZoneInfo.html">
+      <td>  <span class="datatype-name">SecurityZoneInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ServiceDeleteResponse.html">
+      <td>  <span class="datatype-name">ServiceDeleteResponse</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ServicePolicies.html">
+      <td>  <span class="datatype-name">ServicePolicies</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ServiceTags.html">
+      <td>  <span class="datatype-name">ServiceTags</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_StoredServiceResource.html">
+      <td>  <span class="datatype-name">StoredServiceResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_TagPolicies.html">
+      <td>  <span class="datatype-name">TagPolicies</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_TagsChangeExtent.html">
+      <td>  <span class="datatype-name">TagsChangeExtent</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_UserInfo.html">
+      <td>  <span class="datatype-name">UserInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_UsersGroupRoleAssignments.html">
+      <td>  <span class="datatype-name">UsersGroupRoleAssignments</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VEnum.html">
+      <td>  <span class="datatype-name">VEnum</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VEnumElement.html">
+      <td>  <span class="datatype-name">VEnumElement</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VList.html">
+      <td>  <span class="datatype-name">VList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VTrxLogAttr.html">
+      <td>  <span class="datatype-name">VTrxLogAttr</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXAccessAudit.html">
+      <td>  <span class="datatype-name">VXAccessAudit</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXAccessAuditList.html">
+      <td>  <span class="datatype-name">VXAccessAuditList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXAsset.html">
+      <td>  <span class="datatype-name">VXAsset</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXAssetList.html">
+      <td>  <span class="datatype-name">VXAssetList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXAuditMap.html">
+      <td>  <span class="datatype-name">VXAuditMap</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXAuditMapList.html">
+      <td>  <span class="datatype-name">VXAuditMapList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXAuditRecord.html">
+      <td>  <span class="datatype-name">VXAuditRecord</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXAuditRecordList.html">
+      <td>  <span class="datatype-name">VXAuditRecordList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXAuthSession.html">
+      <td>  <span class="datatype-name">VXAuthSession</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXAuthSessionList.html">
+      <td>  <span class="datatype-name">VXAuthSessionList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXCredentialStore.html">
+      <td>  <span class="datatype-name">VXCredentialStore</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXCredentialStoreList.html">
+      <td>  <span class="datatype-name">VXCredentialStoreList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXDataObject.html">
+      <td>  <span class="datatype-name">VXDataObject</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXFileSyncSourceInfo.html">
+      <td>  <span class="datatype-name">VXFileSyncSourceInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXGroup.html">
+      <td>  <span class="datatype-name">VXGroup</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXGroupGroup.html">
+      <td>  <span class="datatype-name">VXGroupGroup</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXGroupGroupList.html">
+      <td>  <span class="datatype-name">VXGroupGroupList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXGroupList.html">
+      <td>  <span class="datatype-name">VXGroupList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXGroupPermission.html">
+      <td>  <span class="datatype-name">VXGroupPermission</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXGroupPermissionList.html">
+      <td>  <span class="datatype-name">VXGroupPermissionList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXGroupUser.html">
+      <td>  <span class="datatype-name">VXGroupUser</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXGroupUserInfo.html">
+      <td>  <span class="datatype-name">VXGroupUserInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXGroupUserList.html">
+      <td>  <span class="datatype-name">VXGroupUserList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXKmsKey.html">
+      <td>  <span class="datatype-name">VXKmsKey</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXKmsKeyList.html">
+      <td>  <span class="datatype-name">VXKmsKeyList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXLdapSyncSourceInfo.html">
+      <td>  <span class="datatype-name">VXLdapSyncSourceInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXLong.html">
+      <td>  <span class="datatype-name">VXLong</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXMessage.html">
+      <td>  <span class="datatype-name">VXMessage</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXMetricAuditDetailsCount.html">
+      <td>  <span class="datatype-name">VXMetricAuditDetailsCount</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXMetricPolicyCount.html">
+      <td>  <span class="datatype-name">VXMetricPolicyCount</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXMetricPolicyWithServiceNameCount.html">
+      <td>  <span class="datatype-name">VXMetricPolicyWithServiceNameCount</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXMetricServiceCount.html">
+      <td>  <span class="datatype-name">VXMetricServiceCount</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXMetricServiceNameCount.html">
+      <td>  <span class="datatype-name">VXMetricServiceNameCount</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXMetricUserGroupCount.html">
+      <td>  <span class="datatype-name">VXMetricUserGroupCount</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXModuleDef.html">
+      <td>  <span class="datatype-name">VXModuleDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXModuleDefList.html">
+      <td>  <span class="datatype-name">VXModuleDefList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXPasswordChange.html">
+      <td>  <span class="datatype-name">VXPasswordChange</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXPermMap.html">
+      <td>  <span class="datatype-name">VXPermMap</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXPermMapList.html">
+      <td>  <span class="datatype-name">VXPermMapList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXPermObj.html">
+      <td>  <span class="datatype-name">VXPermObj</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXPermObjList.html">
+      <td>  <span class="datatype-name">VXPermObjList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXPolicy.html">
+      <td>  <span class="datatype-name">VXPolicy</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXPolicyExportAudit.html">
+      <td>  <span class="datatype-name">VXPolicyExportAudit</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXPolicyExportAuditList.html">
+      <td>  <span class="datatype-name">VXPolicyExportAuditList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXPolicyLabel.html">
+      <td>  <span class="datatype-name">VXPolicyLabel</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXPolicyLabelList.html">
+      <td>  <span class="datatype-name">VXPolicyLabelList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXPolicyList.html">
+      <td>  <span class="datatype-name">VXPolicyList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXPortalUser.html">
+      <td>  <span class="datatype-name">VXPortalUser</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXPortalUserList.html">
+      <td>  <span class="datatype-name">VXPortalUserList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXRepository.html">
+      <td>  <span class="datatype-name">VXRepository</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXRepositoryList.html">
+      <td>  <span class="datatype-name">VXRepositoryList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXResource.html">
+      <td>  <span class="datatype-name">VXResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXResourceList.html">
+      <td>  <span class="datatype-name">VXResourceList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXResponse.html">
+      <td>  <span class="datatype-name">VXResponse</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXString.html">
+      <td>  <span class="datatype-name">VXString</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXStringList.html">
+      <td>  <span class="datatype-name">VXStringList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXTrxLog.html">
+      <td>  <span class="datatype-name">VXTrxLog</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXTrxLogList.html">
+      <td>  <span class="datatype-name">VXTrxLogList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXUgsyncAuditInfo.html">
+      <td>  <span class="datatype-name">VXUgsyncAuditInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXUgsyncAuditInfoList.html">
+      <td>  <span class="datatype-name">VXUgsyncAuditInfoList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXUnixSyncSourceInfo.html">
+      <td>  <span class="datatype-name">VXUnixSyncSourceInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXUser.html">
+      <td>  <span class="datatype-name">VXUser</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXUserGroupInfo.html">
+      <td>  <span class="datatype-name">VXUserGroupInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXUserList.html">
+      <td>  <span class="datatype-name">VXUserList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXUserPermission.html">
+      <td>  <span class="datatype-name">VXUserPermission</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXUserPermissionList.html">
+      <td>  <span class="datatype-name">VXUserPermissionList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_VXXTrxLog.html">
+      <td>  <span class="datatype-name">VXXTrxLog</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ValidityInterval.html">
+      <td>  <span class="datatype-name">ValidityInterval</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_ViewBaseBean.html">
+      <td>  <span class="datatype-name">ViewBaseBean</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXAccessAudit.html">
+      <td>  <span class="datatype-name">XXAccessAudit</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXAccessAuditBase.html">
+      <td>  <span class="datatype-name">XXAccessAuditBase</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXAccessAuditV4.html">
+      <td>  <span class="datatype-name">XXAccessAuditV4</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXAccessAuditV5.html">
+      <td>  <span class="datatype-name">XXAccessAuditV5</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXAccessTypeDef.html">
+      <td>  <span class="datatype-name">XXAccessTypeDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXAccessTypeDefGrants.html">
+      <td>  <span class="datatype-name">XXAccessTypeDefGrants</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXAsset.html">
+      <td>  <span class="datatype-name">XXAsset</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXAuditMap.html">
+      <td>  <span class="datatype-name">XXAuditMap</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXAuthSession.html">
+      <td>  <span class="datatype-name">XXAuthSession</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXContextEnricherDef.html">
+      <td>  <span class="datatype-name">XXContextEnricherDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXCredentialStore.html">
+      <td>  <span class="datatype-name">XXCredentialStore</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXDBBase.html">
+      <td>  <span class="datatype-name">XXDBBase</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXDataHist.html">
+      <td>  <span class="datatype-name">XXDataHist</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXDataMaskTypeDef.html">
+      <td>  <span class="datatype-name">XXDataMaskTypeDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXEnumDef.html">
+      <td>  <span class="datatype-name">XXEnumDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXEnumElementDef.html">
+      <td>  <span class="datatype-name">XXEnumElementDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXGlobalState.html">
+      <td>  <span class="datatype-name">XXGlobalState</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXGlobalStateBase.html">
+      <td>  <span class="datatype-name">XXGlobalStateBase</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXGroup.html">
+      <td>  <span class="datatype-name">XXGroup</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXGroupGroup.html">
+      <td>  <span class="datatype-name">XXGroupGroup</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXGroupPermission.html">
+      <td>  <span class="datatype-name">XXGroupPermission</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXGroupUser.html">
+      <td>  <span class="datatype-name">XXGroupUser</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXModuleDef.html">
+      <td>  <span class="datatype-name">XXModuleDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPermMap.html">
+      <td>  <span class="datatype-name">XXPermMap</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPluginInfo.html">
+      <td>  <span class="datatype-name">XXPluginInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicy.html">
+      <td>  <span class="datatype-name">XXPolicy</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyBase.html">
+      <td>  <span class="datatype-name">XXPolicyBase</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyChangeLog.html">
+      <td>  <span class="datatype-name">XXPolicyChangeLog</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyConditionDef.html">
+      <td>  <span class="datatype-name">XXPolicyConditionDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyExportAudit.html">
+      <td>  <span class="datatype-name">XXPolicyExportAudit</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyItem.html">
+      <td>  <span class="datatype-name">XXPolicyItem</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyItemAccess.html">
+      <td>  <span class="datatype-name">XXPolicyItemAccess</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyItemCondition.html">
+      <td>  <span class="datatype-name">XXPolicyItemCondition</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyItemDataMaskInfo.html">
+      <td>  <span class="datatype-name">XXPolicyItemDataMaskInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyItemGroupPerm.html">
+      <td>  <span class="datatype-name">XXPolicyItemGroupPerm</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyItemRowFilterInfo.html">
+      <td>  <span class="datatype-name">XXPolicyItemRowFilterInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyItemUserPerm.html">
+      <td>  <span class="datatype-name">XXPolicyItemUserPerm</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyLabel.html">
+      <td>  <span class="datatype-name">XXPolicyLabel</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyLabelMap.html">
+      <td>  <span class="datatype-name">XXPolicyLabelMap</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyRefAccessType.html">
+      <td>  <span class="datatype-name">XXPolicyRefAccessType</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyRefCondition.html">
+      <td>  <span class="datatype-name">XXPolicyRefCondition</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyRefDataMaskType.html">
+      <td>  <span class="datatype-name">XXPolicyRefDataMaskType</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyRefGroup.html">
+      <td>  <span class="datatype-name">XXPolicyRefGroup</span>
+</td>
+      <td>  <span class="datatype-description">The persistent class for the x_policy_ref_group database table.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyRefResource.html">
+      <td>  <span class="datatype-name">XXPolicyRefResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyRefRole.html">
+      <td>  <span class="datatype-name">XXPolicyRefRole</span>
+</td>
+      <td>  <span class="datatype-description">The persistent class for the x_policy_ref_role database table.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyRefUser.html">
+      <td>  <span class="datatype-name">XXPolicyRefUser</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyResource.html">
+      <td>  <span class="datatype-name">XXPolicyResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyResourceMap.html">
+      <td>  <span class="datatype-name">XXPolicyResourceMap</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPolicyWithAssignedId.html">
+      <td>  <span class="datatype-name">XXPolicyWithAssignedId</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPortalUser.html">
+      <td>  <span class="datatype-name">XXPortalUser</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXPortalUserRole.html">
+      <td>  <span class="datatype-name">XXPortalUserRole</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXRMSMappingProvider.html">
+      <td>  <span class="datatype-name">XXRMSMappingProvider</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXRMSNotification.html">
+      <td>  <span class="datatype-name">XXRMSNotification</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXRMSResourceMapping.html">
+      <td>  <span class="datatype-name">XXRMSResourceMapping</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXRMSServiceResource.html">
+      <td>  <span class="datatype-name">XXRMSServiceResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXResource.html">
+      <td>  <span class="datatype-name">XXResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXResourceDef.html">
+      <td>  <span class="datatype-name">XXResourceDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXRole.html">
+      <td>  <span class="datatype-name">XXRole</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXRoleBase.html">
+      <td>  <span class="datatype-name">XXRoleBase</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXRoleRefGroup.html">
+      <td>  <span class="datatype-name">XXRoleRefGroup</span>
+</td>
+      <td>  <span class="datatype-description">The persistent class for the x_role_ref_group database table.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXRoleRefRole.html">
+      <td>  <span class="datatype-name">XXRoleRefRole</span>
+</td>
+      <td>  <span class="datatype-description">The persistent class for the x_role_ref_role database table.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXRoleRefUser.html">
+      <td>  <span class="datatype-name">XXRoleRefUser</span>
+</td>
+      <td>  <span class="datatype-description">The persistent class for the x_role_ref_user database table.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXSecurityZone.html">
+      <td>  <span class="datatype-name">XXSecurityZone</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXSecurityZoneBase.html">
+      <td>  <span class="datatype-name">XXSecurityZoneBase</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXSecurityZoneRefGroup.html">
+      <td>  <span class="datatype-name">XXSecurityZoneRefGroup</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXSecurityZoneRefResource.html">
+      <td>  <span class="datatype-name">XXSecurityZoneRefResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXSecurityZoneRefService.html">
+      <td>  <span class="datatype-name">XXSecurityZoneRefService</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXSecurityZoneRefTagService.html">
+      <td>  <span class="datatype-name">XXSecurityZoneRefTagService</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXSecurityZoneRefUser.html">
+      <td>  <span class="datatype-name">XXSecurityZoneRefUser</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXService.html">
+      <td>  <span class="datatype-name">XXService</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXServiceBase.html">
+      <td>  <span class="datatype-name">XXServiceBase</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXServiceConfigDef.html">
+      <td>  <span class="datatype-name">XXServiceConfigDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXServiceConfigMap.html">
+      <td>  <span class="datatype-name">XXServiceConfigMap</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXServiceDef.html">
+      <td>  <span class="datatype-name">XXServiceDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXServiceDefBase.html">
+      <td>  <span class="datatype-name">XXServiceDefBase</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXServiceDefWithAssignedId.html">
+      <td>  <span class="datatype-name">XXServiceDefWithAssignedId</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXServiceResource.html">
+      <td>  <span class="datatype-name">XXServiceResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXServiceResourceElement.html">
+      <td>  <span class="datatype-name">XXServiceResourceElement</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXServiceResourceElementValue.html">
+      <td>  <span class="datatype-name">XXServiceResourceElementValue</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXServiceVersionInfo.html">
+      <td>  <span class="datatype-name">XXServiceVersionInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXServiceWithAssignedId.html">
+      <td>  <span class="datatype-name">XXServiceWithAssignedId</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXTag.html">
+      <td>  <span class="datatype-name">XXTag</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXTagAttribute.html">
+      <td>  <span class="datatype-name">XXTagAttribute</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXTagAttributeDef.html">
+      <td>  <span class="datatype-name">XXTagAttributeDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXTagChangeLog.html">
+      <td>  <span class="datatype-name">XXTagChangeLog</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXTagDef.html">
+      <td>  <span class="datatype-name">XXTagDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXTagResourceMap.html">
+      <td>  <span class="datatype-name">XXTagResourceMap</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXTrxLog.html">
+      <td>  <span class="datatype-name">XXTrxLog</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXUgsyncAuditInfo.html">
+      <td>  <span class="datatype-name">XXUgsyncAuditInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXUser.html">
+      <td>  <span class="datatype-name">XXUser</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_XXUserPermission.html">
+      <td>  <span class="datatype-name">XXUserPermission</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h3 id="syntax_xml"><span class="syntax-name">XML</span></h3>
+
+  <table class="table table-hover datatypes">
+    <caption>Default Namespace  (<a href="ns0.xsd">schema</a>)</caption>
+    <thead>
+      <tr>
+        <th align="center">type</th>
+        <th align="center">description</th>
+      </tr>
+    </thead>
+    <tbody data-link="row" class="rowlink">
+    <tr class="clickable-row" data-href="xml_ns0_RESTResponse.html">
+      <td>  <span class="datatype-name">RESTResponse</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_message.html">
+      <td>  <span class="datatype-name">message</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VEnum.html">
+      <td>  <span class="datatype-name">VEnum</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VEnumElement.html">
+      <td>  <span class="datatype-name">VEnumElement</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VList.html">
+      <td>  <span class="datatype-name">VList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VTrxLogAttr.html">
+      <td>  <span class="datatype-name">VTrxLogAttr</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_viewBaseBean.html">
+      <td>  <span class="datatype-name">viewBaseBean</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXAccessAudit.html">
+      <td>  <span class="datatype-name">XXAccessAudit</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXAccessAuditBase.html">
+      <td>  <span class="datatype-name">XXAccessAuditBase</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXAccessAuditV4.html">
+      <td>  <span class="datatype-name">XXAccessAuditV4</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXAccessAuditV5.html">
+      <td>  <span class="datatype-name">XXAccessAuditV5</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXAccessTypeDef.html">
+      <td>  <span class="datatype-name">XXAccessTypeDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXAccessTypeDefGrants.html">
+      <td>  <span class="datatype-name">XXAccessTypeDefGrants</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXAsset.html">
+      <td>  <span class="datatype-name">XXAsset</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXAuditMap.html">
+      <td>  <span class="datatype-name">XXAuditMap</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXAuthSession.html">
+      <td>  <span class="datatype-name">XXAuthSession</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXContextEnricherDef.html">
+      <td>  <span class="datatype-name">XXContextEnricherDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXCredentialStore.html">
+      <td>  <span class="datatype-name">XXCredentialStore</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXDBBase.html">
+      <td>  <span class="datatype-name">XXDBBase</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXDataHist.html">
+      <td>  <span class="datatype-name">XXDataHist</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXDataMaskTypeDef.html">
+      <td>  <span class="datatype-name">XXDataMaskTypeDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXEnumDef.html">
+      <td>  <span class="datatype-name">XXEnumDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXEnumElementDef.html">
+      <td>  <span class="datatype-name">XXEnumElementDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXGlobalState.html">
+      <td>  <span class="datatype-name">XXGlobalState</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXGlobalStateBase.html">
+      <td>  <span class="datatype-name">XXGlobalStateBase</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXGroup.html">
+      <td>  <span class="datatype-name">XXGroup</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXGroupGroup.html">
+      <td>  <span class="datatype-name">XXGroupGroup</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXGroupPermission.html">
+      <td>  <span class="datatype-name">XXGroupPermission</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXGroupUser.html">
+      <td>  <span class="datatype-name">XXGroupUser</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXModuleDef.html">
+      <td>  <span class="datatype-name">XXModuleDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPermMap.html">
+      <td>  <span class="datatype-name">XXPermMap</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPluginInfo.html">
+      <td>  <span class="datatype-name">XXPluginInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicy.html">
+      <td>  <span class="datatype-name">XXPolicy</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyBase.html">
+      <td>  <span class="datatype-name">XXPolicyBase</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyChangeLog.html">
+      <td>  <span class="datatype-name">XXPolicyChangeLog</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyConditionDef.html">
+      <td>  <span class="datatype-name">XXPolicyConditionDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyExportAudit.html">
+      <td>  <span class="datatype-name">XXPolicyExportAudit</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyItem.html">
+      <td>  <span class="datatype-name">XXPolicyItem</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyItemAccess.html">
+      <td>  <span class="datatype-name">XXPolicyItemAccess</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyItemCondition.html">
+      <td>  <span class="datatype-name">XXPolicyItemCondition</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyItemDataMaskInfo.html">
+      <td>  <span class="datatype-name">XXPolicyItemDataMaskInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyItemGroupPerm.html">
+      <td>  <span class="datatype-name">XXPolicyItemGroupPerm</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyItemRowFilterInfo.html">
+      <td>  <span class="datatype-name">XXPolicyItemRowFilterInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyItemUserPerm.html">
+      <td>  <span class="datatype-name">XXPolicyItemUserPerm</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyLabel.html">
+      <td>  <span class="datatype-name">XXPolicyLabel</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyLabelMap.html">
+      <td>  <span class="datatype-name">XXPolicyLabelMap</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyRefAccessType.html">
+      <td>  <span class="datatype-name">XXPolicyRefAccessType</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyRefCondition.html">
+      <td>  <span class="datatype-name">XXPolicyRefCondition</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyRefDataMaskType.html">
+      <td>  <span class="datatype-name">XXPolicyRefDataMaskType</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyRefGroup.html">
+      <td>  <span class="datatype-name">XXPolicyRefGroup</span>
+</td>
+      <td>  <span class="datatype-description">The persistent class for the x_policy_ref_group database table.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyRefResource.html">
+      <td>  <span class="datatype-name">XXPolicyRefResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyRefRole.html">
+      <td>  <span class="datatype-name">XXPolicyRefRole</span>
+</td>
+      <td>  <span class="datatype-description">The persistent class for the x_policy_ref_role database table.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyRefUser.html">
+      <td>  <span class="datatype-name">XXPolicyRefUser</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyResource.html">
+      <td>  <span class="datatype-name">XXPolicyResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyResourceMap.html">
+      <td>  <span class="datatype-name">XXPolicyResourceMap</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPolicyWithAssignedId.html">
+      <td>  <span class="datatype-name">XXPolicyWithAssignedId</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPortalUser.html">
+      <td>  <span class="datatype-name">XXPortalUser</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXPortalUserRole.html">
+      <td>  <span class="datatype-name">XXPortalUserRole</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXRMSMappingProvider.html">
+      <td>  <span class="datatype-name">XXRMSMappingProvider</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXRMSNotification.html">
+      <td>  <span class="datatype-name">XXRMSNotification</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXRMSResourceMapping.html">
+      <td>  <span class="datatype-name">XXRMSResourceMapping</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXRMSServiceResource.html">
+      <td>  <span class="datatype-name">XXRMSServiceResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXResource.html">
+      <td>  <span class="datatype-name">XXResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXResourceDef.html">
+      <td>  <span class="datatype-name">XXResourceDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXRole.html">
+      <td>  <span class="datatype-name">XXRole</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXRoleBase.html">
+      <td>  <span class="datatype-name">XXRoleBase</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXRoleRefGroup.html">
+      <td>  <span class="datatype-name">XXRoleRefGroup</span>
+</td>
+      <td>  <span class="datatype-description">The persistent class for the x_role_ref_group database table.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXRoleRefRole.html">
+      <td>  <span class="datatype-name">XXRoleRefRole</span>
+</td>
+      <td>  <span class="datatype-description">The persistent class for the x_role_ref_role database table.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXRoleRefUser.html">
+      <td>  <span class="datatype-name">XXRoleRefUser</span>
+</td>
+      <td>  <span class="datatype-description">The persistent class for the x_role_ref_user database table.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXSecurityZone.html">
+      <td>  <span class="datatype-name">XXSecurityZone</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXSecurityZoneBase.html">
+      <td>  <span class="datatype-name">XXSecurityZoneBase</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXSecurityZoneRefGroup.html">
+      <td>  <span class="datatype-name">XXSecurityZoneRefGroup</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXSecurityZoneRefResource.html">
+      <td>  <span class="datatype-name">XXSecurityZoneRefResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXSecurityZoneRefService.html">
+      <td>  <span class="datatype-name">XXSecurityZoneRefService</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXSecurityZoneRefTagService.html">
+      <td>  <span class="datatype-name">XXSecurityZoneRefTagService</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXSecurityZoneRefUser.html">
+      <td>  <span class="datatype-name">XXSecurityZoneRefUser</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXService.html">
+      <td>  <span class="datatype-name">XXService</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXServiceBase.html">
+      <td>  <span class="datatype-name">XXServiceBase</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXServiceConfigDef.html">
+      <td>  <span class="datatype-name">XXServiceConfigDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXServiceConfigMap.html">
+      <td>  <span class="datatype-name">XXServiceConfigMap</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXServiceDef.html">
+      <td>  <span class="datatype-name">XXServiceDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXServiceDefBase.html">
+      <td>  <span class="datatype-name">XXServiceDefBase</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXServiceDefWithAssignedId.html">
+      <td>  <span class="datatype-name">XXServiceDefWithAssignedId</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXServiceResource.html">
+      <td>  <span class="datatype-name">XXServiceResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXServiceResourceElement.html">
+      <td>  <span class="datatype-name">XXServiceResourceElement</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXServiceResourceElementValue.html">
+      <td>  <span class="datatype-name">XXServiceResourceElementValue</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXServiceVersionInfo.html">
+      <td>  <span class="datatype-name">XXServiceVersionInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXServiceWithAssignedId.html">
+      <td>  <span class="datatype-name">XXServiceWithAssignedId</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXTag.html">
+      <td>  <span class="datatype-name">XXTag</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXTagAttribute.html">
+      <td>  <span class="datatype-name">XXTagAttribute</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXTagAttributeDef.html">
+      <td>  <span class="datatype-name">XXTagAttributeDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXTagChangeLog.html">
+      <td>  <span class="datatype-name">XXTagChangeLog</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXTagDef.html">
+      <td>  <span class="datatype-name">XXTagDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXTagResourceMap.html">
+      <td>  <span class="datatype-name">XXTagResourceMap</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXTrxLog.html">
+      <td>  <span class="datatype-name">XXTrxLog</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXUgsyncAuditInfo.html">
+      <td>  <span class="datatype-name">XXUgsyncAuditInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXUser.html">
+      <td>  <span class="datatype-name">XXUser</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_XXUserPermission.html">
+      <td>  <span class="datatype-name">XXUserPermission</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXXTrxLog.html">
+      <td>  <span class="datatype-name">VXXTrxLog</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerTagForEval.html">
+      <td>  <span class="datatype-name">rangerTagForEval</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_auditFilter.html">
+      <td>  <span class="datatype-name">auditFilter</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_groupInfo.html">
+      <td>  <span class="datatype-name">groupInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerBaseModelObject.html">
+      <td>  <span class="datatype-name">rangerBaseModelObject</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerMetrics.html">
+      <td>  <span class="datatype-name">rangerMetrics</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerPluginInfo.html">
+      <td>  <span class="datatype-name">rangerPluginInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerPolicy.html">
+      <td>  <span class="datatype-name">rangerPolicy</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerDataMaskPolicyItem.html">
+      <td>  <span class="datatype-name">rangerDataMaskPolicyItem</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerPolicyItem.html">
+      <td>  <span class="datatype-name">rangerPolicyItem</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerPolicyItemAccess.html">
+      <td>  <span class="datatype-name">rangerPolicyItemAccess</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerPolicyItemCondition.html">
+      <td>  <span class="datatype-name">rangerPolicyItemCondition</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerPolicyItemDataMaskInfo.html">
+      <td>  <span class="datatype-name">rangerPolicyItemDataMaskInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerPolicyItemRowFilterInfo.html">
+      <td>  <span class="datatype-name">rangerPolicyItemRowFilterInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerPolicyResource.html">
+      <td>  <span class="datatype-name">rangerPolicyResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerRowFilterPolicyItem.html">
+      <td>  <span class="datatype-name">rangerRowFilterPolicyItem</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerPolicyDelta.html">
+      <td>  <span class="datatype-name">rangerPolicyDelta</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerRole.html">
+      <td>  <span class="datatype-name">rangerRole</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_roleMember.html">
+      <td>  <span class="datatype-name">roleMember</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerSecurityZone.html">
+      <td>  <span class="datatype-name">rangerSecurityZone</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerSecurityZoneService.html">
+      <td>  <span class="datatype-name">rangerSecurityZoneService</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerService.html">
+      <td>  <span class="datatype-name">rangerService</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerServiceDef.html">
+      <td>  <span class="datatype-name">rangerServiceDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerAccessTypeDef.html">
+      <td>  <span class="datatype-name">rangerAccessTypeDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerContextEnricherDef.html">
+      <td>  <span class="datatype-name">rangerContextEnricherDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerDataMaskDef.html">
+      <td>  <span class="datatype-name">rangerDataMaskDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerDataMaskTypeDef.html">
+      <td>  <span class="datatype-name">rangerDataMaskTypeDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerEnumDef.html">
+      <td>  <span class="datatype-name">rangerEnumDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerEnumElementDef.html">
+      <td>  <span class="datatype-name">rangerEnumElementDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerPolicyConditionDef.html">
+      <td>  <span class="datatype-name">rangerPolicyConditionDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerResourceDef.html">
+      <td>  <span class="datatype-name">rangerResourceDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerRowFilterDef.html">
+      <td>  <span class="datatype-name">rangerRowFilterDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerServiceConfigDef.html">
+      <td>  <span class="datatype-name">rangerServiceConfigDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerServiceResource.html">
+      <td>  <span class="datatype-name">rangerServiceResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerTag.html">
+      <td>  <span class="datatype-name">rangerTag</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerTagDef.html">
+      <td>  <span class="datatype-name">rangerTagDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerTagAttributeDef.html">
+      <td>  <span class="datatype-name">rangerTagAttributeDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerTagResourceMap.html">
+      <td>  <span class="datatype-name">rangerTagResourceMap</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerValidityRecurrence.html">
+      <td>  <span class="datatype-name">rangerValidityRecurrence</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_recurrenceSchedule.html">
+      <td>  <span class="datatype-name">recurrenceSchedule</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_validityInterval.html">
+      <td>  <span class="datatype-name">validityInterval</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerValiditySchedule.html">
+      <td>  <span class="datatype-name">rangerValiditySchedule</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_serviceDeleteResponse.html">
+      <td>  <span class="datatype-name">serviceDeleteResponse</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_userInfo.html">
+      <td>  <span class="datatype-name">userInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerAccessResource.html">
+      <td>  <span class="datatype-name">rangerAccessResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerAccessResourceImpl.html">
+      <td>  <span class="datatype-name">rangerAccessResourceImpl</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerAccessResourceReadOnly.html">
+      <td>  <span class="datatype-name">rangerAccessResourceReadOnly</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerMutableResource.html">
+      <td>  <span class="datatype-name">rangerMutableResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_accessResult.html">
+      <td>  <span class="datatype-name">accessResult</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_dataMaskResult.html">
+      <td>  <span class="datatype-name">dataMaskResult</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rowFilterResult.html">
+      <td>  <span class="datatype-name">rowFilterResult</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerTagResource.html">
+      <td>  <span class="datatype-name">rangerTagResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerAuditPolicy.html">
+      <td>  <span class="datatype-name">rangerAuditPolicy</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerAuditPolicyItem.html">
+      <td>  <span class="datatype-name">rangerAuditPolicyItem</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_matchType.html">
+      <td>  <span class="datatype-name">matchType</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_resourceLookupContext.html">
+      <td>  <span class="datatype-name">resourceLookupContext</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_storedServiceResource.html">
+      <td>  <span class="datatype-name">storedServiceResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_grantRevokeRequest.html">
+      <td>  <span class="datatype-name">grantRevokeRequest</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_grantRevokeRoleRequest.html">
+      <td>  <span class="datatype-name">grantRevokeRoleRequest</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerRequestedResources.html">
+      <td>  <span class="datatype-name">rangerRequestedResources</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerRoles.html">
+      <td>  <span class="datatype-name">rangerRoles</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerUserStore.html">
+      <td>  <span class="datatype-name">rangerUserStore</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_servicePolicies.html">
+      <td>  <span class="datatype-name">servicePolicies</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_securityZoneInfo.html">
+      <td>  <span class="datatype-name">securityZoneInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_tagPolicies.html">
+      <td>  <span class="datatype-name">tagPolicies</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_serviceTags.html">
+      <td>  <span class="datatype-name">serviceTags</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_tagsChangeExtent.html">
+      <td>  <span class="datatype-name">tagsChangeExtent</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_groupUserInfo.html">
+      <td>  <span class="datatype-name">groupUserInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_usersGroupRoleAssignments.html">
+      <td>  <span class="datatype-name">usersGroupRoleAssignments</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerExportPolicyList.html">
+      <td>  <span class="datatype-name">rangerExportPolicyList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerPluginInfoList.html">
+      <td>  <span class="datatype-name">rangerPluginInfoList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerPolicyList.html">
+      <td>  <span class="datatype-name">rangerPolicyList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerRoleList.html">
+      <td>  <span class="datatype-name">rangerRoleList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerSecurityZoneList.html">
+      <td>  <span class="datatype-name">rangerSecurityZoneList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerServiceDefList.html">
+      <td>  <span class="datatype-name">rangerServiceDefList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_rangerServiceList.html">
+      <td>  <span class="datatype-name">rangerServiceList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXAccessAudit.html">
+      <td>  <span class="datatype-name">VXAccessAudit</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXAccessAuditList.html">
+      <td>  <span class="datatype-name">VXAccessAuditList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXAsset.html">
+      <td>  <span class="datatype-name">VXAsset</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXAssetList.html">
+      <td>  <span class="datatype-name">VXAssetList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXAuditMap.html">
+      <td>  <span class="datatype-name">VXAuditMap</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXAuditMapList.html">
+      <td>  <span class="datatype-name">VXAuditMapList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXAuditRecord.html">
+      <td>  <span class="datatype-name">VXAuditRecord</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXAuditRecordList.html">
+      <td>  <span class="datatype-name">VXAuditRecordList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXAuthSession.html">
+      <td>  <span class="datatype-name">VXAuthSession</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXAuthSessionList.html">
+      <td>  <span class="datatype-name">VXAuthSessionList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXCredentialStore.html">
+      <td>  <span class="datatype-name">VXCredentialStore</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXCredentialStoreList.html">
+      <td>  <span class="datatype-name">VXCredentialStoreList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXDataObject.html">
+      <td>  <span class="datatype-name">VXDataObject</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXFileSyncSourceInfo.html">
+      <td>  <span class="datatype-name">VXFileSyncSourceInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXGroup.html">
+      <td>  <span class="datatype-name">VXGroup</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXGroupGroup.html">
+      <td>  <span class="datatype-name">VXGroupGroup</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXGroupGroupList.html">
+      <td>  <span class="datatype-name">VXGroupGroupList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXGroupList.html">
+      <td>  <span class="datatype-name">VXGroupList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXGroupPermission.html">
+      <td>  <span class="datatype-name">VXGroupPermission</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXGroupPermissionList.html">
+      <td>  <span class="datatype-name">VXGroupPermissionList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXGroupUser.html">
+      <td>  <span class="datatype-name">VXGroupUser</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXGroupUserInfo.html">
+      <td>  <span class="datatype-name">VXGroupUserInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXGroupUserList.html">
+      <td>  <span class="datatype-name">VXGroupUserList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXKmsKey.html">
+      <td>  <span class="datatype-name">VXKmsKey</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXKmsKeyList.html">
+      <td>  <span class="datatype-name">VXKmsKeyList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXLdapSyncSourceInfo.html">
+      <td>  <span class="datatype-name">VXLdapSyncSourceInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXLong.html">
+      <td>  <span class="datatype-name">VXLong</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXMessage.html">
+      <td>  <span class="datatype-name">VXMessage</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXMetricAuditDetailsCount.html">
+      <td>  <span class="datatype-name">VXMetricAuditDetailsCount</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXMetricPolicyCount.html">
+      <td>  <span class="datatype-name">VXMetricPolicyCount</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXMetricPolicyWithServiceNameCount.html">
+      <td>  <span class="datatype-name">VXMetricPolicyWithServiceNameCount</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXMetricServiceCount.html">
+      <td>  <span class="datatype-name">VXMetricServiceCount</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXMetricServiceNameCount.html">
+      <td>  <span class="datatype-name">VXMetricServiceNameCount</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXMetricUserGroupCount.html">
+      <td>  <span class="datatype-name">VXMetricUserGroupCount</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXModuleDef.html">
+      <td>  <span class="datatype-name">VXModuleDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXModuleDefList.html">
+      <td>  <span class="datatype-name">VXModuleDefList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXPasswordChange.html">
+      <td>  <span class="datatype-name">VXPasswordChange</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXPermMap.html">
+      <td>  <span class="datatype-name">VXPermMap</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXPermMapList.html">
+      <td>  <span class="datatype-name">VXPermMapList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXPermObj.html">
+      <td>  <span class="datatype-name">VXPermObj</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXPermObjList.html">
+      <td>  <span class="datatype-name">VXPermObjList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXPolicy.html">
+      <td>  <span class="datatype-name">VXPolicy</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXPolicyExportAudit.html">
+      <td>  <span class="datatype-name">VXPolicyExportAudit</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXPolicyExportAuditList.html">
+      <td>  <span class="datatype-name">VXPolicyExportAuditList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXPolicyLabel.html">
+      <td>  <span class="datatype-name">VXPolicyLabel</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXPolicyLabelList.html">
+      <td>  <span class="datatype-name">VXPolicyLabelList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXPolicyList.html">
+      <td>  <span class="datatype-name">VXPolicyList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXPortalUser.html">
+      <td>  <span class="datatype-name">VXPortalUser</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXPortalUserList.html">
+      <td>  <span class="datatype-name">VXPortalUserList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXRepository.html">
+      <td>  <span class="datatype-name">VXRepository</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXRepositoryList.html">
+      <td>  <span class="datatype-name">VXRepositoryList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXResource.html">
+      <td>  <span class="datatype-name">VXResource</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXResourceList.html">
+      <td>  <span class="datatype-name">VXResourceList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXResponse.html">
+      <td>  <span class="datatype-name">VXResponse</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXString.html">
+      <td>  <span class="datatype-name">VXString</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXStringList.html">
+      <td>  <span class="datatype-name">VXStringList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXTrxLog.html">
+      <td>  <span class="datatype-name">VXTrxLog</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXTrxLogList.html">
+      <td>  <span class="datatype-name">VXTrxLogList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXUgsyncAuditInfo.html">
+      <td>  <span class="datatype-name">VXUgsyncAuditInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXUgsyncAuditInfoList.html">
+      <td>  <span class="datatype-name">VXUgsyncAuditInfoList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXUnixSyncSourceInfo.html">
+      <td>  <span class="datatype-name">VXUnixSyncSourceInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXUser.html">
+      <td>  <span class="datatype-name">VXUser</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXUserGroupInfo.html">
+      <td>  <span class="datatype-name">VXUserGroupInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXUserList.html">
+      <td>  <span class="datatype-name">VXUserList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXUserPermission.html">
+      <td>  <span class="datatype-name">VXUserPermission</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_VXUserPermissionList.html">
+      <td>  <span class="datatype-name">VXUserPermissionList</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_httpEntity.html">
+      <td>  <span class="datatype-name">httpEntity</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_responseEntity.html">
+      <td>  <span class="datatype-name">responseEntity</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    </tbody>
+  </table>
+
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Generated by <a href="http://enunciate.webcohesion.com">Enunciate</a>.</p>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript placed at the end of the document so the pages load faster. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
+  <script>
+    $(function() {
+      $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+      });
+
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+
+</body>
+</html>
